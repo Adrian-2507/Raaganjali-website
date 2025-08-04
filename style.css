@@ -1,46 +1,98 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background: #fefefe;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  background-color: #fdfdfd;
   color: #222;
+  line-height: 1.6;
 }
 
 nav {
-  background-color: #fff;
-  padding: 1rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
-  font-weight: bold;
-  border-bottom: 1px solid #ddd;
+  padding: 1rem 2rem;
+  background-color: #ffffffdd;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #eee;
 }
 
 nav a {
   text-decoration: none;
   color: #333;
-  transition: color 0.3s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
   color: #e91e63;
 }
 
-header {
+header.hero {
+  background: url('images/banner.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2rem;
+  position: relative;
+}
+
+header.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+header.hero h1,
+header.hero p {
+  z-index: 2;
+  animation: fadeUp 1s ease forwards;
+}
+
+header.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+header.hero p {
+  font-size: 1.2rem;
+  opacity: 0.8;
 }
 
 section {
-  padding: 1rem 2rem;
-  max-width: 800px;
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 1000px;
   margin: auto;
+  animation: fadeUp 0.8s ease forwards;
 }
 
-form input, form textarea, form button {
+section img {
   width: 100%;
-  margin-top: 0.5rem;
-  padding: 0.6rem;
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
