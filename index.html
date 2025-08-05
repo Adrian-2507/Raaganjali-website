@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raganjali | Home</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
 
@@ -16,12 +17,12 @@
     <a href="events.html">Events</a>
   </nav>
 
-  <header class="hero">
+  <header class="hero" data-aos="fade">
     <h1>Welcome to Raganjali</h1>
     <p>Celebrating Indian Music and Culture in Finland</p>
   </header>
 
-  <section>
+  <section data-aos="fade-up">
     <h2 style="margin-bottom: 2rem;">Who We Are</h2>
     <p style="margin-bottom: 2rem;">
       Raganjali is a passionate collective that brings the rich tapestry of Indian classical and devotional music to life in Finland. Through performance, collaboration, and community, we share the joy of sound and tradition with the world.
@@ -29,5 +30,12 @@
     <img src="images/Grp1.jpg" alt="Raganjali Group" />
   </section>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true
+    });
+  </script>
 </body>
 </html>
+
