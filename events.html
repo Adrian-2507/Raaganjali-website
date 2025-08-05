@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raganjali | Events</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
   <nav>
@@ -15,34 +16,34 @@
     <a href="events.html">Events</a>
   </nav>
 
-  <header>
+  <header style="text-align:center; padding:4rem 2rem;" data-aos="fade">
     <h1>Our Events</h1>
-    <p>Past and Upcoming Performances</p>
   </header>
 
-  <section style="padding: 30px;">
+  <section data-aos="fade-up">
     <h2>🇮🇳 India Day 2025</h2>
-    <p>📍 Helsinki, 17th August 2025<br>
-    🎶 Live performance celebrating Indian independence and music.</p>
+    <p>📍 Helsinki, 17th August 2025<br/>Celebration of Indian independence with live music.</p>
 
-    <h2>🪔 Dussehra & Bathukamma</h2>
-    <p>In collaboration with Finland Telugu Association<br>
-    🥁 Cultural performances and community celebration.</p>
+    <h2 style="margin-top:2rem;">🪔 Dussehra & Bathukamma</h2>
+    <p>With Finland Telugu Association — festive music and cultural performances.</p>
 
-    <h2>🌸 Durga Pooja</h2>
-    <p>With Association of Bengal<br>
-    🎤 Musical acts during spiritual festivities.</p>
+    <h2 style="margin-top:2rem;">🌸 Durga Pooja</h2>
+    <p>Hosted by Association of Bengal — devotional music performances.</p>
 
-    <h2>🎆 Diwali with Swami Ishta Seva</h2>
-    <p>✨ Traditional devotional performance for the festival of lights.</p>
+    <h2 style="margin-top:2rem;">🎆 Diwali (Swami Ishta Seva)</h2>
+    <p>Spiritual and musical celebration of lights.</p>
   </section>
 
-  <section style="padding: 30px;">
-    <h2>🎬 Past Performance</h2>
+  <!-- Video clip here when you upload -->
+  <section data-aos="fade-up">
     <video width="100%" controls>
       <source src="videos/performance.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once:true });</script>
 </body>
 </html>
+
