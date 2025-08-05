@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raganjali | Our Team</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
   <nav>
@@ -15,34 +16,38 @@
     <a href="events.html">Events</a>
   </nav>
 
-  <header>
+  <header style="text-align:center; padding:4rem 2rem;" data-aos="fade">
     <h1>Our Team</h1>
   </header>
 
-  <section style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; padding: 40px;">
-    <div class="team-member">
-      <img src="images/Soumya.jpg" alt="Soumya Velpula - President" style="width: 200px; border-radius: 50%;" />
-      <h3>Soumya Velpula</h3>
+  <section style="display:flex; gap:40px; flex-wrap:wrap; justify-content:center;" data-aos="fade-up">
+    <div>
+      <img src="images/Soumya.jpg" style="width:200px; border-radius:50%; box-shadow:0 5px 25px rgba(0,0,0,0.1);" alt="Soumya"/>
+      <h3>Shrikant.jpg</h3>
       <p>President</p>
     </div>
 
-    <div class="team-member">
-      <img src="images/Lakshmi.jpg" alt="Varalakshmi Aripala - Vice President" style="width: 200px; border-radius: 50%;" />
+    <div>
+      <img src="images/Lakshmi.jpg" style="width:200px; border-radius:50%; box-shadow:0 5px 25px rgba(0,0,0,0.1);" alt="Vasalakshmi"/>
       <h3>Varalakshmi Aripala</h3>
       <p>Vice President</p>
     </div>
 
-    <div class="team-member">
-      <img src="images/Ravi.JPG" alt="Ravichand Velpula - Treasurer" style="width: 200px; border-radius: 50%;" />
+    <div>
+      <img src="images/Ravi.JPG" style="width:200px; border-radius:50%; box-shadow:0 5px 25px rgba(0,0,0,0.1);" alt="Ravi"/>
       <h3>Ravichand Velpula</h3>
       <p>Treasurer</p>
     </div>
 
-    <div class="team-member">
-      <img src="images/Shrikant.jpg" alt="Srikanth Aripala- Secretary" style="width: 200px; border-radius: 50%;" />
+    <div>
+      <img src="images/Shrikant.jpg" style="width:200px; border-radius:50%; box-shadow:0 5px 25px rgba(0,0,0,0.1);" alt="Srikanth"/>
       <h3>Srikanth Aripala</h3>
       <p>Secretary & PR</p>
     </div>
   </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once:true });</script>
 </body>
 </html>
+
