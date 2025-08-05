@@ -38,7 +38,7 @@ nav a:hover {
 }
 
 header.hero {
-  background: url('images/banner.jpg') center/cover no-repeat;
+  background: url('images/Banner.jpg') center/cover no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
