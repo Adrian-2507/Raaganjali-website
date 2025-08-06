@@ -34,11 +34,11 @@ nav a {
 }
 
 nav a:hover {
-  color: #E91E63;  /* Muted Rose */
+  color: #E91E63;
 }
 
 header.hero {
-  background: url('images/Banner.jpg') center/cover no-repeat;
+  background: url('images/banner.jpg') center/cover no-repeat;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -103,6 +103,27 @@ button, .btn {
 
 button:hover, .btn:hover {
   background: #c2185b;
+}
+
+footer {
+  background-color: #f7f7f7;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #eee;
+  margin-top: 4rem;
+}
+
+footer a {
+  color: #E91E63;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+footer a:hover {
+  opacity: 0.7;
 }
 
 @keyframes fadeUp {
