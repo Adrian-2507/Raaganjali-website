@@ -105,6 +105,22 @@ button:hover, .btn:hover {
   background: #c2185b;
 }
 
+.form-field {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1.3rem;
+}
+
+.form-field input,
+.form-field textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
 footer {
   background-color: #f7f7f7;
   padding: 2rem 1rem;
