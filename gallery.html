@@ -8,14 +8,14 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="team.html">Our Team</a>
-    <a href="contact.html">Contact</a>
-    <a href="events.html">Events</a>
-    <a href="gallery.html">Gallery</a>
-  </nav>
+ <nav id="navbar">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="team.html">Our Team</a>
+  <a href="contact.html">Contact</a>
+  <a href="events.html">Events</a>
+  <a href="gallery.html">Gallery</a>
+</nav>
 
   <header class="hero" data-aos="fade">
     <h1>Gallery</h1>
@@ -55,5 +55,16 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ once:true });</script>
+  <script>
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
 </body>
 </html>
