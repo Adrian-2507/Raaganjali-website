@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
@@ -17,33 +18,20 @@
     <a href="gallery.html">Gallery</a>
   </nav>
 
-  <header style="text-align:center; padding:4rem 2rem;" data-aos="fade">
+  <header class="hero-header" data-aos="fade">
     <h1>Contact Us</h1>
   </header>
 
-  <section style="max-width:600px; margin:auto;" data-aos="fade-up">
-    <<form action="https://formspree.io/f/xblkzewz" method="POST">
+  <section class="contact-section" data-aos="fade-up">
+    <form action="https://formspree.io/f/xblkzewz" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="your@email.com" required />
+      <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+      <input type="hidden" name="_subject" value="New message from Raganjali website!" />
+    </form>
 
-  <div class="form-field">
-    <label>Name</label>
-    <input type="text" placeholder="Your Name" required>
-  </div>
-
-  <div class="form-field">
-    <label>Email</label>
-    <input type="email" placeholder="your@email.com" required>
-  </div>
-
-  <div class="form-field">
-    <label>Message</label>
-    <textarea rows="4" placeholder="Your message..." required></textarea>
-  </div>
-
-  <button type="submit" class="btn">Send Message</button>
-  <input type="hidden" name="_subject" value="New message from Raganjali website!" />
-</form>
-
-    <div style="margin-top:3rem;">
+    <div class="contact-info">
       <p>📧 <strong>Email:</strong> <a href="mailto:raaganjali.finland@gmail.com">raaganjali.finland@gmail.com</a></p>
       <p>📞 <strong>Srikanth Aripala:</strong> +358 406 720 695</p>
       <p>📞 <strong>Ravichand Velpula:</strong> +358 400 770 421</p>
@@ -51,13 +39,13 @@
   </section>
 
   <footer>
-  <p>© Raganjali 2025</p>
-  <p>
-    <a href="#" title="Instagram">📷</a>
-    <a href="#" title="Facebook">📘</a>
-    <a href="#" title="YouTube">▶️</a>
-  </p>
-</footer>
+    <p>© Raganjali 2025</p>
+    <p>
+      <a href="#" title="Instagram">📷</a>
+      <a href="#" title="Facebook">📘</a>
+      <a href="#" title="YouTube">▶️</a>
+    </p>
+  </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ once:true });</script>
