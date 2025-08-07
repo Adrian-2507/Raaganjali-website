@@ -98,45 +98,48 @@ footer a:hover {
   color: #ffc0cb;
 }
 
+.contact-section {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 1rem;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
+.contact-form input,
+.contact-form textarea {
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
-  background-color: #fff;
+  width: 100%;
 }
 
-.btn {
-  background-color: #b03060;
+.contact-form .btn {
+  background-color: #a1676f;
   color: #fff;
-  padding: 0.8rem 1.5rem;
+  padding: 0.75rem;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #8e0048;
+.contact-form .btn:hover {
+  background-color: #854d58;
 }
+
+.contact-info {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
 
