@@ -83,6 +83,12 @@ nav.scrolled {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+nav a.active {
+  border-bottom: 2px solid #c27ba0; /* muted rose underline */
+  color: #c27ba0; /* optional color highlight */
+  font-weight: 600;
+}
+
 /* Nav Links */
 nav a {
   text-decoration: none;
