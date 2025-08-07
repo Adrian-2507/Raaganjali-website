@@ -144,6 +144,20 @@ footer a:hover {
   color: #ffc0cb;
 }
 
+.site-footer {
+  padding: 3rem 1rem 1rem;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 600px) {
+  .footer-socials a {
+    font-size: 1.8rem;
+  }
+}
+
 .contact-section {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 2rem;
