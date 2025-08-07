@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Raganjali</title>
+  <title>Raganjali | Events</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
 
@@ -14,46 +15,44 @@
     <a href="team.html">Our Team</a>
     <a href="contact.html">Contact</a>
     <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
   </nav>
 
-  <section>
-    <h2>Contact Us</h2>
-    <p>Feel free to reach out to us via the form below.</p>
+  <header class="hero-header" data-aos="fade">
+    <h1>Events</h1>
+    <p>Discover our upcoming and past musical journeys</p>
+  </header>
 
-    <form action="https://formsubmit.co/your@email.com" method="POST" class="contact-form">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
-      </div>
+  <section class="content-section" data-aos="fade-up">
+    <div class="event-card">
+      <h2>Independence Day Celebration – August 15, 2025</h2>
+      <p>Join us at the Indian Embassy in Helsinki for a soulful performance celebrating India’s independence.</p>
+    </div>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-      </div>
+    <div class="event-card">
+      <h2>Raganjali Annual Concert – October 2025</h2>
+      <p>Our grand musical evening showcasing classical, semi-classical, and devotional music.</p>
+    </div>
 
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-      </div>
-
-      <input type="hidden" name="_subject" value="New message from Raganjali website!" />
-      <button type="submit" class="btn">Send Message</button>
-    </form>
+    <div class="event-card">
+      <h2>Republic Day – January 26, 2025</h2>
+      <p>We performed at the Indian Association's cultural event in Tampere — a beautiful tribute through music.</p>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Raganjali</p>
-    <div>
-      <a href="https://www.instagram.com/raaganjalsuomi?igsh=YW9icWszeGRxem91&utm_source=qr" title="Instagram">📷</a>
-      <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" title="Facebook">📘</a>
-      <a href="https://youtube.com/@raaganjalisuomi?si=dxVs05CgfTDMBsEv" title="YouTube">▶️</a>
-    </div>
+    <p>© Raganjali 2025</p>
+    <p>
+      <a href="#" title="Instagram">📷</a>
+      <a href="#" title="Facebook">📘</a>
+      <a href="#" title="YouTube">▶️</a>
+    </p>
   </footer>
 
-</body>
-</html>
-
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ once:true });</script>
+  <script>
+    AOS.init({ once: true });
+  </script>
+
 </body>
 </html>
