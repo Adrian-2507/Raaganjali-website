@@ -5,30 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raganjali | Gallery</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-  <style>
-    .masonry {
-      column-count: 3;
-      column-gap: 1rem;
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .masonry img {
-      width: 100%;
-      margin-bottom: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      break-inside: avoid;
-    }
-
-    @media(max-width:768px){
-      .masonry{column-count:2;}
-    }
-    @media(max-width:500px){
-      .masonry{column-count:1;}
-    }
-  </style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
   <nav>
@@ -40,18 +17,20 @@
     <a href="gallery.html">Gallery</a>
   </nav>
 
-  <header style="text-align:center; padding:4rem 2rem;" data-aos="fade">
+  <header class="hero" data-aos="fade">
     <h1>Gallery</h1>
+    <p>Moments from our musical journey</p>
   </header>
 
-  <section data-aos="fade-up">
-    <div class="masonry">
-      <!-- Add your images here -->
-      <img src="Grp2.jpg" alt="">
-      <img src="Grp1.jpg" alt="">
-      <img src="images/gallery3.jpg" alt="">
-      <img src="images/gallery4.jpg" alt="">
-      <img src="images/gallery5.jpg" alt="">
+  <section class="gallery-container" data-aos="fade-up">
+    <!-- Add your images below -->
+    <div class="gallery-grid">
+      <img src="images/Grp1.jpg" alt="Group Photo 1" />
+      <img src="images/Grp2.jpg" alt="Group Photo 2" />
+      <img src="images/Grp3.jpg" alt="Group Photo 3" />
+      <img src="images/Ravi.JPG" alt="Team Member 1" />
+      <img src="images/Shrikant.jpg" alt="Team Member 2" />
+      <!-- Add more as needed -->
     </div>
   </section>
 
@@ -61,6 +40,7 @@
       <a href="https://www.instagram.com/raaganjalsuomi?igsh=YW9icWszeGRxem91&utm_source=qr" title="Instagram">📷</a>
       <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" title="Facebook">📘</a>
       <a href="https://youtube.com/@raaganjalisuomi?si=dxVs05CgfTDMBsEv" title="YouTube">▶️</a>
+    </p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
