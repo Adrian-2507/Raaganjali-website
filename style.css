@@ -1,3 +1,49 @@
+.who-we-are {
+  max-width: 900px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.who-we-are img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cta-section {
+  background: #f9f4f3;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: #c68ca3; /* muted rose */
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #a96a84;
+}
+
 /* Reset & Base */
 * {
   margin: 0;
