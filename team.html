@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
-   <nav id="navbar">
+
+<!-- NAVIGATION -->
+<nav id="navbar">
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="team.html" class="active">Our Team</a>
@@ -17,37 +19,75 @@
   <a href="gallery.html">Gallery</a>
 </nav>
 
-  <header style="text-align:center; padding:4rem 2rem;" data-aos="fade">
-    <h1>Our Team</h1>
-  </header>
+<!-- HEADER -->
+<header style="text-align:center; padding:4rem 2rem;" data-aos="fade">
+  <h1>Our Team</h1>
+  <p>Meet the people who make Raaganjali possible</p>
+</header>
 
-  <section style="display:flex; gap:40px; flex-wrap:wrap; justify-content:center;" data-aos="fade-up">
-    <div>
-      <img src="images/soumya2.jpg" style="width:200px; border-radius:50%; box-shadow:0 5px 25px rgba(0,0,0,0.1);" alt="Soumya"/>
+<!-- CORE MEMBERS -->
+<section data-aos="fade-up" style="padding:2rem;">
+  <h2 style="text-align:center; margin-bottom:2rem;">Core Members</h2>
+  <div style="display:flex; gap:40px; flex-wrap:wrap; justify-content:center;">
+
+    <div class="team-card">
+      <img src="images/soumya2.jpg" alt="Soumya Velpula">
       <h3>Soumya Velpula</h3>
       <p>President</p>
     </div>
 
-    <div>
-      <img src="images/lakshmi.jpg" style="width:200px; border-radius:50%; box-shadow:0 5px 25px rgba(0,0,0,0.1);" alt="Vasalakshmi"/>
+    <div class="team-card">
+      <img src="images/lakshmi.jpg" alt="Varalakshmi Aripala">
       <h3>Varalakshmi Aripala</h3>
       <p>Vice President</p>
     </div>
 
-    <div>
-      <img src="images/Ravi.JPG" style="width:200px; border-radius:50%; box-shadow:0 5px 25px rgba(0,0,0,0.1);" alt="Ravi"/>
+    <div class="team-card">
+      <img src="images/Ravi.JPG" alt="Ravichand Velpula">
       <h3>Ravichand Velpula</h3>
       <p>Treasurer</p>
     </div>
 
-    <div>
-      <img src="images/Shrikant.jpg" style="width:200px; border-radius:50%; box-shadow:0 5px 25px rgba(0,0,0,0.1);" alt="Srikanth"/>
+    <div class="team-card">
+      <img src="images/Shrikant.jpg" alt="Srikanth Aripala">
       <h3>Srikanth Aripala</h3>
       <p>Secretary & PR</p>
     </div>
-  </section>
-  
-  <footer class="site-footer">
+
+    <div class="team-card">
+      <img src="images/adrian.jpg" alt="Adrian [Your Last Name]">
+      <h3>Adrian Gonsalves</h3>
+      <p>Technical Director</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- RAGANJALI MEMBERS -->
+<section data-aos="fade-up" style="padding:2rem; background:rgba(255,255,255,0.8);">
+  <h2 style="text-align:center; margin-bottom:2rem;">Raganjali Members</h2>
+  <div style="display:flex; gap:30px; flex-wrap:wrap; justify-content:center;">
+    <!-- Add as many members as needed -->
+    <div class="team-card">
+      <img src="images/member1.jpg" alt="Member Name">
+      <h3>Member Name</h3>
+      <p>Performer</p>
+    </div>
+    <div class="team-card">
+      <img src="images/member2.jpg" alt="Member Name">
+      <h3>Member Name</h3>
+      <p>Vocalist</p>
+    </div>
+    <div class="team-card">
+      <img src="images/member3.jpg" alt="Member Name">
+      <h3>Member Name</h3>
+      <p>Instrumentalist</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
   <div class="footer-content">
     <div class="footer-logo">
       <h3>Raaganjali</h3>
@@ -66,19 +106,14 @@
   </div>
 </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ once:true });</script>
-  <script>
-  const navbar = document.getElementById('navbar');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once:true });</script>
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 10);
+});
 </script>
+
 </body>
 </html>
-
