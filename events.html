@@ -40,34 +40,38 @@
     <p>Traditional devotional music celebrating the festival of lights.</p>
   </section>
 
- <!-- PAST EVENTS -->
-<section data-aos="fade-up" style="margin-top:4rem;">
-  <h2>📽️ Past Events</h2>
+<!-- PAST EVENTS -->
+<section data-aos="fade-up" style="margin-top:4rem; padding:3rem 2rem; background:linear-gradient(135deg, rgba(255,255,255,0.8), rgba(245,245,245,0.9));">
+  <h2 style="text-align:center; font-size:2rem; margin-bottom:2rem;">📽️ Past Events</h2>
 
-  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin-top:1.5rem;">
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; max-width:1200px; margin:auto;">
 
     <!-- Event 1 -->
-    <div style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 5px 20px rgba(0,0,0,0.1); padding:1rem;">
-      <video width="100%" controls>
+    <div style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.1); transition:transform 0.3s ease, box-shadow 0.3s ease;">
+      <video width="100%" controls style="display:block;">
         <source src="videos/performance video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <h3 style="margin-top:1rem;">Folklore Performance</h3>
-      <p>Our vibrant Folklore music performance celebrating India's rich cultural heritage.</p>
-      <div style="margin-top:0.5rem;">
-        <a href="https://youtu.be/BF-bZC6cUnE?si=98i1MfUcdSOq7rsr" target="_blank" style="color:#d9534f; text-decoration:none;">▶ Watch Full Video on YouTube</a><br/>
-        <a href="https://www.instagram.com/raaganjalsuomi" target="_blank" style="color:#0077b5; text-decoration:none;">📷 Follow us on Instagram for more events</a>
+      <div style="padding:1.5rem;">
+        <h3 style="margin:0; font-size:1.4rem; color:#333;">Folklore Performance</h3>
+        <p style="margin:0.5rem 0 1rem; color:#555;">A vibrant musical performance celebrating India's rich cultural heritage.</p>
+        <div style="display:flex; flex-direction:column; gap:0.5rem;">
+          <a href="https://youtube.com/your-link" target="_blank" style="background:#d9534f; color:white; padding:0.6rem 1rem; text-align:center; border-radius:6px; text-decoration:none; transition:background 0.3s;">▶ Watch Full Video</a>
+          <a href="https://www.instagram.com/raaganjalsuomi" target="_blank" style="background:#E1306C; color:white; padding:0.6rem 1rem; text-align:center; border-radius:6px; text-decoration:none; transition:background 0.3s;">📷 Follow us on Instagram</a>
+        </div>
       </div>
     </div>
 
     <!-- Placeholder for future events -->
-    <div style="background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 5px 20px rgba(0,0,0,0.1); padding:1rem;">
-      <img src="images/event-placeholder.jpg" alt="Event" style="width:100%; border-radius:8px;">
-      <h3 style="margin-top:1rem;">Event Name</h3>
-      <p>Brief description of the event goes here.</p>
-      <div style="margin-top:0.5rem;">
-        <a href="#" target="_blank" style="color:#d9534f; text-decoration:none;">▶ Watch Full Video on YouTube</a><br/>
-        <a href="https://www.instagram.com/raaganjalsuomi" target="_blank" style="color:#0077b5; text-decoration:none;">📷 Follow us on Instagram</a>
+    <div style="background:white; border-radius:15px; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.1); transition:transform 0.3s ease, box-shadow 0.3s ease;">
+      <img src="images/event-placeholder.jpg" alt="Event" style="width:100%; display:block;">
+      <div style="padding:1.5rem;">
+        <h3 style="margin:0; font-size:1.4rem; color:#333;">Event Name</h3>
+        <p style="margin:0.5rem 0 1rem; color:#555;">Brief description of the event goes here.</p>
+        <div style="display:flex; flex-direction:column; gap:0.5rem;">
+          <a href="#" target="_blank" style="background:#d9534f; color:white; padding:0.6rem 1rem; text-align:center; border-radius:6px; text-decoration:none; transition:background 0.3s;">▶ Watch Full Video</a>
+          <a href="https://www.instagram.com/raaganjalsuomi" target="_blank" style="background:#E1306C; color:white; padding:0.6rem 1rem; text-align:center; border-radius:6px; text-decoration:none; transition:background 0.3s;">📷 Follow us on Instagram</a>
+        </div>
       </div>
     </div>
 
@@ -77,7 +81,7 @@
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-logo">
-      <h3>Raganjali</h3>
+      <h3>Raaganjali</h3>
       <p>Celebrating Indian Music in Finland</p>
     </div>
     
@@ -89,9 +93,23 @@
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2025 Raganjali. All rights reserved.</p>
+    <p>&copy; 2025 Raaganjali. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- Hover Effect Script -->
+<script>
+  document.querySelectorAll('section div[style*="box-shadow"]').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-5px)';
+      card.style.boxShadow = '0 12px 30px rgba(0,0,0,0.15)';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0)';
+      card.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
+    });
+  });
+</script>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ once:true });</script>
