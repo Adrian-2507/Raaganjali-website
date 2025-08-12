@@ -6,6 +6,39 @@
   <title>Raaganjali | Our Team</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    /* Member slider styles */
+    .member-slider {
+      position: relative;
+      max-width: 300px;
+      margin: auto;
+      overflow: hidden;
+    }
+    .member-slide {
+      display: none;
+      text-align: center;
+      animation: fade 1s ease-in-out;
+    }
+    .member-slide img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+    .member-slide h3 {
+      margin: 0.5rem 0 0.3rem;
+    }
+    .member-slide p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    @keyframes fade {
+      from { opacity: 0.4 }
+      to { opacity: 1 }
+    }
+  </style>
 </head>
 <body>
 
@@ -55,7 +88,7 @@
     </div>
 
     <div class="team-card">
-      <img src="images/adrian.jpg" alt="Adrian [Your Last Name]">
+      <img src="images/adrian.jpg" alt="Adrian Gonsalves">
       <h3>Adrian Gonsalves</h3>
       <p>Technical Director</p>
     </div>
@@ -63,22 +96,22 @@
   </div>
 </section>
 
-<!-- RAGANJALI MEMBERS -->
+<!-- RAGANJALI MEMBERS SLIDER -->
 <section data-aos="fade-up" style="padding:2rem; background:rgba(255,255,255,0.8);">
   <h2 style="text-align:center; margin-bottom:2rem;">Raganjali Members</h2>
-  <div style="display:flex; gap:30px; flex-wrap:wrap; justify-content:center;">
-    <!-- Add as many members as needed -->
-    <div class="team-card">
+  
+  <div class="member-slider">
+    <div class="member-slide">
       <img src="images/member1.jpg" alt="Member Name">
       <h3>Member Name</h3>
       <p>Performer</p>
     </div>
-    <div class="team-card">
+    <div class="member-slide">
       <img src="images/member2.jpg" alt="Member Name">
       <h3>Member Name</h3>
       <p>Vocalist</p>
     </div>
-    <div class="team-card">
+    <div class="member-slide">
       <img src="images/member3.jpg" alt="Member Name">
       <h3>Member Name</h3>
       <p>Instrumentalist</p>
@@ -90,7 +123,7 @@
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-logo">
-      <h3>Raganjali</h3>
+      <h3>Raaganjali</h3>
       <p>Celebrating Indian Music in Finland</p>
     </div>
     
@@ -108,17 +141,32 @@
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2025 Raganjali. All rights reserved.</p>
+    <p>&copy; 2025 Raaganjali. All rights reserved.</p>
   </div>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ once:true });</script>
+
 <script>
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 10);
 });
+
+// Member slider fade autoplay
+let slideIndex = 0;
+const slides = document.querySelectorAll(".member-slide");
+
+function showSlides() {
+  slides.forEach(s => s.style.display = "none");
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 3000); // 3 seconds per slide
+}
+
+showSlides();
 </script>
 
 </body>
