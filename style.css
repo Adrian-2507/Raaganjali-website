@@ -277,24 +277,28 @@ section {
 
 /* Each Member Slide */
 .member-slide {
-  flex: 0 0 100%;
-  max-width: 100%;
-  padding: 2rem;
-  border-radius: 15px;
-  position: relative;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  min-height: 350px;
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Overlay for readability */
 .member-slide::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.35); /* dark overlay for text contrast */
   z-index: 0;
+}
+
+.member-slide img,
+.member-slide h3,
+.member-slide p {
+  position: relative;
+  z-index: 1;
 }
 
 .member-slide > * {
