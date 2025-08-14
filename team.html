@@ -6,212 +6,103 @@
   <title>Raaganjali | Our Team</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Page-specific polish (adds on top of style.css) -->
   <style>
-    /* GENERAL PAGE STYLING */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #fff;
-    }
-    h1, h2, h3 {
-      color: #ff69b4;
+    :root{
+      --rose:#c27ba0;         /* your muted rose */
+      --rose-dark:#a96a84;
     }
 
-    /* NAVBAR */
-    nav {
-      background: white;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: box-shadow 0.3s;
-    }
-    nav.scrolled {
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-    nav a.active {
-      color: #ff69b4;
-    }
-
-    /* CORE MEMBERS GRID */
-    .core-grid {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .team-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      overflow: hidden;
-      text-align: center;
-      width: 220px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .team-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(255,105,180,0.3);
-    }
-    .team-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-    .team-card h3 {
-      margin: 0.5rem 0 0.2rem;
-    }
-    .team-card p {
-      margin: 0;
-      color: #666;
-      padding-bottom: 0.5rem;
-    }
-
-    /* MEMBER SLIDER */
-    .member-slider {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
-      height: 400px;
-      margin: 0 auto;
-      overflow: hidden;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-    }
-    .member-slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity 1s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-size: cover;
-      background-position: center;
+    /* Let the site pink background peek through this page’s cards */
+    .team-shell{
+      background: rgba(255,255,255,0.72);
+      border-radius: 16px;
+      max-width: 980px;
+      margin: 2rem auto;
       padding: 2rem;
-      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
     }
-    .member-slide::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(255,105,180,0.6), rgba(255,105,180,0.3));
-      z-index: 0;
-    }
-    .member-slide.active {
-      opacity: 1;
-      z-index: 1;
-    }
-    .member-slide img {
-      position: relative;
-      z-index: 1;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      margin-bottom: 1rem;
-      background: white;
-      transform: scale(0.9);
-      transition: transform 0.8s ease;
-    }
-    .member-slide.active img {
-      transform: scale(1);
-    }
-    .member-slide h3 {
-      margin: 0.5rem 0 0.2rem;
-      font-size: 1.5rem;
-      color: white;
-      z-index: 1;
-    }
-    .member-slide p {
-      margin: 0;
-      font-size: 1rem;
-      color: #fff5f9;
-      z-index: 1;
+    .team-shell h2{
+      text-align:center;
+      margin-bottom:1.25rem;
+      color: var(--rose);
     }
 
-    /* SLIDER NAVIGATION */
-    .slider-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.8);
-      border: none;
-      padding: 0.5rem 0.8rem;
-      cursor: pointer;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      z-index: 2;
-    }
-    .slider-arrow:hover {
-      background: rgba(255,255,255,1);
-    }
-    .slider-arrow.prev { left: 10px; }
-    .slider-arrow.next { right: 10px; }
-
-    .slider-dots {
-      position: absolute;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 2;
-    }
-    .slider-dots button {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(255,255,255,0.7);
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .slider-dots button.active {
-      background: #ff69b4;
+    /* Core members look consistent */
+    .core-wrap{
+      display:flex;flex-wrap:wrap;gap:38px;justify-content:center
     }
 
-    /* FOOTER */
-    .site-footer {
-      background: #222;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
+    /* --- Members slider (fade) --- */
+    .member-slider{
+      position:relative;
+      width:100%;
+      height:420px;                 /* fixed viewport so layout is stable */
+      overflow:hidden;
+      border-radius:14px;
+      box-shadow:0 8px 24px rgba(0,0,0,.12);
+      background: rgba(255,255,255,0.85); /* fallback if no bg image */
     }
-    .footer-socials img {
-      margin: 0 8px;
-      filter: brightness(0) invert(1);
-      transition: filter 0.3s;
+    .m-slide{
+      position:absolute; inset:0;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:.5rem; text-align:center;
+      padding:1.5rem;
+      background-size:cover; background-position:center; background-repeat:no-repeat;
+      opacity:0; transform:scale(.985);
+      transition: opacity .9s ease, transform .9s ease;
     }
-    .footer-socials img:hover {
-      filter: none;
+    .m-slide::before{
+      content:""; position:absolute; inset:0; 
+      background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.25));
+      z-index:0;
     }
+    .m-slide > *{ position:relative; z-index:1; }
+    .m-slide.active{ opacity:1; transform:scale(1); }
 
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      .member-slider {
-        height: 350px;
-      }
-      .member-slide img {
-        width: 120px;
-        height: 120px;
-      }
+    .m-avatar{
+      width:170px; height:170px; border-radius:50%; object-fit:cover;
+      border:5px solid #fff; box-shadow:0 10px 25px rgba(0,0,0,.25);
+      background:#fff;
     }
+    .m-name{ font-size:1.4rem; color:#fff; letter-spacing:.2px; }
+    .m-role{ font-size:1rem; color:#ffe7f0; }
+
+    /* Controls */
+    .ms-arrow{
+      position:absolute; top:50%; transform:translateY(-50%);
+      border:none; border-radius:50%; width:42px; height:42px;
+      background: rgba(255,255,255,.85); cursor:pointer; font-size:1.25rem;
+      display:grid; place-items:center; color: var(--rose);
+      box-shadow:0 6px 16px rgba(0,0,0,.18);
+    }
+    .ms-arrow:hover{ background:#fff; }
+    .ms-prev{ left:10px; }
+    .ms-next{ right:10px; }
+
+    .ms-dots{
+      position:absolute; bottom:12px; left:50%; transform:translateX(-50%);
+      display:flex; gap:8px;
+    }
+    .ms-dot{
+      width:9px; height:9px; border-radius:50%; border:none; cursor:pointer;
+      background: rgba(255,255,255,.7);
+    }
+    .ms-dot.active{ background:#fff; }
+
+    /* Section spacing harmony with your site */
+    header.page-head{ text-align:center; padding:3.5rem 1.5rem; }
+    header.page-head h1{ color:#b03060; }
+    header.page-head p{ color:#5e0a38; }
+
+    /* Make sure nav “active” styling shows */
+    #navbar a.active{ border-bottom:2px solid var(--rose); color:var(--rose); font-weight:600; }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav id="navbar">
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
@@ -221,14 +112,16 @@
   <a href="gallery.html">Gallery</a>
 </nav>
 
-<header style="text-align:center; padding:4rem 2rem;" data-aos="fade">
+<!-- HEADER -->
+<header class="page-head" data-aos="fade">
   <h1>Our Team</h1>
   <p>Meet the people who make Raaganjali possible</p>
 </header>
 
-<section data-aos="fade-up" style="padding:2rem;">
-  <h2 style="text-align:center; margin-bottom:2rem;">Core Members</h2>
-  <div class="core-grid">
+<!-- CORE MEMBERS -->
+<section class="team-shell" data-aos="fade-up">
+  <h2>Core Members</h2>
+  <div class="core-wrap">
     <div class="team-card">
       <img src="images/soumya2.jpg" alt="Soumya Velpula">
       <h3>Soumya Velpula</h3>
@@ -257,31 +150,40 @@
   </div>
 </section>
 
-<section data-aos="fade-up" style="padding:2rem; background:rgba(255,255,255,0.8);">
-  <h2 style="text-align:center; margin-bottom:2rem;">Raaganjali Members</h2>
-  <div class="member-slider">
-    <div class="member-slide active" style="background-image:url('images/member background.jpg');">
-      <img src="images/Malai.jpg" alt="Malai">
-      <h3>Malai</h3>
-      <p>Vocalist</p>
-    </div>
-    <div class="member-slide" style="background-image:url('images/member background.jpg');">
-      <img src="images/satvika.jpg" alt="Satvika">
-      <h3>Satvika</h3>
-      <p>Vocalist</p>
-    </div>
-    <div class="member-slide" style="background-image:url('images/member background.jpg');">
-      <img src="images/member3.jpg" alt="Member Three">
-      <h3>Member Three</h3>
-      <p>Instrumentalist</p>
+<!-- RAGANJALI MEMBERS (Slider) -->
+<section class="team-shell" data-aos="fade-up">
+  <h2>Raaganjali Members</h2>
+
+  <div class="member-slider" id="memberSlider">
+    <!-- Slide 1 -->
+    <div class="m-slide active" style="background-image:url('images/malai-bg.jpg');">
+      <img class="m-avatar" src="images/Malai.jpg" alt="Malai">
+      <h3 class="m-name">Malai</h3>
+      <p class="m-role">Vocalist</p>
     </div>
 
-    <button class="slider-arrow prev">&#10094;</button>
-    <button class="slider-arrow next">&#10095;</button>
-    <div class="slider-dots"></div>
+    <!-- Slide 2 -->
+    <div class="m-slide" style="background-image:url('images/satvika-bg.jpg');">
+      <img class="m-avatar" src="images/satvika.jpg" alt="Satvika">
+      <h3 class="m-name">Satvika</h3>
+      <p class="m-role">Vocalist</p>
+    </div>
+
+    <!-- Slide 3 (example placeholder) -->
+    <div class="m-slide" style="background-image:url('images/member3-bg.jpg');">
+      <img class="m-avatar" src="images/member3.jpg" alt="Member Three">
+      <h3 class="m-name">Member Three</h3>
+      <p class="m-role">Instrumentalist</p>
+    </div>
+
+    <!-- Controls -->
+    <button class="ms-arrow ms-prev" aria-label="Previous">&#10094;</button>
+    <button class="ms-arrow ms-next" aria-label="Next">&#10095;</button>
+    <div class="ms-dots" aria-hidden="true"></div>
   </div>
 </section>
 
+<!-- FOOTER (unchanged) -->
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-logo">
@@ -289,13 +191,13 @@
       <p>Celebrating Indian Music in Finland</p>
     </div>
     <div class="footer-socials">
-      <a href="https://www.instagram.com/raaganjalsuomi" target="_blank">
+      <a href="https://www.instagram.com/raaganjalsuomi?igsh=YW9icWszeGRxem91&utm_source=qr" title="Instagram" target="_blank">
         <img src="images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
       </a>
-      <a href="https://www.facebook.com/share/1BACGW6q2k" target="_blank">
+      <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" title="Facebook" target="_blank">
         <img src="images/facebook.svg" alt="Facebook" style="width:24px; height:24px;">
       </a>
-      <a href="https://youtube.com/@raaganjalisuomi" target="_blank">
+      <a href="https://youtube.com/@raaganjalisuomi?si=dxVs05CgfTDMBsEv" title="YouTube" target="_blank">
         <img src="images/youtube.svg" alt="YouTube" style="width:24px; height:24px;">
       </a>
     </div>
@@ -309,50 +211,57 @@
 <script>
 AOS.init({ once:true });
 
+/* keep your sticky nav behavior */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
+  if (!navbar) return;
   navbar.classList.toggle('scrolled', window.scrollY > 10);
 });
 
-// SLIDER LOGIC
-const slides = document.querySelectorAll('.member-slide');
-const prevBtn = document.querySelector('.slider-arrow.prev');
-const nextBtn = document.querySelector('.slider-arrow.next');
-const dotsContainer = document.querySelector('.slider-dots');
-let currentIndex = 0;
-let slideInterval;
+/* --- Members slider logic (fade + autoplay + manual) --- */
+(function(){
+  const slider = document.getElementById('memberSlider');
+  if(!slider) return;
+  const slides = Array.from(slider.querySelectorAll('.m-slide'));
+  const prev = slider.querySelector('.ms-prev');
+  const next = slider.querySelector('.ms-next');
+  const dotsWrap = slider.querySelector('.ms-dots');
+  let i = 0, timer;
 
-slides.forEach((_, index) => {
-  const dot = document.createElement('button');
-  dot.addEventListener('click', () => goToSlide(index));
-  dotsContainer.appendChild(dot);
-});
-const dots = document.querySelectorAll('.slider-dots button');
-
-function updateSlider() {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === currentIndex);
-    dots[i].classList.toggle('active', i === currentIndex);
+  // build dots
+  slides.forEach((_, idx)=>{
+    const d = document.createElement('button');
+    d.className = 'ms-dot' + (idx===0 ? ' active' : '');
+    d.addEventListener('click', ()=>go(idx, true));
+    dotsWrap.appendChild(d);
   });
-}
-function goToSlide(index) {
-  currentIndex = (index + slides.length) % slides.length;
-  updateSlider();
-  resetInterval();
-}
-function nextSlide() { goToSlide(currentIndex + 1); }
-function prevSlide() { goToSlide(currentIndex - 1); }
-function startInterval() { slideInterval = setInterval(nextSlide, 5000); }
-function resetInterval() { clearInterval(slideInterval); startInterval(); }
+  const dots = Array.from(dotsWrap.children);
 
-nextBtn.addEventListener('click', nextSlide);
-prevBtn.addEventListener('click', prevSlide);
+  function setActive(n){
+    slides.forEach((s,k)=> s.classList.toggle('active', k===n));
+    dots.forEach((d,k)=> d.classList.toggle('active', k===n));
+  }
+  function go(n, reset=false){
+    i = (n + slides.length) % slides.length;
+    setActive(i);
+    if(reset){ restart(); }
+  }
+  function nextSlide(){ go(i+1); }
+  function prevSlide(){ go(i-1, true); }
 
-updateSlider();
-startInterval();
+  function start(){ timer = setInterval(nextSlide, 5000); }
+  function stop(){ clearInterval(timer); }
+  function restart(){ stop(); start(); }
+
+  next.addEventListener('click', ()=>{ nextSlide(); restart(); });
+  prev.addEventListener('click', ()=>{ prevSlide(); restart(); });
+
+  // Pause on hover (nice touch)
+  slider.addEventListener('mouseenter', stop);
+  slider.addEventListener('mouseleave', start);
+
+  start();
+})();
 </script>
-
-</body>
-</html>
 </body>
 </html>
