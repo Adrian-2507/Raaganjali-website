@@ -6,9 +6,76 @@
   <title>Raaganjali | Our Team</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
   <style>
-    /* Slider container */
+    /* GENERAL PAGE STYLING */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff;
+    }
+    h1, h2, h3 {
+      color: #ff69b4;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    nav a.active {
+      color: #ff69b4;
+    }
+
+    /* CORE MEMBERS GRID */
+    .core-grid {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .team-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      width: 220px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255,105,180,0.3);
+    }
+    .team-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .team-card h3 {
+      margin: 0.5rem 0 0.2rem;
+    }
+    .team-card p {
+      margin: 0;
+      color: #666;
+      padding-bottom: 0.5rem;
+    }
+
+    /* MEMBER SLIDER */
     .member-slider {
       position: relative;
       width: 100%;
@@ -20,14 +87,9 @@
       border-radius: 10px;
       box-shadow: 0 5px 25px rgba(0,0,0,0.1);
     }
-
-    /* Each slide */
     .member-slide {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       opacity: 0;
       transition: opacity 1s ease;
       display: flex;
@@ -39,41 +101,52 @@
       padding: 2rem;
       text-align: center;
     }
-
-    /* Active slide */
+    .member-slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(255,105,180,0.6), rgba(255,105,180,0.3));
+      z-index: 0;
+    }
     .member-slide.active {
       opacity: 1;
       z-index: 1;
     }
-
-    /* Profile image */
     .member-slide img {
+      position: relative;
+      z-index: 1;
       width: 150px;
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       margin-bottom: 1rem;
       background: white;
+      transform: scale(0.9);
+      transition: transform 0.8s ease;
     }
-
-    /* Text styling */
+    .member-slide.active img {
+      transform: scale(1);
+    }
     .member-slide h3 {
       margin: 0.5rem 0 0.2rem;
       font-size: 1.5rem;
+      color: white;
+      z-index: 1;
     }
     .member-slide p {
       margin: 0;
       font-size: 1rem;
-      color: #555;
+      color: #fff5f9;
+      z-index: 1;
     }
 
-    /* Navigation arrows */
+    /* SLIDER NAVIGATION */
     .slider-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.8);
       border: none;
       padding: 0.5rem 0.8rem;
       cursor: pointer;
@@ -82,12 +155,11 @@
       z-index: 2;
     }
     .slider-arrow:hover {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,1);
     }
     .slider-arrow.prev { left: 10px; }
     .slider-arrow.next { right: 10px; }
 
-    /* Dots navigation */
     .slider-dots {
       position: absolute;
       bottom: 15px;
@@ -95,6 +167,7 @@
       transform: translateX(-50%);
       display: flex;
       gap: 8px;
+      z-index: 2;
     }
     .slider-dots button {
       width: 10px;
@@ -103,15 +176,42 @@
       border: none;
       background: rgba(255,255,255,0.7);
       cursor: pointer;
+      transition: background 0.3s;
     }
     .slider-dots button.active {
-      background: white;
+      background: #ff69b4;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #222;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .footer-socials img {
+      margin: 0 8px;
+      filter: brightness(0) invert(1);
+      transition: filter 0.3s;
+    }
+    .footer-socials img:hover {
+      filter: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .member-slider {
+        height: 350px;
+      }
+      .member-slide img {
+        width: 120px;
+        height: 120px;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
 <nav id="navbar">
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
@@ -121,16 +221,14 @@
   <a href="gallery.html">Gallery</a>
 </nav>
 
-<!-- HEADER -->
 <header style="text-align:center; padding:4rem 2rem;" data-aos="fade">
   <h1>Our Team</h1>
   <p>Meet the people who make Raaganjali possible</p>
 </header>
 
-<!-- CORE MEMBERS -->
 <section data-aos="fade-up" style="padding:2rem;">
   <h2 style="text-align:center; margin-bottom:2rem;">Core Members</h2>
-  <div style="display:flex; gap:40px; flex-wrap:wrap; justify-content:center;">
+  <div class="core-grid">
     <div class="team-card">
       <img src="images/soumya2.jpg" alt="Soumya Velpula">
       <h3>Soumya Velpula</h3>
@@ -159,37 +257,31 @@
   </div>
 </section>
 
-<!-- RAGANJALI MEMBERS SLIDER -->
 <section data-aos="fade-up" style="padding:2rem; background:rgba(255,255,255,0.8);">
   <h2 style="text-align:center; margin-bottom:2rem;">Raaganjali Members</h2>
   <div class="member-slider">
-    <!-- Slides -->
     <div class="member-slide active" style="background-image:url('images/member background.jpg');">
-      <img src="images/Malai.jpg" alt="Member Name">
+      <img src="images/Malai.jpg" alt="Malai">
       <h3>Malai</h3>
       <p>Vocalist</p>
     </div>
     <div class="member-slide" style="background-image:url('images/member background.jpg');">
-      <img src="images/satvika.jpg" alt="Member Name">
+      <img src="images/satvika.jpg" alt="Satvika">
       <h3>Satvika</h3>
       <p>Vocalist</p>
     </div>
     <div class="member-slide" style="background-image:url('images/member background.jpg');">
-      <img src="images/member3.jpg" alt="Member Name">
+      <img src="images/member3.jpg" alt="Member Three">
       <h3>Member Three</h3>
       <p>Instrumentalist</p>
     </div>
 
-    <!-- Arrows -->
     <button class="slider-arrow prev">&#10094;</button>
     <button class="slider-arrow next">&#10095;</button>
-
-    <!-- Dots -->
     <div class="slider-dots"></div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-logo">
@@ -222,7 +314,7 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 10);
 });
 
-// Slider logic
+// SLIDER LOGIC
 const slides = document.querySelectorAll('.member-slide');
 const prevBtn = document.querySelector('.slider-arrow.prev');
 const nextBtn = document.querySelector('.slider-arrow.next');
@@ -230,7 +322,6 @@ const dotsContainer = document.querySelector('.slider-dots');
 let currentIndex = 0;
 let slideInterval;
 
-// Create dots
 slides.forEach((_, index) => {
   const dot = document.createElement('button');
   dot.addEventListener('click', () => goToSlide(index));
@@ -244,30 +335,24 @@ function updateSlider() {
     dots[i].classList.toggle('active', i === currentIndex);
   });
 }
-
 function goToSlide(index) {
   currentIndex = (index + slides.length) % slides.length;
   updateSlider();
   resetInterval();
 }
-
 function nextSlide() { goToSlide(currentIndex + 1); }
 function prevSlide() { goToSlide(currentIndex - 1); }
-
 function startInterval() { slideInterval = setInterval(nextSlide, 5000); }
 function resetInterval() { clearInterval(slideInterval); startInterval(); }
 
-// Event listeners
 nextBtn.addEventListener('click', nextSlide);
 prevBtn.addEventListener('click', prevSlide);
 
-// Init
 updateSlider();
 startInterval();
 </script>
 
 </body>
 </html>
-
 </body>
 </html>
