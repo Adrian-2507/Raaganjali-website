@@ -29,68 +29,34 @@
       color: var(--rose);
     }
 
-    /* Core members look consistent */
-    .core-wrap{
-      display:flex;flex-wrap:wrap;gap:38px;justify-content:center
-    }
+    .core-members-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
 
-    /* --- Members slider (fade) --- */
-    .member-slider{
-      position:relative;
-      width:100%;
-      height:420px;                 /* fixed viewport so layout is stable */
-      overflow:hidden;
-      border-radius:14px;
-      box-shadow:0 8px 24px rgba(0,0,0,.12);
-      background: rgba(255,255,255,0.85); /* fallback if no bg image */
-    }
-    .m-slide{
-      position:absolute; inset:0;
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      gap:.5rem; text-align:center;
-      padding:1.5rem;
-      background-size:cover; background-position:center; background-repeat:no-repeat;
-      opacity:0; transform:scale(.985);
-      transition: opacity .9s ease, transform .9s ease;
-    }
-    .m-slide::before{
-      content:""; position:absolute; inset:0; 
-      background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.25));
-      z-index:0;
-    }
-    .m-slide > *{ position:relative; z-index:1; }
-    .m-slide.active{ opacity:1; transform:scale(1); }
+.core-members-container .team-card {
+  text-align: center;
+  max-width: 200px;
+  background: rgba(255,255,255,0.85);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
-    .m-avatar{
-      width:170px; height:170px; border-radius:50%; object-fit:cover;
-      border:5px solid #fff; box-shadow:0 10px 25px rgba(0,0,0,.25);
-      background:#fff;
-    }
-    .m-name{ font-size:1.4rem; color:#fff; letter-spacing:.2px; }
-    .m-role{ font-size:1rem; color:#ffe7f0; }
+.core-members-container .team-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
 
-    /* Controls */
-    .ms-arrow{
-      position:absolute; top:50%; transform:translateY(-50%);
-      border:none; border-radius:50%; width:42px; height:42px;
-      background: rgba(255,255,255,.85); cursor:pointer; font-size:1.25rem;
-      display:grid; place-items:center; color: var(--rose);
-      box-shadow:0 6px 16px rgba(0,0,0,.18);
-    }
-    .ms-arrow:hover{ background:#fff; }
-    .ms-prev{ left:10px; }
-    .ms-next{ right:10px; }
-
-    .ms-dots{
-      position:absolute; bottom:12px; left:50%; transform:translateX(-50%);
-      display:flex; gap:8px;
-    }
-    .ms-dot{
-      width:9px; height:9px; border-radius:50%; border:none; cursor:pointer;
-      background: rgba(255,255,255,.7);
-    }
-    .ms-dot.active{ background:#fff; }
-
+.core-members-container .team-card img:hover {
+  transform: scale(1.05);
+}
     /* Section spacing harmony with your site */
     header.page-head{ text-align:center; padding:3.5rem 1.5rem; }
     header.page-head h1{ color:#b03060; }
@@ -156,21 +122,21 @@
 
   <div class="member-slider" id="memberSlider">
     <!-- Slide 1 -->
-    <div class="m-slide active" style="background-image:url('images/malai-bg.jpg');">
+    <div class="m-slide active" style="background-image:url('images/member background.jpg');">
       <img class="m-avatar" src="images/Malai.jpg" alt="Malai">
       <h3 class="m-name">Malai</h3>
       <p class="m-role">Vocalist</p>
     </div>
 
     <!-- Slide 2 -->
-    <div class="m-slide" style="background-image:url('images/satvika-bg.jpg');">
+    <div class="m-slide" style="background-image:url('images/member background.jpg');">
       <img class="m-avatar" src="images/satvika.jpg" alt="Satvika">
       <h3 class="m-name">Satvika</h3>
       <p class="m-role">Vocalist</p>
     </div>
 
     <!-- Slide 3 (example placeholder) -->
-    <div class="m-slide" style="background-image:url('images/member3-bg.jpg');">
+    <div class="m-slide" style="background-image:url('images/member background.jpg');">
       <img class="m-avatar" src="images/member3.jpg" alt="Member Three">
       <h3 class="m-name">Member Three</h3>
       <p class="m-role">Instrumentalist</p>
