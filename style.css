@@ -266,32 +266,49 @@ section {
   margin-bottom: 1.5rem;
   color: #E91E63;
 }
-
-/* Carousel Container */
-.team-carousel {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-  overflow: hidden;
-  position: relative;
+/* Core Members Grid - NEW STYLES */
+.core-members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    padding: 1rem;
+    margin: 2rem auto;
 }
 
-/* Each Member Slide */
-.member-slide {
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  padding: 2rem 1rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+.core-member {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    max-width: 250px;
 }
 
-.member-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35); /* dark overlay for text contrast */
-  z-index: 0;
+.core-member:hover {
+    transform: translateY(-5px);
+}
+
+.core-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 0 auto 1rem;
+}
+
+.core-member h3 {
+    color: #E91E63;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.core-member p {
+    color: #666;
+    font-size: 0.9rem;
 }
 
 .member-slide img,
@@ -318,11 +335,6 @@ section {
   box-shadow: 0 5px 25px rgba(0,0,0,0.2);
   background-color: #fff; /* adds a clean circle behind transparent parts */
   padding: 5px; /* spacing inside the circle */
-}
-
-/* Carousel Controls */
-.carousel-controls {
-  margin-top: 1rem;
 }
 
 .carousel-controls button {
