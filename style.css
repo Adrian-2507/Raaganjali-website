@@ -308,13 +308,16 @@ section {
 }
 
 /* Member Image */
+/* Member Image - Fixed zoom issue */
 .member-slide img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
+  width: 150px; /* slightly smaller for balance */
+  height: 150px;
+  object-fit: contain; /* prevents unwanted zoom-in */
   border-radius: 50%;
   border: 5px solid #fff;
   box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  background-color: #fff; /* adds a clean circle behind transparent parts */
+  padding: 5px; /* spacing inside the circle */
 }
 
 /* Carousel Controls */
