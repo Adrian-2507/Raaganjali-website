@@ -250,97 +250,6 @@ section {
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
-/* Team Section */
-.team-section {
-  background-color: rgba(255, 255, 255, 0.7); /* see pink background */
-  padding: 2rem;
-  border-radius: 15px;
-  max-width: 900px;
-  margin: 2rem auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.team-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #E91E63;
-}
-
-/* Carousel Container */
-.team-carousel {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Each Member Slide */
-.member-slide {
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  padding: 2rem 1rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.member-slide::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35); /* dark overlay for text contrast */
-  z-index: 0;
-}
-
-.member-slide img,
-.member-slide h3,
-.member-slide p {
-  position: relative;
-  z-index: 1;
-}
-
-.member-slide > * {
-  position: relative;
-  z-index: 1;
-  color: #E91E63;
-}
-
-/* Member Image */
-/* Member Image - Fixed zoom issue */
-.member-slide img {
-  width: 150px; /* slightly smaller for balance */
-  height: 150px;
-  object-fit: contain; /* prevents unwanted zoom-in */
-  border-radius: 50%;
-  border: 5px solid #fff;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
-  background-color: #fff; /* adds a clean circle behind transparent parts */
-  padding: 5px; /* spacing inside the circle */
-}
-
-/* Carousel Controls */
-.carousel-controls {
-  margin-top: 1rem;
-}
-
-.carousel-controls button {
-  background-color: rgba(255,255,255,0.8);
-  border: none;
-  padding: 0.5rem 1rem;
-  margin: 0 0.3rem;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-  color: #E91E63;
-  transition: background 0.3s ease;
-}
-
-.carousel-controls button:hover {
-  background-color: rgba(255,255,255,1);
-}
-
 .event-card {
     background:#fff;
     border-radius:10px;
@@ -392,3 +301,86 @@ section {
   .event-btn.facebook {
     background:linear-gradient(45deg, #1877F2, #0f5dc0);
   }
+
+/* Team Shell */
+.team-shell {
+  background: rgba(255,255,255,0.8);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 1000px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.team-shell h2 {
+  color: #c27ba0;
+  margin-bottom: 2rem;
+}
+
+/* Core Members */
+.core-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.team-card {
+  background: rgba(255,255,255,0.85);
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.team-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.team-card img:hover {
+  transform: scale(1.05);
+}
+.team-card h3 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #b03060;
+}
+.team-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Members Slider */
+.member-slider {
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+}
+.member-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  width: 100%;
+}
+.member-slide {
+  flex: 0 0 100%;
+  text-align: center;
+  padding: 2rem;
+}
+.member-slide img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.member-slide h3 {
+  margin-top: 1rem;
+  color: #b03060;
+}
+.member-slide p {
+  color: #555;
+}
