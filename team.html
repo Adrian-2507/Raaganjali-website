@@ -20,68 +20,63 @@
 </nav>
 
 <!-- HEADER -->
-<header style="text-align:center; padding:4rem 2rem;" data-aos="fade">
+<header class="page-head" data-aos="fade">
   <h1>Our Team</h1>
   <p>Meet the people who make Raaganjali possible</p>
 </header>
 
 <!-- CORE MEMBERS -->
-<section data-aos="fade-up" style="padding:2rem;">
-  <h2 style="text-align:center; margin-bottom:2rem;">Core Members</h2>
-  <div style="display:flex; gap:40px; flex-wrap:wrap; justify-content:center;">
-
+<section class="team-shell" data-aos="fade-up">
+  <h2>Core Members</h2>
+  <div class="core-members">
     <div class="team-card">
-      <img src="images/soumya2.jpg" alt="Soumya Velpula">
+      <img src="images/Soumya[1].jpg" alt="Soumya Velpula">
       <h3>Soumya Velpula</h3>
       <p>President</p>
     </div>
-
     <div class="team-card">
-      <img src="images/lakshmi.jpg" alt="Varalakshmi Aripala">
+      <img src="images/Lakshmi[4].jpg" alt="Varalakshmi Aripala">
       <h3>Varalakshmi Aripala</h3>
       <p>Vice President</p>
     </div>
-
     <div class="team-card">
-      <img src="images/Ravi.JPG" alt="Ravichand Velpula">
+      <img src="images/Ravi{5].jpg" alt="Ravichand Velpula">
       <h3>Ravichand Velpula</h3>
       <p>Treasurer</p>
     </div>
-
     <div class="team-card">
-      <img src="images/Shrikant.jpg" alt="Srikanth Aripala">
+      <img src="images/Shrikant[1].jpg" alt="Srikanth Aripala">
       <h3>Srikanth Aripala</h3>
       <p>Secretary & PR</p>
     </div>
-
     <div class="team-card">
-      <img src="images/adrian.jpg" alt="Adrian [Your Last Name]">
+      <img src="images/adrian.jpg" alt="Adrian Gonsalves">
       <h3>Adrian Gonsalves</h3>
       <p>Technical Director</p>
     </div>
-
   </div>
 </section>
 
-<!-- RAGANJALI MEMBERS -->
-<section data-aos="fade-up" style="padding:2rem; background:rgba(255,255,255,0.8);">
-  <h2 style="text-align:center; margin-bottom:2rem;">Raganjali Members</h2>
-  <div style="display:flex; gap:30px; flex-wrap:wrap; justify-content:center;">
-    <!-- Add as many members as needed -->
-    <div class="team-card">
-      <img src="images/member1.jpg" alt="Member Name">
-      <h3>Member Name</h3>
-      <p>Performer</p>
-    </div>
-    <div class="team-card">
-      <img src="images/member2.jpg" alt="Member Name">
-      <h3>Member Name</h3>
-      <p>Vocalist</p>
-    </div>
-    <div class="team-card">
-      <img src="images/member3.jpg" alt="Member Name">
-      <h3>Member Name</h3>
-      <p>Instrumentalist</p>
+<!-- RAGANJALI MEMBERS SLIDER -->
+<section class="team-shell" data-aos="fade-up">
+  <h2>Raaganjali Members</h2>
+  <div class="member-slider">
+    <div class="member-track">
+      <div class="member-slide">
+        <img src="images/Malai{1].jpg" alt="Malai">
+        <h3>Malai</h3>
+        <p>Vocalist</p>
+      </div>
+      <div class="member-slide">
+        <img src="images/Satvika{1].jpg" alt="Satvika">
+        <h3>Satvika</h3>
+        <p>Vocalist</p>
+      </div>
+      <div class="member-slide">
+        <img src="images/Allan[1].jpg" alt="Member Three">
+        <h3>Alan Gonsalves</h3>
+        <p>Instrumentalist</p>
+      </div>
     </div>
   </div>
 </section>
@@ -90,36 +85,45 @@
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-logo">
-      <h3>Raganjali</h3>
+      <h3>Raaganjali</h3>
       <p>Celebrating Indian Music in Finland</p>
     </div>
-    
     <div class="footer-socials">
-      <a href="https://www.instagram.com/raaganjalsuomi?igsh=YW9icWszeGRxem91&utm_source=qr" title="Instagram" target="_blank">
+      <a href="https://www.instagram.com/raaganjalsuomi" target="_blank">
         <img src="images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
       </a>
-      <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" title="Facebook" target="_blank">
+      <a href="https://https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" target="_blank">
         <img src="images/facebook.svg" alt="Facebook" style="width:24px; height:24px;">
       </a>
-      <a href="https://youtube.com/@raaganjalisuomi?si=dxVs05CgfTDMBsEv" title="YouTube" target="_blank">
+      <a href="https://youtube.com/@raaganjalisuomi" target="_blank">
         <img src="images/youtube.svg" alt="YouTube" style="width:24px; height:24px;">
       </a>
     </div>
   </div>
-
   <div class="footer-bottom">
-    <p>&copy; 2025 Raganjali. All rights reserved.</p>
+    <p>&copy; 2025 Raaganjali. All rights reserved.</p>
   </div>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ once:true });</script>
 <script>
+/* Sticky navbar */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 10);
 });
-</script>
 
+/* Member slider autoplay */
+const track = document.querySelector('.member-track');
+let index = 0;
+function slideMembers() {
+  index++;
+  const slides = document.querySelectorAll('.member-slide');
+  if(index >= slides.length) index = 0;
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+setInterval(slideMembers, 5000);
+</script>
 </body>
 </html>
