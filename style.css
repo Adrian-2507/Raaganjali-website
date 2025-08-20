@@ -181,6 +181,13 @@ section {
   }
 }
 
+.page-head, 
+.contact-section header,
+section h1, 
+section h2 {
+  text-align: center;
+}
+
 .contact-section {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 2rem;
