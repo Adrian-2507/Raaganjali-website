@@ -386,12 +386,12 @@ section h2 {
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid #fff;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .member-slide h3 {
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #b03060;
 }
 .member-slide p {
