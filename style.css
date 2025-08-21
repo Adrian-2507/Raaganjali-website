@@ -381,8 +381,8 @@ section h2 {
 }
 
 .member-slide img {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid #fff;
@@ -391,7 +391,6 @@ section h2 {
 
 .member-slide h3 {
   margin-top: 1rem;
-  font-size: 1rem;
   color: #b03060;
 }
 .member-slide p {
