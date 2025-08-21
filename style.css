@@ -377,35 +377,23 @@ section h2 {
 .member-slide {
   flex: 0 0 100%;
   text-align: center;
-  padding: 3rem 2rem;
-  min-height: 480px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 2rem;
 }
 
 .member-slide img {
-  width: 240px;
-  height: 240px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 50%;
-  border: 6px solid #fff;
+  border: 5px solid #fff;
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease;
-}
-
-.member-slide image:hover {
-  transform: scale(1.08);
 }
 
 .member-slide h3 {
-  margin-top: 1.2rem;
+  margin-top: 1rem;
   font-size: 1.5rem;
   color: #b03060;
 }
 .member-slide p {
   color: #555;
-  font-size: 1.1rem;
 }
