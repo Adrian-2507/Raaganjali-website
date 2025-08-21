@@ -366,6 +366,9 @@ section h2 {
   overflow: hidden;
   position: relative;
   border-radius: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .member-track {
