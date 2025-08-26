@@ -294,7 +294,7 @@ section h2 {
     border-radius:25px;
     text-decoration:none;
     font-weight:bold;
-    color:#fff;
+    color:#c1898e;
     transition:background 0.3s ease, transform 0.2s ease;
   }
   .event-btn:hover {
