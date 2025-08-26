@@ -403,6 +403,15 @@ section h2 {
   color: #555;
 }
 
+/* Color variables for muted rose theme */
+    :root {
+      --primary-color: #d8a1a6; /* Muted rose */
+      --primary-dark: #c1898e;
+      --text-color: #5a4a4c;
+      --light-bg: #f9f3f4;
+      --card-bg: #ffffff;
+      --footer-bg: #2c3e50;
+
 .cta-button {
   display: inline-block;
   background: var(--primary-color);
