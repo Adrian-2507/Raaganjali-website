@@ -1,1 +1,190 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raaganjali | Tiimimme</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="index.html">Etusivu</a>
+  <a href="services.html">Palvelut</a>
+  <a href="team.html" class="active">Tiimimme</a>
+  <a href="gallery.html">Galleria</a>
+  <a href="events.html">Tapahtumat</a>
+  <a href="contact.html">Yhteystiedot</a>
+</nav>
+
+<!-- HEADER -->
+<header class="page-head" data-aos="fade">
+  <h1>Tiimimme</h1>
+  <p>Tutustu ihmisiin, jotka tekevät Raaganjalista mahdollisen</p>
+</header>
+
+<!-- CORE MEMBERS -->
+<section class="team-shell" data-aos="fade-up">
+  <h2>Johtoryhmä</h2>
+  <div class="core-members">
+    <div class="team-card">
+      <img src="images/Soumya[1].jpg" alt="Soumya Velpula">
+      <h3>Soumya Velpula</h3>
+      <p>Puheenjohtaja</p>
+    </div>
+    <div class="team-card">
+      <img src="images/Lakshmi[4].jpg" alt="Varalakshmi Aripala">
+      <h3>Varalakshmi Aripirala</h3>
+      <p>Varapuheenjohtaja</p>
+    </div>
+    <div class="team-card">
+      <img src="images/Ravi{5].jpg" alt="Ravichand Velpula">
+      <h3>Ravichand Velpula</h3>
+      <p>Talousvastaava</p>
+    </div>
+    <div class="team-card">
+      <img src="images/Shrikant[1].jpg" alt="Srikanth Aripala">
+      <h3>Srikanth Aripirala</h3>
+      <p>Sihteeri & Viestintä</p>
+    </div>
+    <div class="team-card">
+      <img src="images/adrian.jpg" alt="Adrian Gonsalves">
+      <h3>Adrian Gonsalves</h3>
+      <p>Tekninen johtaja</p>
+    </div>
+  </div>
+</section>
+
+<!-- RAGANJALI MEMBERS SLIDER -->
+<section class="team-shell" data-aos="fade-up">
+  <h2>Raaganjalin jäsenet</h2>
+  <div class="member-slider">
+    <div class="member-track">
+      <div class="member-slide">
+        <img src="images/Malai{1].jpg" alt="Malai">
+        <h3>Malay Das</h3>
+        <p>Vokalisti</p>
+      </div>
+      <div class="member-slide">
+        <img src="images/Satvika{1].jpg" alt="Satvika">
+        <h3>Satvika Aripirala</h3>
+        <p>Vokalisti</p>
+      </div>
+      <div class="member-slide">
+        <img src="images/Lakshmi[2].jpg" alt="Varalakshmi">
+        <h3>Varalakshmi Aripirala</h3>
+        <p>Vokalisti</p>
+      </div>
+      <div class="member-slide">
+        <img src="images/Arshiya[2].jpg" alt="Arshiya">
+        <h3>Arshiya</h3>
+        <p>Vokalisti</p>
+      </div>
+      <div class="member-slide">
+        <img src="images/Ravi[1].jpg" alt="Ravichand">
+        <h3>Ravichand Velpula</h3>
+        <p>Pianisti</p>
+      </div>
+      <div class="member-slide">
+        <img src="images/Allan[1].jpg" alt="Allan">
+        <h3>Allan Gonsalves</h3>
+        <p>Lyömäsoittaja</p>
+      </div>
+      <div class="member-slide">
+        <img src="images/Saket[1].jpg" alt="Saket">
+        <h3>Saket Aripirala</h3>
+        <p>Kitaristi</p>
+      </div>
+      <div class="member-slide">
+        <img src="images/Sachin[1].jpg" alt="Sachin">
+        <h3>Sachin</h3>
+        <p>Kitaristi</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>Raaganjali</h3>
+      <p>Intialaisen musiikin juhlaa Suomessa</p>
+    </div>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/raaganjalsuomi" target="_blank">
+        <img src="images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
+      </a>
+      <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" target="_blank">
+        <img src="images/facebook.svg" alt="Facebook" style="width:24px; height:24px;">
+      </a>
+      <a href="https://youtube.com/@raaganjalisuomi" target="_blank">
+        <img src="images/youtube.svg" alt="YouTube" style="width:24px; height:24px;">
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Raaganjali. Kaikki oikeudet pidätetään.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once:true });</script>
+<script>
+/* Sticky navbar */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 10);
+});
+
+/* Infinite Member slider autoplay */
+const track = document.querySelector('.member-track');
+let slides = document.querySelectorAll('.member-slide');
+
+/* Clone first and last slides for seamless loop */
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true);
+track.appendChild(firstClone);
+track.insertBefore(lastClone, slides[0]);
+
+// Update slides NodeList to include the clones
+slides = document.querySelectorAll('.member-slide');
+
+let index = 1;
+let slideWidth = slides[0].clientWidth;
+
+track.style.transform = `translateX(${-slideWidth * index}px)`;
+
+// Adjust slideWidth on window resize
+window.addEventListener("resize", () => {
+  slideWidth = slides[0].clientWidth;
+  track.style.transition = "none";
+  track.style.transform = `translateX(${-slideWidth * index}px)`;
+});
+
+// Transition handling
+track.addEventListener("transitionend", () => {
+  if (slides[index].isEqualNode(firstClone)) {
+    track.style.transition = "none";
+    index = 1;
+    track.style.transform = `translateX(${-slideWidth * index}px)`;
+  }
+  if (slides[index].isEqualNode(lastClone)) {
+    track.style.transition = "none";
+    index = slides.length - 2;
+    track.style.transform = `translateX(${-slideWidth * index}px)`;
+  }
+});
+
+// Autoplay every 5s
+setInterval(() => {
+  index++;
+  track.style.transition = "transform 0.6s ease-in-out";
+  track.style.transform = `translateX(${-slideWidth * index}px)`;
+}, 5000);
+</script>
+</body>
+</html>
 
