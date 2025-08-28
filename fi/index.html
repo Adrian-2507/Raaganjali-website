@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raaganjali | Etusivu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body>
 
+  <nav id="navbar">
+  <a href="index.html" class="active">Etusivu</a>
+  <a href="services.html">Palvelut</a>
+  <a href="team.html">Tiimimme</a>
+  <a href="gallery.html">Galleria</a>
+  <a href="events.html">Tapahtumat</a>
+  <a href="contact.html">Yhteystiedot</a>
+</nav>
+
+  <header class="hero" data-aos="fade-in">
+    <h1>Tervetuloa Raaganjaliin</h1>
+    <p>Intialaisen musiikin ja kulttuurin juhlaa Suomessa</p>
+  </header>
+
+  <section class="who-we-are" data-aos="fade-up">
+    <h2>Keitä olemme</h2>
+    <p>
+      Raaganjali on intohimoinen yhteisö, joka tuo intialaisen klassisen ja hengellisen musiikin rikkaan perinteen eläväksi Suomessa. 
+      Esiintymisten, yhteistyön ja yhteisöllisyyden kautta jaamme äänen ja perinteen iloa maailmalle.
+    </p>
+    <img src="images/Group[3].jpg" alt="Raganjali Ryhmäkuva" />
+  </section>
+
+  <section class="cta-section" data-aos="zoom-in">
+    <h2>Liity mukaan</h2>
+    <p>Pysy ajan tasalla tapahtumistamme, esiintymisistämme ja musiikillisista matkoistamme.</p>
+    <a href="contact.html" class="btn">Ota yhteyttä</a>
+  </section>
+
+  <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>Raaganjali</h3>
+      <p>Intialaisen musiikin juhlaa Suomessa</p>
+    </div>
+    
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/raaganjalsuomi?igsh=YW9icWszeGRxem91&utm_source=qr" title="Instagram" target="_blank">
+        <img src="images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
+      </a>
+      <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" title="Facebook" target="_blank">
+        <img src="images/facebook.svg" alt="Facebook" style="width:24px; height:24px;">
+      </a>
+      <a href="https://youtube.com/@raaganjalisuomi?si=dxVs05CgfTDMBsEv" title="YouTube" target="_blank">
+        <img src="images/youtube.svg" alt="YouTube" style="width:24px; height:24px;">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Raaganjali. Kaikki oikeudet pidätetään.</p>
+  </div>
+</footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once:true });</script>
+  <script>
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>
