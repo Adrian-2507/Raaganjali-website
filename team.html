@@ -130,7 +130,19 @@
     <p>&copy; 2025 Raaganjali. All rights reserved.</p>
   </div>
 </footer>
+<script>
+  function changeLang(lang) {
+    const current = window.location.pathname.split('/').pop();
 
+    if(lang === "fi") {
+      // redirect to Finnish page (make sure these files exist)
+      window.location.href = current.replace('.html', '_fi.html');
+    } else {
+      // redirect to English version
+      window.location.href = current.replace('_fi.html', '.html');
+    }
+  }
+</script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ once:true });</script>
 <script>
