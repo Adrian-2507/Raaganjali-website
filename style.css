@@ -427,3 +427,17 @@ section h2 {
 .cta-button:hover {
   background: var(--primary-dark);
 }
+
+.lang-switcher {
+  margin-left: auto;
+  padding: 0 1rem;
+}
+
+.lang-switcher select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: white;
+  font-weight: 600;
+  cursor: pointer;
+}
