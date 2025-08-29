@@ -101,18 +101,31 @@
   </div>
 </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ once:true });</script>
-  <script>
-  const navbar = document.getElementById('navbar');
+<script>
+  function changeLang(lang) {
+    const current = window.location.pathname.split('/').pop();
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      navbar.classList.add('scrolled');
+    if(lang === "fi") {
+      // redirect to Finnish page (make sure these files exist)
+      window.location.href = current.replace('.html', '_fi.html');
     } else {
-      navbar.classList.remove('scrolled');
+      // redirect to English version
+      window.location.href = current.replace('_fi.html', '.html');
     }
-  });
+  }
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once:true });</script>
+<script>
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
 </script>
 </body>
 </html>
