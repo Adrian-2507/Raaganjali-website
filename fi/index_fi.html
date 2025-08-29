@@ -3,50 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Raaganjali | Etusivu</title>
+  <title>Raaganjali | Koti</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
 
-  <nav id="navbar">
-  <a href="index.html" class="active">Etusivu</a>
-  <a href="services.html">Palvelut</a>
-  <a href="team.html">Tiimimme</a>
-  <a href="gallery.html">Galleria</a>
-  <a href="events.html">Tapahtumat</a>
-  <a href="contact.html">Yhteystiedot</a>
-
+<nav id="navbar">
+  <a href="index_fi.html" class="active">Koti</a>
+  <a href="services_fi.html">Palvelut</a>
+  <a href="team_fi.html">Tiimimme</a>
+  <a href="gallery_fi.html">Galleria</a>
+  <a href="events_fi.html">Tapahtumat</a>
+  <a href="contact_fi.html">Yhteystiedot</a>
+    
   <!-- Language Switcher -->
   <div class="lang-switcher">
     <select onchange="changeLang(this.value)">
-      <option value="en" selected>EN</option>
-      <option value="fi">FI</option>
+      <option value="en">EN</option>
+      <option value="fi" selected>FI</option>
     </select>
   </div>
 </nav>
 
-  <header class="hero" data-aos="fade-in">
-    <h1>Tervetuloa Raaganjaliin</h1>
-    <p>Intialaisen musiikin ja kulttuurin juhlaa Suomessa</p>
-  </header>
+<header class="hero" data-aos="fade-in">
+  <h1>Tervetuloa Raaganjaliin</h1>
+  <p>Intialaisen musiikin ja kulttuurin juhlaa Suomessa</p>
+</header>
 
-  <section class="who-we-are" data-aos="fade-up">
-    <h2>Keitä olemme</h2>
-    <p>
-      Raaganjali on intohimoinen yhteisö, joka tuo intialaisen klassisen ja hengellisen musiikin rikkaan perinteen eläväksi Suomessa. 
-      Esiintymisten, yhteistyön ja yhteisöllisyyden kautta jaamme äänen ja perinteen iloa maailmalle.
-    </p>
-    <img src="images/Group[3].jpg" alt="Raganjali Ryhmäkuva" />
-  </section>
+<section class="who-we-are" data-aos="fade-up">
+  <h2>Keitä olemme</h2>
+  <p>
+    Raaganjali on intohimoinen yhteisö, joka tuo intialaisen klassisen ja hengellisen musiikin rikkaan perinteen eläväksi Suomessa. 
+    Esiintymisten, yhteistyön ja yhteisöllisyyden kautta jaamme äänen ja perinteen iloa maailmalle.
+  </p>
+  <img src="images/Group[3].jpg" alt="Raaganjali ryhmäkuva" />
+</section>
 
-  <section class="cta-section" data-aos="zoom-in">
-    <h2>Liity mukaan</h2>
-    <p>Pysy ajan tasalla tapahtumistamme, esiintymisistämme ja musiikillisista matkoistamme.</p>
-    <a href="contact.html" class="btn">Ota yhteyttä</a>
-  </section>
+<section class="cta-section" data-aos="zoom-in">
+  <h2>Liity mukaan</h2>
+  <p>Pysy ajan tasalla tapahtumistamme, esiintymisistämme ja musiikillisista matkoistamme.</p>
+  <a href="contact_fi.html" class="btn">Ota yhteyttä</a>
+</section>
 
-  <footer class="site-footer">
+<footer class="site-footer">
   <div class="footer-content">
     <div class="footer-logo">
       <h3>Raaganjali</h3>
@@ -70,31 +70,37 @@
     <p>&copy; 2025 Raaganjali. Kaikki oikeudet pidätetään.</p>
   </div>
 </footer>
+
 <script>
   function changeLang(lang) {
-    const current = window.location.pathname.split('/').pop();
+    let current = window.location.pathname.split('/').pop();
 
-    if(lang === "fi") {
-      // redirect to Finnish page (make sure these files exist)
-      window.location.href = current.replace('index.html', 'index_fi.html');
+    if (current === '' || current === 'index.html' || current === 'index_fi.html') {
+      // handle homepage separately
+      window.location.href = lang === 'fi' ? 'index_fi.html' : 'index.html';
+      return;
+    }
+
+    if (lang === "fi") {
+      window.location.href = current.replace('.html', '_fi.html');
     } else {
-      // redirect to English version
-      window.location.href = current.replace('index_fi.html', 'index.html');
+      window.location.href = current.replace('_fi.html', '.html');
     }
   }
 </script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ once:true });</script>
-  <script>
-  const navbar = document.getElementById('navbar');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once:true });</script>
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
 </script>
 </body>
 </html>
+
