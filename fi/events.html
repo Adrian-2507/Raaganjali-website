@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raaganjali | Tapahtumat</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body>
+  <nav id="navbar">
+  <a href="index.html">Etusivu</a>
+  <a href="services.html">Palvelut</a>
+  <a href="team.html">Tiimimme</a>
+  <a href="gallery.html">Galleria</a>
+  <a href="events.html" class="active">Tapahtumat</a>
+  <a href="contact.html">Yhteystiedot</a>
+</nav>
 
+  <header style="text-align:center; padding:4rem 2rem;" data-aos="fade">
+    <h1>Tapahtumat</h1>
+  </header>
+
+  <!-- UPCOMING EVENTS -->
+  <section data-aos="fade-up">
+    <h2>🔔 Tulevat tapahtumat (2025)</h2>
+
+    <h3 style="margin-top:2rem;">🌸 Durga Pooja 3. lokakuuta</h3>
+    <p>Isäntänä Association of Bengal — hengellistä musiikkia juhlan kunniaksi.</p>
+
+    <h3 style="margin-top:2rem;">🎆 Diwali – Swami Ishta Seva 18. lokakuuta</h3>
+    <p>Perinteistä hengellistä musiikkia valon juhlan kunniaksi.</p>
+
+    <h3 style="margin-top:2rem;">🪔 (FITA) Dussehra & Bathukamma 19. lokakuuta</h3>
+    <p>Yhteistyössä Finland Telugu Association<br/>
+      Juhlavaa musiikkia ja kulttuuriesityksiä.</p>
+  </section>
+
+<!-- PAST EVENTS -->
+<section data-aos="fade-up" style="margin-top:4rem;">
+  <h2 style="text-align:center;">📽️ Menneet tapahtumat</h2>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin-top:2rem;">
+
+    <!-- Event 1: [1]Folklore 2025 -->
+    <div class="event-card">
+      <div class="media-container">
+        <video width="100%" controls>
+          <source src="videos/performance video.mp4" type="video/mp4">
+          Selaimesi ei tue videon toistoa.
+        </video>
+      </div>
+      <div class="event-content">
+        <h3>Folklore-esitys</h3>
+        <p>Andhra ja Telangana – Brahmamokate</p>
+        <p>Eloisa katsaus perinteiseen musiikkiin ja kulttuuriin.</p>
+        <a href="https://youtu.be/BF-bZC6cUnE?si=5VxmbgRpa_fW2Y6w" target="_blank" class="event-btn youtube">▶ Katso koko video</a>
+      </div>
+    </div>
+
+    <!-- Event 2: [2]Folklore 2025 -->
+    <div class="event-card">
+      <div class="media-container">
+        <video width="100%" controls>
+          <source src="videos/Folklore-2025-Goa video.mp4" type="video/mp4">
+          Selaimesi ei tue videon toistoa.
+        </video>
+      </div>
+      <div class="event-content">
+        <h3>Folklore-esitys</h3>
+        <p>Goa – Hanv Saiba</p>
+        <p>Eloisa katsaus perinteiseen musiikkiin ja kulttuuriin.</p>
+        <a href="https://youtu.be/jq_FLERcfMo?si=0j3ekzPu71Cbq16G" target="_blank" class="event-btn youtube">▶ Katso koko video</a>
+      </div>
+    </div>
+
+    <!-- Event 3: India Day 2025 -->
+    <div class="event-card">
+      <div class="media-container">
+          <!-- Placeholder image until video is ready -->
+          <img src="images/Group[2].jpg" alt="India Day 2025">
+        </div>
+        <div class="event-content">
+        <h3>India Day 2025</h3>
+        <p>Raaganjali esiintyi ylpeänä India Day -juhlassa, jossa juhlistettiin kulttuuria, musiikkia ja yhteisöllisyyttä.</p>
+        <a href="#" class="event-btn youtube" style="pointer-events:none; opacity:0.6;">
+        Katso kohokohdat (tulossa pian)
+        </a>
+      </div>
+     </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>Raaganjali</h3>
+      <p>Intialaisen musiikin juhlaa Suomessa</p>
+    </div>
+    
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/raaganjalsuomi?igsh=YW9icWszeGRxem91&utm_source=qr" title="Instagram" target="_blank">
+        <img src="images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
+      </a>
+      <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" title="Facebook" target="_blank">
+        <img src="images/facebook.svg" alt="Facebook" style="width:24px; height:24px;">
+      </a>
+      <a href="https://youtube.com/@raaganjalisuomi?si=dxVs05CgfTDMBsEv" title="YouTube" target="_blank">
+        <img src="images/youtube.svg" alt="YouTube" style="width:24px; height:24px;">
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Raaganjali. Kaikki oikeudet pidätetään.</p>
+  </div>
+</footer>
+
+<!-- Hover Effect Script -->
+<script>
+  document.querySelectorAll('section div[style*="box-shadow"]').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'translateY(-5px)';
+      card.style.boxShadow = '0 12px 30px rgba(0,0,0,0.15)';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'translateY(0)';
+      card.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
+    });
+  });
+</script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once:true });</script>
+  <script>
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>
