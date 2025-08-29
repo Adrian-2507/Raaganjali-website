@@ -9,18 +9,18 @@
 </head>
 <body>
   <nav id="navbar">
-  <a href="index.html">Etusivu</a>
-  <a href="services.html">Palvelut</a>
-  <a href="team.html">Tiimimme</a>
-  <a href="gallery.html">Galleria</a>
-  <a href="events.html" class="active">Tapahtumat</a>
-  <a href="contact.html">Yhteystiedot</a>
+  <a href="index_fi.html">Etusivu</a>
+  <a href="services_fi.html">Palvelut</a>
+  <a href="team_fi.html">Tiimimme</a>
+  <a href="gallery_fi.html">Galleria</a>
+  <a href="events_fi.html" class="active">Tapahtumat</a>
+  <a href="contact_fi.html">Yhteystiedot</a>
 
   <!-- Language Switcher -->
   <div class="lang-switcher">
     <select onchange="changeLang(this.value)">
-      <option value="en" selected>EN</option>
-      <option value="fi">FI</option>
+      <option value="en">EN</option>
+      <option value="fi" selected>FI</option>
     </select>
   </div>
 </nav>
@@ -50,7 +50,7 @@
 
   <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin-top:2rem;">
 
-    <!-- Event 1: [1]Folklore 2025 -->
+    <!-- Event 1: Folklore 2025 -->
     <div class="event-card">
       <div class="media-container">
         <video width="100%" controls>
@@ -66,7 +66,7 @@
       </div>
     </div>
 
-    <!-- Event 2: [2]Folklore 2025 -->
+    <!-- Event 2: Folklore 2025 -->
     <div class="event-card">
       <div class="media-container">
         <video width="100%" controls>
@@ -85,7 +85,6 @@
     <!-- Event 3: India Day 2025 -->
     <div class="event-card">
       <div class="media-container">
-          <!-- Placeholder image until video is ready -->
           <img src="images/Group[2].jpg" alt="India Day 2025">
         </div>
         <div class="event-content">
@@ -106,13 +105,13 @@
     </div>
     
     <div class="footer-socials">
-      <a href="https://www.instagram.com/raaganjalsuomi?igsh=YW9icWszeGRxem91&utm_source=qr" title="Instagram" target="_blank">
+      <a href="https://www.instagram.com/raaganjalsuomi" target="_blank">
         <img src="images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
       </a>
-      <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" title="Facebook" target="_blank">
+      <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" target="_blank">
         <img src="images/facebook.svg" alt="Facebook" style="width:24px; height:24px;">
       </a>
-      <a href="https://youtube.com/@raaganjalisuomi?si=dxVs05CgfTDMBsEv" title="YouTube" target="_blank">
+      <a href="https://youtube.com/@raaganjalisuomi" target="_blank">
         <img src="images/youtube.svg" alt="YouTube" style="width:24px; height:24px;">
       </a>
     </div>
@@ -127,10 +126,8 @@
     const current = window.location.pathname.split('/').pop();
 
     if(lang === "fi") {
-      // redirect to Finnish page (make sure these files exist)
       window.location.href = current.replace('events.html', 'events_fi.html');
     } else {
-      // redirect to English version
       window.location.href = current.replace('events_fi.html', 'events.html');
     }
   }
@@ -138,7 +135,7 @@
 
 <!-- Hover Effect Script -->
 <script>
-  document.querySelectorAll('section div[style*="box-shadow"]').forEach(card => {
+  document.querySelectorAll('.event-card').forEach(card => {
     card.addEventListener('mouseenter', () => {
       card.style.transform = 'translateY(-5px)';
       card.style.boxShadow = '0 12px 30px rgba(0,0,0,0.15)';
