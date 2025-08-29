@@ -25,7 +25,6 @@
     </select>
   </div>
 </nav>
-</nav>
 
 <header class="hero" data-aos="fade-in">
     <h1>Our Services</h1>
@@ -107,10 +106,10 @@
 
     if(lang === "fi") {
       // redirect to Finnish page (make sure these files exist)
-      window.location.href = current.replace('.html', '_fi.html');
+      window.location.href = current.replace('services.html', 'services_fi.html');
     } else {
       // redirect to English version
-      window.location.href = current.replace('_fi.html', '.html');
+      window.location.href = current.replace('services_fi.html', 'services.html');
     }
   }
 </script>
