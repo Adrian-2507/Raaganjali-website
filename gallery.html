@@ -15,6 +15,16 @@
   <a href="gallery.html" class="active">Gallery</a>
   <a href="events.html">Events</a>
   <a href="contact.html">Contact</a>
+
+  <!-- Language Switcher -->
+  <div class="lang-switcher">
+    <select onchange="changeLang(this.value)">
+      <option value="en" selected>EN</option>
+      <option value="fi">FI</option>
+    </select>
+  </div>
+</nav>
+</nav>
 </nav>
 
   <header class="hero" data-aos="fade">
@@ -65,7 +75,19 @@
     <p>&copy; 2025 Raaganjali. All rights reserved.</p>
   </div>
 </footer>
+<script>
+  function changeLang(lang) {
+    const current = window.location.pathname.split('/').pop();
 
+    if(lang === "fi") {
+      // redirect to Finnish page (make sure these files exist)
+      window.location.href = current.replace('.html', '_fi.html');
+    } else {
+      // redirect to English version
+      window.location.href = current.replace('_fi.html', '.html');
+    }
+  }
+</script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ once:true });</script>
   <script>
