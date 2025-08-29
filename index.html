@@ -9,13 +9,22 @@
 </head>
 <body>
 
-  <nav id="navbar">
+<nav id="navbar">
   <a href="index.html" class="active">Home</a>
   <a href="services.html">Services</a>
   <a href="team.html">Our Team</a>
   <a href="gallery.html">Gallery</a>
   <a href="events.html">Events</a>
   <a href="contact.html">Contact</a>
+    
+  <!-- Language Switcher -->
+  <div class="lang-switcher">
+    <select onchange="changeLang(this.value)">
+      <option value="en" selected>EN</option>
+      <option value="fi">FI</option>
+    </select>
+  </div>
+</nav>
 </nav>
 
   <header class="hero" data-aos="fade-in">
