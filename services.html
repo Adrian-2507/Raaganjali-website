@@ -9,26 +9,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
 <nav id="navbar">
-  <a href="index_fi.html">Home</a>
-  <a href="services_fi.html" class="active">Services</a>
-  <a href="team_fi.html">Our Team</a>
-  <a href="gallery_fi.html">Gallery</a>
-  <a href="events_fi.html">Events</a>
-  <a href="contact_fi.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="services.html" class="active">Services</a>
+  <a href="team.html">Our Team</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="events.html">Events</a>
+  <a href="contact.html">Contact</a>
 
   <!-- Language Switcher -->
   <div class="lang-switcher">
     <select onchange="changeLang(this.value)">
-      <option value="en">EN</option>
-      <option value="fi" selected>FI</option>
+      <option value="en" selected>EN</option>
+      <option value="fi">FI</option>
     </select>
   </div>
 </nav>
 
 <header class="hero" data-aos="fade-in">
-    <h1>Our services</h1>
-    <p>Discover how we can bring the beauty of Indian music to your events</p>
+  <h1>Our Services</h1>
+  <p>Discover how we can bring the beauty of Indian music to your events</p>
 </header>
 
 <div class="services-container">
@@ -39,7 +40,6 @@
     <div class="service-content">
       <h2>Musical Evenings</h2>
       <p>We organize soulful musical evenings, community performances, and cultural showcases. Perfect for festivals and gatherings!</p>
-      
       <div class="price-list">
         <h3>What we offer:</h3>
         <ul>
@@ -49,8 +49,7 @@
           <li>Community musical gatherings</li>
         </ul>
       </div>
-      
-      <a href="contact_fi.html" class="cta-button">Book a Performance</a>
+      <a href="contact.html" class="cta-button">Book a Performance</a>
     </div>
   </section>
 
@@ -61,7 +60,6 @@
     <div class="service-content">
       <h2>Equipment Rental</h2>
       <p>We provide high-quality audio and stage equipment for cultural events, performances, and private functions.</p>
-      
       <div class="price-list">
         <h3>Available Equipment:</h3>
         <ul>
@@ -71,8 +69,7 @@
         </ul>
         <p><em>Complete price list available on request.</em></p>
       </div>
-      
-      <a href="contact_fi.html" class="cta-button">Inquire About Rental</a>
+      <a href="contact.html" class="cta-button">Inquire About Rental</a>
     </div>
   </section>
 </div>
@@ -96,17 +93,16 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2025 Raaganjali.Raaganjali. All rights reserved.</p>
+    <p>&copy; 2025 Raaganjali. All rights reserved.</p>
   </div>
 </footer>
+
 <script>
   function changeLang(lang) {
-    const current = window.location.pathname.split('/').pop();
-
-    if(lang === "fi") {
-      window.location.href = current.replace('services.html', 'services_fi.html');
+    if (lang === "fi") {
+      window.location.href = "fi/services.html";
     } else {
-      window.location.href = current.replace('services_fi.html', 'services.html');
+      window.location.href = "services.html";
     }
   }
 </script>
@@ -114,13 +110,8 @@
 <script>AOS.init({ once:true });</script>
 <script>
 const navbar = document.getElementById('navbar');
-
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 10) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
+  navbar.classList.toggle('scrolled', window.scrollY > 10);
 });
 </script>
 </body>
