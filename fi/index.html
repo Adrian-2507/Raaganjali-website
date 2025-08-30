@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raaganjali | Koti</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
 
+<!-- NAVIGATION -->
 <nav id="navbar">
-  <a href="index_fi.html" class="active">Koti</a>
-  <a href="services_fi.html">Palvelut</a>
-  <a href="team_fi.html">Tiimimme</a>
-  <a href="gallery_fi.html">Galleria</a>
-  <a href="events_fi.html">Tapahtumat</a>
-  <a href="contact_fi.html">Yhteystiedot</a>
+  <a href="index.html" class="active">Koti</a>
+  <a href="services.html">Palvelut</a>
+  <a href="team.html">Tiimimme</a>
+  <a href="gallery.html">Galleria</a>
+  <a href="events.html">Tapahtumat</a>
+  <a href="contact.html">Yhteystiedot</a>
     
   <!-- Language Switcher -->
   <div class="lang-switcher">
@@ -26,26 +27,30 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <header class="hero" data-aos="fade-in">
   <h1>Tervetuloa Raaganjaliin</h1>
   <p>Intialaisen musiikin ja kulttuurin juhlaa Suomessa</p>
 </header>
 
+<!-- WHO WE ARE -->
 <section class="who-we-are" data-aos="fade-up">
   <h2>Keitä olemme</h2>
   <p>
     Raaganjali on intohimoinen yhteisö, joka tuo intialaisen klassisen ja hengellisen musiikin rikkaan perinteen eläväksi Suomessa. 
     Esiintymisten, yhteistyön ja yhteisöllisyyden kautta jaamme äänen ja perinteen iloa maailmalle.
   </p>
-  <img src="images/Group[3].jpg" alt="Raaganjali ryhmäkuva" />
+  <img src="../images/Group[3].jpg" alt="Raaganjali ryhmäkuva" />
 </section>
 
+<!-- CTA -->
 <section class="cta-section" data-aos="zoom-in">
   <h2>Liity mukaan</h2>
   <p>Pysy ajan tasalla tapahtumistamme, esiintymisistämme ja musiikillisista matkoistamme.</p>
-  <a href="contact_fi.html" class="btn">Ota yhteyttä</a>
+  <a href="contact.html" class="btn">Ota yhteyttä</a>
 </section>
 
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-logo">
@@ -55,13 +60,13 @@
     
     <div class="footer-socials">
       <a href="https://www.instagram.com/raaganjalsuomi?igsh=YW9icWszeGRxem91&utm_source=qr" title="Instagram" target="_blank">
-        <img src="images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
+        <img src="../images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
       </a>
       <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" title="Facebook" target="_blank">
-        <img src="images/facebook.svg" alt="Facebook" style="width:24px; height:24px;">
+        <img src="../images/facebook.svg" alt="Facebook" style="width:24px; height:24px;">
       </a>
       <a href="https://youtube.com/@raaganjalisuomi?si=dxVs05CgfTDMBsEv" title="YouTube" target="_blank">
-        <img src="images/youtube.svg" alt="YouTube" style="width:24px; height:24px;">
+        <img src="../images/youtube.svg" alt="YouTube" style="width:24px; height:24px;">
       </a>
     </div>
   </div>
@@ -71,20 +76,17 @@
   </div>
 </footer>
 
+<!-- LANGUAGE SWITCHER SCRIPT -->
 <script>
   function changeLang(lang) {
-    let current = window.location.pathname.split('/').pop();
-
-    if (current === '' || current === 'index.html' || current === 'index_fi.html') {
-      // handle homepage separately
-      window.location.href = lang === 'fi' ? 'index_fi.html' : 'index.html';
-      return;
-    }
+    const current = window.location.pathname.split('/').pop(); // e.g. "index.html"
 
     if (lang === "fi") {
-      window.location.href = current.replace('.html', '_fi.html');
+      // redirect into fi/ folder
+      window.location.href = "fi/" + current;
     } else {
-      window.location.href = current.replace('_fi.html', '.html');
+      // redirect back to root folder (EN)
+      window.location.href = "../" + current.replace('_fi', '');
     }
   }
 </script>
@@ -94,13 +96,8 @@
 <script>
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 10) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
+  navbar.classList.toggle('scrolled', window.scrollY > 10);
 });
 </script>
 </body>
 </html>
-
