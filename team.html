@@ -38,27 +38,27 @@
   <h2>Core Members</h2>
   <div class="core-members">
     <div class="team-card">
-      <img src="images/Soumya[1].jpg" alt="Soumya Velpula">
+      <img src="images/Soumya[1].jpg" alt="Soumya Velpula - President">
       <h3>Soumya Velpula</h3>
       <p>President</p>
     </div>
     <div class="team-card">
-      <img src="images/Lakshmi[4].jpg" alt="Varalakshmi Aripala">
+      <img src="images/Lakshmi[4].jpg" alt="Varalakshmi Aripirala - Vice President">
       <h3>Varalakshmi Aripirala</h3>
       <p>Vice President</p>
     </div>
     <div class="team-card">
-      <img src="images/Ravi{5].jpg" alt="Ravichand Velpula">
+      <img src="images/Ravi[5].jpg" alt="Ravichand Velpula - Treasurer">
       <h3>Ravichand Velpula</h3>
       <p>Treasurer</p>
     </div>
     <div class="team-card">
-      <img src="images/Shrikant[1].jpg" alt="Srikanth Aripala">
+      <img src="images/Shrikant[1].jpg" alt="Srikanth Aripirala - Secretary & PR">
       <h3>Srikanth Aripirala</h3>
       <p>Secretary & PR</p>
     </div>
     <div class="team-card">
-      <img src="images/adrian.jpg" alt="Adrian Gonsalves">
+      <img src="images/adrian.jpg" alt="Adrian Gonsalves - Technical Director">
       <h3>Adrian Gonsalves</h3>
       <p>Technical Director</p>
     </div>
@@ -71,45 +71,44 @@
   <div class="member-slider">
     <div class="member-track">
       <div class="member-slide">
-        <img src="images/Malai{1].jpg" alt="Malai">
+        <img src="images/Malai[1].jpg" alt="Malay Das - Vocalist">
         <h3>Malay Das</h3>
         <p>Vocalist</p>
       </div>
       <div class="member-slide">
-        <img src="images/Satvika{1].jpg" alt="Satvika">
+        <img src="images/Satvika[1].jpg" alt="Satvika Aripirala - Vocalist">
         <h3>Satvika Aripirala</h3>
         <p>Vocalist</p>
       </div>
       <div class="member-slide">
-        <img src="images/Lakshmi[2].jpg" alt="Satvika">
+        <img src="images/Lakshmi[2].jpg" alt="Varalakshmi Aripirala - Vocalist">
         <h3>Varalakshmi Aripirala</h3>
         <p>Vocalist</p>
       </div>
       <div class="member-slide">
-        <img src="images/Arshiya[2].jpg" alt="Member Three">
+        <img src="images/Arshiya[2].jpg" alt="Arshiya - Vocalist">
         <h3>Arshiya</h3>
         <p>Vocalist</p>
       </div>
       <div class="member-slide">
-        <img src="images/Ravi[1].jpg" alt="Member Three">
+        <img src="images/Ravi[1].jpg" alt="Ravichand Velpula - Pianist">
         <h3>Ravichand Velpula</h3>
         <p>Pianist</p>
       </div>
       <div class="member-slide">
-        <img src="images/Allan[1].jpg" alt="Member Three">
+        <img src="images/Allan[1].jpg" alt="Allan Gonsalves - Percussionist">
         <h3>Allan Gonsalves</h3>
         <p>Percussionist</p>
       </div>
       <div class="member-slide">
-        <img src="images/Saket[1].jpg" alt="Member Three">
+        <img src="images/Saket[1].jpg" alt="Saket Aripirala - Guitarist">
         <h3>Saket Aripirala</h3>
         <p>Guitarist</p>
       </div>
       <div class="member-slide">
-        <img src="images/Sachin[1].jpg" alt="Member Three">
+        <img src="images/Sachin[1].jpg" alt="Sachin - Guitarist">
         <h3>Sachin</h3>
         <p>Guitarist</p>
-      </div>
       </div>
     </div>
   </div>
@@ -138,73 +137,66 @@
     <p>&copy; 2025 Raaganjali. All rights reserved.</p>
   </div>
 </footer>
+
 <script>
   function changeLang(lang) {
     const current = window.location.pathname.split('/').pop();
-
     if(lang === "fi") {
-      // redirect to Finnish page (make sure these files exist)
-      window.location.href = current.replace('team.html', 'fi/team_fi.html');
+      window.location.href = current.replace('team.html', 'team_fi.html');
     } else {
-      // redirect to English version
-      window.location.href = current.replace('fi/team_fi.html', 'team.html');
+      window.location.href = current.replace('team_fi.html', 'team.html');
     }
   }
+
+  /* Sticky navbar */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  /* Infinite slider */
+  const track = document.querySelector('.member-track');
+  let slides = document.querySelectorAll('.member-slide');
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[slides.length - 1].cloneNode(true);
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
+  slides = document.querySelectorAll('.member-slide');
+
+  let index = 1;
+  let slideWidth = slides[0].clientWidth;
+  track.style.transform = `translateX(${-slideWidth * index}px)`;
+
+  window.addEventListener("resize", () => {
+    slideWidth = slides[0].clientWidth;
+    track.style.transition = "none";
+    track.style.transform = `translateX(${-slideWidth * index}px)`;
+  });
+
+  track.addEventListener("transitionend", () => {
+    if (slides[index].isEqualNode(firstClone)) {
+      track.style.transition = "none";
+      index = 1;
+      track.style.transform = `translateX(${-slideWidth * index}px)`;
+    }
+    if (slides[index].isEqualNode(lastClone)) {
+      track.style.transition = "none";
+      index = slides.length - 2;
+      track.style.transform = `translateX(${-slideWidth * index}px)`;
+    }
+  });
+
+  function nextSlide() {
+    index++;
+    track.style.transition = "transform 0.6s ease-in-out";
+    track.style.transform = `translateX(${-slideWidth * index}px)`;
+  }
+
+  let autoplay = setInterval(nextSlide, 5000);
+  document.querySelector('.member-slider').addEventListener("mouseenter", () => clearInterval(autoplay));
+  document.querySelector('.member-slider').addEventListener("mouseleave", () => autoplay = setInterval(nextSlide, 5000));
 </script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({ once:true });</script>
-<script>
-/* Sticky navbar */
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 10);
-});
-
-/* Infinite Member slider autoplay */
-const track = document.querySelector('.member-track');
-let slides = document.querySelectorAll('.member-slide');
-
-/* Clone first and last slides for seamless loop */
-const firstClone = slides[0].cloneNode(true);
-const lastClone = slides[slides.length - 1].cloneNode(true);
-track.appendChild(firstClone);
-track.insertBefore(lastClone, slides[0]);
-
-// Update slides NodeList to include the clones
-slides = document.querySelectorAll('.member-slide');
-
-let index = 1;
-let slideWidth = slides[0].clientWidth;
-
-track.style.transform = `translateX(${-slideWidth * index}px)`;
-
-// Adjust slideWidth on window resize (important for responsiveness)
-window.addEventListener("resize", () => {
-  slideWidth = slides[0].clientWidth;
-  track.style.transition = "none";
-  track.style.transform = `translateX(${-slideWidth * index}px)`;
-});
-
-// Transition handling (listener only once!)
-track.addEventListener("transitionend", () => {
-  if (slides[index].isEqualNode(firstClone)) {
-    track.style.transition = "none";
-    index = 1;
-    track.style.transform = `translateX(${-slideWidth * index}px)`;
-  }
-  if (slides[index].isEqualNode(lastClone)) {
-    track.style.transition = "none";
-    index = slides.length - 2;
-    track.style.transform = `translateX(${-slideWidth * index}px)`;
-  }
-});
-
-// Autoplay every 5s
-setInterval(() => {
-  index++;
-  track.style.transition = "transform 0.6s ease-in-out";
-  track.style.transform = `translateX(${-slideWidth * index}px)`;
-}, 5000);
-</script>
 </body>
 </html>
