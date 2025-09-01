@@ -1,2 +1,2 @@
-# Raganjali-website
-Official website for Raganjali, a music NGO.
+# Raaganjali-website
+Official website for Raaganjali, a music NGO.
