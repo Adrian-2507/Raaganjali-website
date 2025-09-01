@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
-  <nav id="navbar">
+
+<!-- NAVIGATION -->
+<nav id="navbar">
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="team.html">Our Team</a>
@@ -25,32 +27,40 @@
   </div>
 </nav>
 
-  <header style="text-align:center; padding:4rem 2rem;" data-aos="fade">
-    <h1>Events</h1>
-  </header>
+<!-- HEADER -->
+<header class="page-head" data-aos="fade">
+  <h1>Events</h1>
+  <p>Celebrating culture, music, and togetherness</p>
+</header>
 
-  <!-- UPCOMING EVENTS -->
-  <section data-aos="fade-up">
-    <h2>🔔 Upcoming Events (2025)</h2>
+<!-- UPCOMING EVENTS -->
+<section data-aos="fade-up">
+  <h2>🔔 Upcoming Events (2025)</h2>
 
-    <h3 style="margin-top:2rem;">🌸 Durga Pooja 3rd October</h3>
-    <p>Hosted by Association of Bengal — devotional music for the celebration.</p>
+  <div class="event-list">
+    <div class="event-item">
+      <h3>🌸 Durga Pooja – 3rd October</h3>
+      <p>Hosted by Association of Bengal — devotional music for the celebration.</p>
+    </div>
 
-    <h3 style="margin-top:2rem;">🎆 Diwali – Swami Ishta Seva 18th October</h3>
-    <p>Traditional devotional music celebrating the festival of lights.</p>
+    <div class="event-item">
+      <h3>🎆 Diwali – Swami Ishta Seva – 18th October</h3>
+      <p>Traditional devotional music celebrating the festival of lights.</p>
+    </div>
 
-    <h3 style="margin-top:2rem;">🪔 (FITA) Dussehra & Bathukamma 19th October</h3>
-    <p>With Finland Telugu Association<br/>
-      Festive music and cultural performances.</p>
-  </section>
+    <div class="event-item">
+      <h3>🪔 Dussehra & Bathukamma – 19th October</h3>
+      <p>With Finland Telugu Association — festive music and cultural performances.</p>
+    </div>
+  </div>
+</section>
 
 <!-- PAST EVENTS -->
 <section data-aos="fade-up" style="margin-top:4rem;">
   <h2 style="text-align:center;">📽️ Past Events</h2>
 
-  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin-top:2rem;">
-
-    <!-- Event 1: [1]Folklore 2025 -->
+  <div class="event-grid">
+    <!-- Event 1 -->
     <div class="event-card">
       <div class="media-container">
         <video width="100%" controls>
@@ -60,13 +70,12 @@
       </div>
       <div class="event-content">
         <h3>Folklore Performance</h3>
-        <p>Andhra and Telangana - Brahmamokate</p>
-        <p>A vibrant showcase of traditional music and culture.</p>
+        <p>Andhra and Telangana — Brahmamokate</p>
         <a href="https://youtu.be/BF-bZC6cUnE?si=5VxmbgRpa_fW2Y6w" target="_blank" class="event-btn youtube">▶ Watch Full Video</a>
       </div>
     </div>
 
-    <!-- Event 1: [2]Folklore 2025 -->
+    <!-- Event 2 -->
     <div class="event-card">
       <div class="media-container">
         <video width="100%" controls>
@@ -76,28 +85,28 @@
       </div>
       <div class="event-content">
         <h3>Folklore Performance</h3>
-        <p>Goa - Hanv Saiba</p>
-        <p>A vibrant showcase of traditional music and culture.</p>
+        <p>Goa — Hanv Saiba</p>
         <a href="https://youtu.be/jq_FLERcfMo?si=0j3ekzPu71Cbq16G" target="_blank" class="event-btn youtube">▶ Watch Full Video</a>
       </div>
     </div>
 
-    <!-- Event 3: India Day 2025 -->-->
+    <!-- Event 3 -->
     <div class="event-card">
       <div class="media-container">
-          <!-- Placeholder image until video is ready -->
-          <img src="images/Group[2].jpg" alt="India Day 2025">
-        </div>
-        <div class="event-content">
+        <img src="images/Group[2].jpg" alt="India Day 2025">
+      </div>
+      <div class="event-content">
         <h3>India Day 2025</h3>
         <p>Raaganjali proudly performed at India Day, celebrating culture, music, and unity.</p>
         <a href="#" class="event-btn youtube" style="pointer-events:none; opacity:0.6;">
-        Watch Highlights (Coming Soon)
+          Watch Highlights (Coming Soon)
         </a>
       </div>
-     </div>
+    </div>
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-logo">
@@ -106,13 +115,13 @@
     </div>
     
     <div class="footer-socials">
-      <a href="https://www.instagram.com/raaganjalsuomi?igsh=YW9icWszeGRxem91&utm_source=qr" title="Instagram" target="_blank">
+      <a href="https://www.instagram.com/raaganjalsuomi" target="_blank">
         <img src="images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
       </a>
-      <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" title="Facebook" target="_blank">
+      <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" target="_blank">
         <img src="images/facebook.svg" alt="Facebook" style="width:24px; height:24px;">
       </a>
-      <a href="https://youtube.com/@raaganjalisuomi?si=dxVs05CgfTDMBsEv" title="YouTube" target="_blank">
+      <a href="https://youtube.com/@raaganjalisuomi" target="_blank">
         <img src="images/youtube.svg" alt="YouTube" style="width:24px; height:24px;">
       </a>
     </div>
@@ -123,45 +132,28 @@
   </div>
 </footer>
 
+<!-- LANGUAGE SWITCHER -->
 <script>
   function changeLang(lang) {
     const current = window.location.pathname.split('/').pop();
-
-    if(lang === "fi") {
-      // redirect to Finnish page (make sure these files exist)
+    if (lang === "fi") {
       window.location.href = current.replace('events.html', 'events_fi.html');
     } else {
-      // redirect to English version
       window.location.href = current.replace('events_fi.html', 'events.html');
     }
   }
 </script>
 
-<!-- Hover Effect Script -->
+<!-- NAVBAR SCROLL -->
 <script>
-  document.querySelectorAll('section div[style*="box-shadow"]').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.style.transform = 'translateY(-5px)';
-      card.style.boxShadow = '0 12px 30px rgba(0,0,0,0.15)';
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'translateY(0)';
-      card.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
-    });
-  });
-</script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ once:true });</script>
-  <script>
   const navbar = document.getElementById('navbar');
-
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
   });
 </script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once:true });</script>
 </body>
 </html>
+
