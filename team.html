@@ -71,7 +71,7 @@
   <div class="member-slider">
     <div class="member-track">
       <div class="member-slide">
-        <img src="images/Malai{1].jpg" alt="Malay Das - Vocalist">
+        <img src="images/Malai[1].jpg" alt="Malay Das - Vocalist">
         <h3>Malay Das</h3>
         <p>Vocalist</p>
       </div>
@@ -141,20 +141,18 @@
 <script>
   function changeLang(lang) {
     const current = window.location.pathname.split('/').pop();
-    if(lang === "fi") {
-      window.location.href = current.replace('team.html', 'team_fi.html');
-    } else {
-      window.location.href = current.replace('team_fi.html', 'team.html');
-    }
+    window.location.href = lang === "fi" 
+      ? current.replace('team.html', 'team_fi.html') 
+      : current.replace('team_fi.html', 'team.html');
   }
 
-  /* Sticky navbar */
+  // Sticky navbar
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 10);
   });
 
-  /* Infinite slider */
+  // Infinite slider
   const track = document.querySelector('.member-track');
   let slides = document.querySelectorAll('.member-slide');
   const firstClone = slides[0].cloneNode(true);
