@@ -140,10 +140,11 @@
 
 <script>
   function changeLang(lang) {
-    const current = window.location.pathname.split('/').pop();
-    window.location.href = lang === "fi" 
-      ? current.replace('team.html', 'team_fi.html') 
-      : current.replace('team_fi.html', 'team.html');
+    if (lang === "fi") {
+      window.location.href = "fi/events.html";
+    } else {
+      window.location.href = "events.html";
+    }
   }
 
   // Sticky navbar
