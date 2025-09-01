@@ -135,14 +135,12 @@
 <!-- LANGUAGE SWITCHER -->
 <script>
   function changeLang(lang) {
-    const current = window.location.pathname.split('/').pop();
-    if (lang === "fi") {
-      window.location.href = current.replace('events.html', 'events_fi.html');
+    if (lang === "en") {
+      window.location.href = "../events.html";
     } else {
-      window.location.href = current.replace('events_fi.html', 'events.html');
+      window.location.href = "events.html";
     }
   }
-</script>
 
 <!-- NAVBAR SCROLL -->
 <script>
