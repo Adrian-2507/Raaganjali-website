@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
- <nav id="navbar">
+
+<!-- NAVIGATION -->
+<nav id="navbar">
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="team.html">Our Team</a>
@@ -25,31 +27,33 @@
   </div>
 </nav>
 
-  <header class="hero" data-aos="fade">
-    <h1>Gallery</h1>
-    <p>Moments from our musical journey</p>
-  </header>
+<!-- HEADER -->
+<header class="page-head" data-aos="fade">
+  <h1>Gallery</h1>
+  <p>Moments from our musical journey</p>
+</header>
 
-  <section class="gallery-container" data-aos="fade-up">
-    <!-- Add your images below -->
-    <div class="gallery-grid">
-      <img src="images/Grp1.jpg" alt="Group Photo 1" />
-      <img src="images/Grp2.jpg" alt="Group Photo 2" />
-      <img src="images/Grp3.jpg" alt="Group Photo 3" />
-      <img src="images/Grp4.jpg" alt="Group Photo 4" />
-      <img src="images/Grp5.jpg" alt="Group Photo 5" />
-      <img src="images/Group[2].jpg" alt="Team Member 1" />
-      <img src="images/Group[3].jpg" alt="Team Member 2" />
-      <img src="images/Lakshmi[1].jpg" alt="Team Member 3" />
-      <img src="images/soumya2.jpg" alt="Team Member 4" />
-      <img src="images/Malai[2].jpg" alt="Team Member 2" />
-      <img src="images/Satvika[3].jpg" alt="Team Member 2" />
-      <img src="images/Ravi[1].jpg" alt="Team Member 2" />
-      <!-- Add more as needed -->
-    </div>
-  </section>
+<!-- GALLERY -->
+<section class="gallery-container" data-aos="fade-up">
+  <div class="gallery-grid">
+    <img src="images/Grp1.jpg" alt="Group Photo 1" />
+    <img src="images/Grp2.jpg" alt="Group Photo 2" />
+    <img src="images/Grp3.jpg" alt="Group Photo 3" />
+    <img src="images/Grp4.jpg" alt="Group Photo 4" />
+    <img src="images/Grp5.jpg" alt="Group Photo 5" />
+    <img src="images/Group[2].jpg" alt="Performance 1" />
+    <img src="images/Group[3].jpg" alt="Performance 2" />
+    <img src="images/Lakshmi[1].jpg" alt="Lakshmi performing" />
+    <img src="images/soumya2.jpg" alt="Soumya performing" />
+    <img src="images/Malai[2].jpg" alt="Malai performing" />
+    <img src="images/Satvika[3].jpg" alt="Satvika performing" />
+    <img src="images/Ravi[1].jpg" alt="Ravi performing" />
+    <!-- Add more as needed -->
+  </div>
+</section>
 
- <footer class="site-footer">
+<!-- FOOTER -->
+<footer class="site-footer">
   <div class="footer-content">
     <div class="footer-logo">
       <h3>Raaganjali</h3>
@@ -73,30 +77,25 @@
     <p>&copy; 2025 Raaganjali. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- LANGUAGE SWITCHER SCRIPT -->
 <script>
   function changeLang(lang) {
-    const current = window.location.pathname.split('/').pop();
-
-    if(lang === "fi") {
-      // redirect to Finnish page (make sure these files exist)
-      window.location.href = current.replace('gallery.html', 'gallery_fi.html');
+    if (lang === "fi") {
+      window.location.href = "fi/gallery.html";
     } else {
-      // redirect to English version
-      window.location.href = current.replace('gallery_fi.html', 'gallery.html');
+      window.location.href = "gallery.html";
     }
   }
 </script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ once:true });</script>
-  <script>
-  const navbar = document.getElementById('navbar');
 
+<!-- SCROLL EFFECTS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once:true });</script>
+<script>
+  const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
   });
 </script>
 </body>
