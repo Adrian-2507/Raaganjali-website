@@ -141,20 +141,20 @@
 <script>
   function changeLang(lang) {
     const current = window.location.pathname.split('/').pop();
-    if(lang === "fi") {
+    if (lang === "fi") {
       window.location.href = current.replace('team.html', 'team_fi.html');
     } else {
       window.location.href = current.replace('team_fi.html', 'team.html');
     }
   }
 
-  /* Sticky navbar */
+  // Sticky navbar
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 10);
   });
 
-  /* Infinite slider */
+  // Infinite slider
   const track = document.querySelector('.member-track');
   let slides = document.querySelectorAll('.member-slide');
   const firstClone = slides[0].cloneNode(true);
