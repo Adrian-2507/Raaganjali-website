@@ -237,19 +237,6 @@ nav a.active, nav a:hover {
 
 /* --- Add this to your style.css --- */
 
-/* --- Blue background for Services page --- */
-.services-bg {
-  background: linear-gradient(135deg, #13336b 80%, #2056b5 100%);
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: 120px; /* Should match navbar height */
-  padding-bottom: 40px;
-}
-
 /* --- Services Cards --- */
 .services-cards {
   display: flex;
