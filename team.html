@@ -62,52 +62,15 @@
       </div>
     </section>
 
-    <!-- Raaganjali Members Slider -->
+    <!-- Raaganjali Members Carousel -->
     <section class="team-shell">
       <h2>Raaganjali Members</h2>
-      <div class="member-slider">
-        <div class="member-track">
-          <div class="member-slide">
-            <img src="images/Malai{1].jpg" alt="Malay Das - Vocalist" class="team-img"/>
-            <h3 class="team-name">Malay Das</h3>
-            <p class="team-role">Vocalist</p>
-          </div>
-          <div class="member-slide">
-            <img src="images/Satvika{1].jpg" alt="Satvika Aripirala - Vocalist" class="team-img"/>
-            <h3 class="team-name">Satvika Aripirala</h3>
-            <p class="team-role">Vocalist</p>
-          </div>
-          <div class="member-slide">
-            <img src="images/Lakshmi[2].jpg" alt="Varalakshmi Aripirala - Vocalist" class="team-img"/>
-            <h3 class="team-name">Varalakshmi Aripirala</h3>
-            <p class="team-role">Vocalist</p>
-          </div>
-          <div class="member-slide">
-            <img src="images/Arshiya[2].jpg" alt="Arshiya - Vocalist" class="team-img"/>
-            <h3 class="team-name">Arshiya</h3>
-            <p class="team-role">Vocalist</p>
-          </div>
-          <div class="member-slide">
-            <img src="images/Ravi[1].jpg" alt="Ravichand Velpula - Pianist" class="team-img"/>
-            <h3 class="team-name">Ravichand Velpula</h3>
-            <p class="team-role">Pianist</p>
-          </div>
-          <div class="member-slide">
-            <img src="images/Allan[1].jpg" alt="Allan Gonsalves - Percussionist" class="team-img"/>
-            <h3 class="team-name">Allan Gonsalves</h3>
-            <p class="team-role">Percussionist</p>
-          </div>
-          <div class="member-slide">
-            <img src="images/Saket[1].jpg" alt="Saket Aripirala - Guitarist" class="team-img"/>
-            <h3 class="team-name">Saket Aripirala</h3>
-            <p class="team-role">Guitarist</p>
-          </div>
-          <div class="member-slide">
-            <img src="images/Sachin[1].jpg" alt="Sachin - Guitarist" class="team-img"/>
-            <h3 class="team-name">Sachin</h3>
-            <p class="team-role">Guitarist</p>
-          </div>
+      <div class="member-carousel-container">
+        <button class="carousel-btn left" onclick="carouselPrev()">&#8592;</button>
+        <div id="member-carousel">
+          <!-- JS will inject member card here -->
         </div>
+        <button class="carousel-btn right" onclick="carouselNext()">&#8594;</button>
       </div>
     </section>
   </main>
@@ -135,5 +98,56 @@
       <p>&copy; 2025 Raaganjali. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Carousel JS -->
+  <script>
+    // Members data
+    const members = [
+      { img: "images/Malai{1].jpg", name: "Malay Das", role: "Vocalist" },
+      { img: "images/Satvika{1].jpg", name: "Satvika Aripirala", role: "Vocalist" },
+      { img: "images/Lakshmi[2].jpg", name: "Varalakshmi Aripirala", role: "Vocalist" },
+      { img: "images/Arshiya[2].jpg", name: "Arshiya", role: "Vocalist" },
+      { img: "images/Ravi[1].jpg", name: "Ravichand Velpula", role: "Pianist" },
+      { img: "images/Allan[1].jpg", name: "Allan Gonsalves", role: "Percussionist" },
+      { img: "images/Saket[1].jpg", name: "Saket Aripirala", role: "Guitarist" },
+      { img: "images/Sachin[1].jpg", name: "Sachin", role: "Guitarist" }
+    ];
+
+    let current = 0;
+    let carouselTimeout;
+
+    function showMember(index) {
+      const member = members[index];
+      const card = `
+        <div class="member-carousel-card">
+          <img src="${member.img}" alt="${member.name} - ${member.role}" class="carousel-img" />
+          <h3 class="carousel-name">${member.name}</h3>
+          <p class="carousel-role">${member.role}</p>
+        </div>
+      `;
+      document.getElementById('member-carousel').innerHTML = card;
+    }
+
+    function carouselPrev() {
+      current = (current - 1 + members.length) % members.length;
+      showMember(current);
+      restartCarousel();
+    }
+    function carouselNext() {
+      current = (current + 1) % members.length;
+      showMember(current);
+      restartCarousel();
+    }
+    function restartCarousel() {
+      clearTimeout(carouselTimeout);
+      carouselTimeout = setTimeout(carouselNext, 5000);
+    }
+    function startCarousel() {
+      showMember(current);
+      carouselTimeout = setTimeout(carouselNext, 5000);
+    }
+
+    document.addEventListener('DOMContentLoaded', startCarousel);
+  </script>
 </body>
 </html>
