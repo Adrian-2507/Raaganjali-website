@@ -1,4 +1,82 @@
-/* --- Logo Text Orange --- */
+/* --- Reset & Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #13336b;
+  background: #fff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* --- Full Background Slider --- */
+.full-bg-slider {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+.slider {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+.slide {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.slider-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0; top: 0;
+  background: linear-gradient(180deg, rgba(19,51,107,0.66) 0%, rgba(255,255,255,0.72) 100%);
+  z-index: 1;
+}
+
+/* --- Navbar --- */
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 10;
+  background-color: #13336bcc;
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  box-shadow: 0 5px 24px rgba(19,51,107,0.10);
+}
+.logo-link {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+.navbar-logo {
+  height: 48px;
+  width: auto;
+  transition: transform 0.2s;
+}
+.logo-link:hover .navbar-logo {
+  transform: scale(1.08) rotate(-3deg);
+  filter: drop-shadow(0 2px 8px orange);
+}
 .navbar-text {
   font-size: 1.7rem;
   font-weight: bold;
@@ -6,6 +84,116 @@
   margin-left: 0.6rem;
   letter-spacing: 1px;
   vertical-align: middle;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex: 1;
+}
+nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.5rem;
+  transition: color 0.2s;
+}
+nav a.active, nav a:hover {
+  color: orange;
+}
+
+/* --- Main Content --- */
+.main-content {
+  position: relative;
+  z-index: 3;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* --- Hero Text Section --- */
+.hero-text {
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  text-shadow: 0 2px 10px rgba(19,51,107,0.45);
+  z-index: 3;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  color: orange;
+  text-shadow: 0 2px 12px #13336b;
+}
+.hero-text p {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+/* --- Who We Are Section --- */
+.who-we-are {
+  max-width: 900px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 2.2rem 2rem 2.2rem 2rem;
+  background: rgba(255,255,255,0.85);
+  border-radius: 1rem;
+  box-shadow: 0 5px 25px rgba(19,51,107,0.12);
+  z-index: 3;
+  border: 2px solid orange;
+}
+.who-we-are h2 {
+  color: #13336b;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.who-we-are p {
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.btn {
+  padding: 0.85rem 1.7rem;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px rgba(19,51,107,0.12);
+  border: none;
+  outline: none;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn.orange {
+  background: orange;
+  color: #fff;
+}
+.btn.orange:hover {
+  background: #e48b13;
+}
+.btn.blue {
+  background: #13336b;
+  color: #fff;
+}
+.btn.blue:hover {
+  background: #2056b5;
 }
 
 /* --- Service Icons Section --- */
@@ -41,13 +229,56 @@
   font-weight: 500;
 }
 
-/* --- Responsive for icons --- */
+/* --- Footer --- */
+.site-footer {
+  background: #13336b;
+  color: #fff;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+  border-top: 4px solid orange;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 10;
+}
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.footer-logo h3 {
+  font-size: 1.2rem;
+  color: orange;
+}
+.footer-socials a img {
+  filter: grayscale(30%);
+  margin: 0 0.5rem;
+  transition: filter 0.2s;
+}
+.footer-socials a:hover img {
+  filter: none;
+}
+.footer-bottom {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .hero-text h1 { font-size: 2.3rem; }
+  .who-we-are { padding: 1.5rem 0.5rem; }
+}
 @media (max-width: 650px) {
-  .services-icons {
-    gap: 1.2rem;
-  }
-  .service-icon img {
-    width: 32px;
-    height: 32px;
-  }
+  #navbar { flex-direction: column; gap: 0.5rem; padding: 0.7rem 0.5rem; }
+  .nav-links { gap: 1rem; }
+  .main-content { padding-top: 80px; padding-bottom: 80px; }
+  .hero-text { margin-top: 1rem; padding-bottom: 1rem; }
+  .cta-buttons { flex-direction: column; gap: 1rem; }
+  .who-we-are { margin: 2rem auto; }
+  .services-icons { gap: 1.2rem; }
+  .service-icon img { width: 32px; height: 32px; }
 }
