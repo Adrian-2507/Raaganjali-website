@@ -11,19 +11,17 @@
 
 <!-- NAVIGATION -->
 <nav id="navbar">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="team.html">Our Team</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="events.html" class="active">Events</a>
-  <a href="contact.html">Contact</a>
-
-  <!-- Language Switcher -->
-  <div class="lang-switcher">
-    <select onchange="changeLang(this.value)">
-      <option value="en" selected>EN</option>
-      <option value="fi">FI</option>
-    </select>
+  <a href="index.html" class="logo-link">
+    <img src="images/Raaganjali Logo.png" alt="Raaganjali Logo" class="navbar-logo" />
+    <span class="navbar-text">Raaganjali</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="team.html">Our Team</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="events.html" class="active">Events</a>
+    <a href="contact.html">Contact</a>
   </div>
 </nav>
 
@@ -132,16 +130,7 @@
   </div>
 </footer>
 
-<!-- LANGUAGE SWITCHER -->
-<script>
-  function changeLang(lang) {
-    if (lang === "fi") {
-      window.location.href = "fi/events.html";
-    } else {
-      window.location.href = "events.html";
-    }
-  }
-</script>
+
 
 <!-- NAVBAR SCROLL -->
 <script>
