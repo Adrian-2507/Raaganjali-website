@@ -302,12 +302,20 @@ nav a.active, nav a:hover {
 /* --- Team Page --- */
 .team-shell {
   margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team-shell h2 {
+  text-align: center;
+  width: 100%;
 }
 .core-members {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 .team-card, .member-slide {
   background: #fff;
