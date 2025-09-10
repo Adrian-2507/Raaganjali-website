@@ -11,19 +11,17 @@
 
 <!-- NAVIGATION -->
 <nav id="navbar">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="team.html">Our Team</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="events.html" class="active">Events</a>
-  <a href="contact.html">Contact</a>
-
-  <!-- Language Switcher -->
-  <div class="lang-switcher">
-    <select onchange="changeLang(this.value)">
-      <option value="en" selected>EN</option>
-      <option value="fi">FI</option>
-    </select>
+  <a href="index.html" class="logo-link">
+    <img src="images/Raaganjali Logo.png" alt="Raaganjali Logo" class="navbar-logo" />
+    <span class="navbar-text">Raaganjali</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="team.html">Our Team</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="events.html" class="active">Events</a>
+    <a href="contact.html">Contact</a>
   </div>
 </nav>
 
@@ -42,12 +40,10 @@
       <h3>🌸 Durga Pooja – 3rd October</h3>
       <p>Hosted by Association of Bengal — devotional music for the celebration.</p>
     </div>
-
     <div class="event-item">
       <h3>🎆 Diwali – Swami Ishta Seva – 18th October</h3>
       <p>Traditional devotional music celebrating the festival of lights.</p>
     </div>
-
     <div class="event-item">
       <h3>🪔 Dussehra & Bathukamma – 19th October</h3>
       <p>With Finland Telugu Association — festive music and cultural performances.</p>
@@ -113,7 +109,6 @@
       <h3>Raaganjali</h3>
       <p>Celebrating Indian Music in Finland</p>
     </div>
-    
     <div class="footer-socials">
       <a href="https://www.instagram.com/raaganjalsuomi" target="_blank">
         <img src="images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
@@ -126,33 +121,14 @@
       </a>
     </div>
   </div>
-
   <div class="footer-bottom">
     <p>&copy; 2025 Raaganjali. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- LANGUAGE SWITCHER -->
-<script>
-  function changeLang(lang) {
-    if (lang === "fi") {
-      window.location.href = "fi/events.html";
-    } else {
-      window.location.href = "events.html";
-    }
-  }
-</script>
-
-<!-- NAVBAR SCROLL -->
-<script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 10);
-  });
-</script>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ once:true });</script>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>
-
