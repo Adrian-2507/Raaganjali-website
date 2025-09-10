@@ -18,6 +18,16 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+/* --- Fix for Fixed Navbar Overlapping Content --- */
+body {
+  padding-top: 80px; /* Adjust this value to match your navbar height */
+}
+
+@media (max-width: 650px) {
+  body {
+    padding-top: 64px; /* Slightly smaller on mobile if your navbar shrinks */
+  }
+}
 
 /* --- Full Background Slider --- */
 .full-bg-slider {
