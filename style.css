@@ -237,6 +237,10 @@ nav a.active, nav a:hover {
 
 /* --- Add this to your style.css --- */
 
+.blue-text {
+  color: #13336b;
+}
+
 /* --- Services Cards --- */
 .services-cards {
   display: flex;
