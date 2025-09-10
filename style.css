@@ -18,16 +18,6 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-/* --- Fix for Fixed Navbar Overlapping Content --- */
-body {
-  padding-top: 80px; /* Adjust this value to match your navbar height */
-}
-
-@media (max-width: 650px) {
-  body {
-    padding-top: 64px; /* Slightly smaller on mobile if your navbar shrinks */
-  }
-}
 
 /* --- Full Background Slider --- */
 .full-bg-slider {
@@ -310,6 +300,9 @@ nav a.active, nav a:hover {
 }
 
 /* --- Team Page --- */
+.page-head {
+  margin-top: 80px;
+}
 .team-shell {
   margin: 2rem 0;
   display: flex;
@@ -554,6 +547,9 @@ nav a.active, nav a:hover {
 }
 
 /* --- Raaganjali Event Cards Styling --- */
+.page-head {
+  margin-top: 80px;
+}
 
 .event-grid {
   display: grid;
