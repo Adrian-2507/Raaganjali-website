@@ -235,6 +235,21 @@ nav a.active, nav a:hover {
   font-weight: 500;
 }
 
+/* --- Add this to your style.css --- */
+
+/* --- Blue background for Services page --- */
+.services-bg {
+  background: linear-gradient(135deg, #13336b 80%, #2056b5 100%);
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 120px;
+  padding-bottom: 40px;
+}
+
 /* --- Services Cards --- */
 .services-cards {
   display: flex;
@@ -262,6 +277,8 @@ nav a.active, nav a:hover {
   width: 56px;
   height: 56px;
   margin-bottom: 1.2rem;
+  object-fit: cover;
+  border-radius: 0.7rem;
   filter: drop-shadow(0 2px 10px orange);
 }
 .service-card h2 {
@@ -283,6 +300,7 @@ nav a.active, nav a:hover {
   .service-card { max-width: 98vw; min-width: 200px; }
 }
 @media (max-width: 650px) {
+  .services-bg { padding-top: 80px; padding-bottom: 40px; }
   .services-cards {
     flex-direction: column;
     align-items: center;
