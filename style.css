@@ -543,6 +543,149 @@ nav a.active, nav a:hover {
   z-index: 1;
 }
 
+/* --- Raaganjali Event Cards Styling --- */
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.event-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(95,61,196,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s cubic-bezier(.25,.8,.25,1), box-shadow 0.25s;
+  text-align: center;
+}
+
+.event-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(95,61,196,0.16), 0 0 0 3px #e7ddff;
+  z-index: 2;
+}
+
+.media-container {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-container img,
+.media-container video {
+  max-width: 95%;
+  max-height: 210px;
+  border-radius: 10px;
+  background: #f4f0ff;
+  box-shadow: 0 2px 10px rgba(95,61,196,0.08);
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 0.8rem 1.3rem 1.5rem 1.3rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-content h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  color: #5f3dc4;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.event-content p {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  font-size: 1.07rem;
+  margin-bottom: 0.9rem;
+  margin-top: 0;
+}
+
+.event-btn {
+  display: inline-block;
+  background-color: #5f3dc4;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.6em 1.4em;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(95,61,196,0.09);
+}
+
+.event-btn:hover {
+  background: #7b47d8;
+  box-shadow: 0 4px 16px rgba(95,61,196,0.18);
+  transform: scale(1.06);
+  color: #fff;
+  text-decoration: none;
+}
+
+.event-btn.youtube {
+  background: #ef233c;
+}
+
+.event-btn.youtube:hover {
+  background: #d90429;
+}
+
+.event-btn[style*="pointer-events:none"] {
+  background: #bbb!important;
+  color: #fff!important;
+  cursor: not-allowed;
+}
+
+/* Center section headings and event lists */
+section[data-aos] h2 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #5f3dc4;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.event-list, .event-item {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive tweaks for mobile */
+@media (max-width: 700px) {
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 1.3rem;
+  }
+  .media-container img,
+  .media-container video {
+    max-height: 150px;
+  }
+  .event-content {
+    padding: 0.7rem 0.6rem 1.2rem 0.6rem;
+  }
+}
+
+/* --- End Raaganjali Event Cards Styling --- */
+
 /* --- Footer --- */
 .site-footer {
   background: #13336b;
