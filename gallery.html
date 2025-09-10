@@ -11,19 +11,17 @@
 
 <!-- NAVIGATION -->
 <nav id="navbar">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="team.html">Our Team</a>
-  <a href="gallery.html" class="active">Gallery</a>
-  <a href="events.html">Events</a>
-  <a href="contact.html">Contact</a>
-
-  <!-- Language Switcher -->
-  <div class="lang-switcher">
-    <select onchange="changeLang(this.value)">
-      <option value="en" selected>EN</option>
-      <option value="fi">FI</option>
-    </select>
+  <a href="index.html" class="logo-link">
+    <img src="images/Raaganjali Logo.png" alt="Raaganjali Logo" class="navbar-logo" />
+    <span class="navbar-text">Raaganjali</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="team.html">Our Team</a>
+    <a href="gallery.html" class="active">Gallery</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
   </div>
 </nav>
 
@@ -59,44 +57,26 @@
       <h3>Raaganjali</h3>
       <p>Celebrating Indian Music in Finland</p>
     </div>
-    
     <div class="footer-socials">
-      <a href="https://www.instagram.com/raaganjalsuomi?igsh=YW9icWszeGRxem91&utm_source=qr" title="Instagram" target="_blank">
+      <a href="https://www.instagram.com/raaganjalsuomi?igsh=YW9icWszeGRxem91&utm_source=qr" target="_blank">
         <img src="images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
       </a>
-      <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" title="Facebook" target="_blank">
+      <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" target="_blank">
         <img src="images/facebook.svg" alt="Facebook" style="width:24px; height:24px;">
       </a>
-      <a href="https://youtube.com/@raaganjalisuomi?si=dxVs05CgfTDMBsEv" title="YouTube" target="_blank">
+      <a href="https://youtube.com/@raaganjalisuomi?si=dxVs05CgfTDMBsEv" target="_blank">
         <img src="images/youtube.svg" alt="YouTube" style="width:24px; height:24px;">
       </a>
     </div>
   </div>
-
   <div class="footer-bottom">
     <p>&copy; 2025 Raaganjali. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- LANGUAGE SWITCHER SCRIPT -->
-<script>
-  function changeLang(lang) {
-    if (lang === "fi") {
-      window.location.href = "fi/gallery.html";
-    } else {
-      window.location.href = "gallery.html";
-    }
-  }
-</script>
-
-<!-- SCROLL EFFECTS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ once:true });</script>
 <script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 10);
-  });
+  AOS.init();
 </script>
 </body>
 </html>
