@@ -5,81 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raaganjali | Services</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
-<nav id="navbar">
-  <a href="index.html">Home</a>
-  <a href="services.html" class="active">Services</a>
-  <a href="team.html">Our Team</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="events.html">Events</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<header class="hero" data-aos="fade">
-  <h1>Our Services</h1>
-  <p>What we bring to the community</p>
-</header>
-
-<section class="services-list" data-aos="fade-up">
-  <h2>Music & Culture</h2>
-  <p>
-    We provide cultural programs, performances, and workshops that celebrate Indian 
-    music and traditions while connecting with the Finnish community.
-  </p>
-</section>
-
-<section class="services-list" data-aos="fade-up">
-  <h2>Workshops</h2>
-  <p>
-    Hands-on learning sessions in classical and devotional music, open to all ages 
-    and levels of experience.
-  </p>
-</section>
-
-<section class="services-list" data-aos="fade-up">
-  <h2>Collaborations</h2>
-  <p>
-    Partnering with cultural organizations and associations across Finland to 
-    celebrate shared values through music.
-  </p>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <h3>Raaganjali</h3>
-      <p>Celebrating Indian Music in Finland</p>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <a href="index.html" class="logo-link">
+      <img src="images/Raaganjali Logo.png" alt="Raaganjali Logo" class="navbar-logo" />
+      <span class="navbar-text">Raaganjali</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="team.html">Our Team</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <div class="footer-socials">
-      <a href="https://www.instagram.com/raaganjalsuomi" target="_blank">
-        <img src="images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
-      </a>
-      <a href="https://www.facebook.com/share/1BACGW6q2k" target="_blank">
-        <img src="images/facebook.svg" alt="Facebook" style="width:24px; height:24px;">
-      </a>
-      <a href="https://youtube.com/@raaganjalisuomi" target="_blank">
-        <img src="images/youtube.svg" alt="YouTube" style="width:24px; height:24px;">
-      </a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Raaganjali. All rights reserved.</p>
-  </div>
-</footer>
+  </nav>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ once:true });</script>
-<script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-</script>
+  <main class="main-content">
+    <section class="hero-text">
+      <h1>Our Services</h1>
+      <p>What we bring to the community</p>
+    </section>
+
+    <!-- Services Cards -->
+    <section class="services-cards">
+      <div class="service-card">
+        <img src="images/micsystem image.jpg" alt="Music & Culture" class="service-img"/>
+        <h2>Music & Culture</h2>
+        <p>
+          We provide cultural programs, performances, and workshops that celebrate Indian 
+          music and traditions while connecting with the Finnish community.
+        </p>
+        <a href="contact.html" class="btn orange">Contact Us</a>
+      </div>
+      <div class="service-card">
+        <img src="images/soundsystem image.jpg" alt="Workshops" class="service-img"/>
+        <h2>Workshops</h2>
+        <p>
+          Hands-on learning sessions in classical and devotional music, open to all ages 
+          and levels of experience.
+        </p>
+        <a href="contact.html" class="btn orange">Contact Us</a>
+      </div>
+      <div class="service-card">
+        <img src="images/microphone.svg" alt="Collaborations" class="service-img"/>
+        <h2>Collaborations</h2>
+        <p>
+          Partnering with cultural organizations and associations across Finland to 
+          celebrate shared values through music.
+        </p>
+        <a href="contact.html" class="btn orange">Contact Us</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>Raaganjali</h3>
+        <p>Celebrating Indian Music in Finland</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/raaganjalsuomi?igsh=YW9icWszeGRxem91&utm_source=qr" target="_blank">
+          <img src="images/instagram.svg" alt="Instagram" style="width:24px; height:24px;">
+        </a>
+        <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" target="_blank">
+          <img src="images/facebook.svg" alt="Facebook" style="width:24px; height:24px;">
+        </a>
+        <a href="https://youtube.com/@raaganjalisuomi?si=dxVs05CgfTDMBsEv" target="_blank">
+          <img src="images/youtube.svg" alt="YouTube" style="width:24px; height:24px;">
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Raaganjali. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
