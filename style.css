@@ -308,7 +308,7 @@ nav a.active, nav a:hover {
   margin-top: 80px;
 }
 .team-shell {
-  margin: 2rem 0;
+  margin: 1.2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -332,6 +332,9 @@ nav a.active, nav a:hover {
   padding: 1.5rem 1rem;
   text-align: center;
   max-width: 200px;
+  min-width: 200px;
+  min-height: 320px;
+  box-sizing: border-box;
   margin: 0.5rem;
 }
 .team-img {
@@ -353,6 +356,16 @@ nav a.active, nav a:hover {
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
+}
+.team-card:hover .team-img,
+.member-slide:hover .team-img {
+  transform: scale(1.12) rotate(-4deg);
+  box-shadow: 0 4px 18px orange;
+}
+.team-card:hover,
+.member-slide:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 24px orange;
 }
 .member-slider {
   overflow-x: auto;
