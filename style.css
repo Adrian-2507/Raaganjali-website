@@ -591,14 +591,61 @@ section[data-aos] h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
 }
 
-.event-item h3, .event-item p {
+.event-item {
+  background: rgba(255,255,255,0.95);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 32px rgba(95,61,196,0.12);
+  border: 2px solid transparent;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  width: 100%;
   text-align: center;
-  margin: 0.2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #5f3dc4 0%, #ef233c 100%);
+}
+
+.event-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(95,61,196,0.18);
+  border-color: rgba(95,61,196,0.2);
+}
+
+.event-item h3 {
+  text-align: center;
+  margin: 0 0 1rem 0;
   font-family: 'Montserrat', sans-serif;
+  color: #5f3dc4;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.event-item p {
+  text-align: center;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #13336b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 /* Past Events Grid & Cards */
@@ -613,25 +660,43 @@ section[data-aos] h2 {
 
 .event-card {
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(95,61,196,0.08);
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(95,61,196,0.1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.25s cubic-bezier(.25,.8,.25,1), box-shadow 0.25s;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   text-align: center;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #5f3dc4 0%, #ef233c 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .event-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 8px 32px rgba(95,61,196,0.16), 0 0 0 3px #e7ddff;
-  z-index: 2;
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(95,61,196,0.2), 0 0 0 3px rgba(95,61,196,0.1);
+  border-color: rgba(95,61,196,0.15);
+}
+
+.event-card:hover::before {
+  transform: scaleX(1);
 }
 
 .media-container {
   width: 100%;
-  padding: 0;
+  padding: 1rem;
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
@@ -640,13 +705,36 @@ section[data-aos] h2 {
 
 .media-container video {
   width: 100%;
-  max-width: 520px;              /* <-- Larger for desktop */
+  max-width: 520px;
   max-height: 250px;
-  border-radius: 12px;
+  border-radius: 16px;
   background: #0e1b33;
-  box-shadow: 0 4px 24px rgba(19,51,107,0.13);
+  box-shadow: 0 6px 28px rgba(19,51,107,0.16);
   margin: auto;
   display: block;
+  transition: transform 0.2s ease;
+}
+
+.media-container img {
+  width: 100%;
+  max-width: 520px;
+  max-height: 250px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 6px 28px rgba(19,51,107,0.16);
+  transition: transform 0.2s ease;
+}
+
+.event-card:hover .media-container video,
+.event-card:hover .media-container img {
+  transform: scale(1.02);
+}
+
+@media (max-width: 700px) {
+  .media-container video {
+    max-width: 100%;
+    max-height: 180px;
+  }
 }
 @media (max-width: 700px) {
   .media-container video {
@@ -656,7 +744,7 @@ section[data-aos] h2 {
 }
 
 .event-content {
-  padding: 0.8rem 1.3rem 1.5rem 1.3rem;
+  padding: 1.2rem 2rem 2rem 2rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -666,21 +754,23 @@ section[data-aos] h2 {
 
 .event-content h3 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.25rem;
-  color: orange;
+  font-size: 1.4rem;
+  color: #5f3dc4;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 2px 10px #13336b;
+  margin-bottom: 0.8rem;
+  text-shadow: none;
+  line-height: 1.3;
 }
 
 .event-content p {
   font-family: 'Montserrat', sans-serif;
-  color: #13336b; /* <-- Fixed from #fff */
-  font-size: 1.07rem;
-  margin-bottom: 0.9rem;
+  color: #13336b;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
   margin-top: 0;
-  text-shadow: 0 1px 12px rgba(32,86,181,0.22);
-
+  text-shadow: none;
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 .event-btn {
@@ -688,23 +778,40 @@ section[data-aos] h2 {
   background-color: #5f3dc4;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
-  padding: 0.6em 1.4em;
+  padding: 0.8rem 2rem;
   border: none;
-  border-radius: 40px;
+  border-radius: 50px;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-  box-shadow: 0 2px 8px rgba(95,61,196,0.09);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 4px 16px rgba(95,61,196,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.event-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
 }
 
 .event-btn:hover {
   background: #7b47d8;
-  box-shadow: 0 4px 16px rgba(95,61,196,0.18);
-  transform: scale(1.06);
+  box-shadow: 0 8px 24px rgba(95,61,196,0.25);
+  transform: translateY(-2px);
   color: #fff;
   text-decoration: none;
+}
+
+.event-btn:hover::before {
+  left: 100%;
 }
 
 .event-btn.youtube {
@@ -725,18 +832,56 @@ section[data-aos] h2 {
 @media (max-width: 700px) {
   .event-grid {
     grid-template-columns: 1fr;
-    gap: 1.3rem;
+    gap: 2rem;
+    padding: 1rem;
   }
+  
+  .event-list {
+    padding: 0 1rem;
+  }
+  
+  .event-item {
+    padding: 1.5rem 1.5rem;
+  }
+  
+  .event-item h3 {
+    font-size: 1.2rem;
+  }
+  
+  .event-item p {
+    font-size: 1rem;
+  }
+  
+  .media-container {
+    padding: 0.8rem;
+  }
+  
   .media-container img,
   .media-container video {
-    max-height: 150px;
+    max-height: 180px;
+    border-radius: 12px;
   }
+  
   .event-content {
-    padding: 0.7rem 0.6rem 1.2rem 0.6rem;
+    padding: 1rem 1.2rem 1.5rem 1.2rem;
   }
+  
+  .event-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .event-content p {
+    font-size: 1rem;
+  }
+  
+  .event-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
   .events-section {
-    margin-top: 1.2rem;
-    margin-bottom: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 

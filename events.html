@@ -9,6 +9,16 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Full-background slider -->
+  <div class="full-bg-slider">
+    <div class="slider-overlay"></div>
+    <div class="slider">
+      <img src="images/Ravi[1].jpg" class="slide" alt="Slide 1" />
+      <img src="images/homepage.jpg" class="slide" alt="Slide 2" />
+      <img src="images/allan_bg.jpg" class="slide" alt="Slide 3" />
+      <img src="images/Satvika[3].jpg" class="slide" alt="Slide 4" />
+    </div>
+  </div>
 
 <!-- NAVIGATION -->
 <nav id="navbar">
@@ -139,6 +149,26 @@
 </script>
 
 <script>
+  // Background slider functionality
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  
+  function showSlide(n) {
+    slides.forEach(slide => slide.style.opacity = '0');
+    slides[n].style.opacity = '1';
+  }
+  
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+  
+  // Initialize first slide
+  if (slides.length > 0) {
+    showSlide(0);
+    setInterval(nextSlide, 4000); // Change slide every 4 seconds
+  }
+  
   // Hamburger menu toggle
   const navbarToggle = document.getElementById('navbar-toggle');
   const navLinks = document.querySelector('.nav-links');
