@@ -837,52 +837,79 @@ section[data-aos] h2 {
 }
 
 
-/* --- Footer --- */
+/* --- Polished Footer Styling --- */
 .site-footer {
   background: #13336b;
   color: #fff;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 2.5rem 1.5rem 1.2rem 1.5rem;
   text-align: center;
   border-top: 4px solid orange;
-  z-index: 3;
+  margin-top: 4rem;
+  box-shadow: 0 -2px 24px rgba(19,51,107,0.12);
 }
 .footer-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 4rem;
   flex-wrap: wrap;
+  margin-bottom: 0.8rem;
 }
 .footer-logo h3 {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: orange;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 0.4rem;
 }
-.footer-socials a img {
-  filter: grayscale(30%);
-  margin: 0 0.5rem;
-  transition: filter 0.2s;
+.footer-logo p {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
 }
-.footer-socials a:hover img {
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.footer-icon {
+  width: 34px;
+  height: 34px;
+  transition: transform 0.2s, filter 0.2s;
+  filter: grayscale(35%) brightness(0.92);
+}
+.footer-socials a:hover .footer-icon {
   filter: none;
+  transform: scale(1.18) rotate(-6deg);
+  box-shadow: 0 2px 12px orange;
 }
 .footer-bottom {
-  margin-top: 1rem;
-  font-size: 0.95rem;
-  color: #fff;
+  margin-top: 1.3rem;
+  font-size: 0.98rem;
+  color: #ffeebd;
+  opacity: 0.7;
+  letter-spacing: 0.2px;
 }
-
-/* --- Responsive --- */
-@media (max-width: 900px) {
-  .hero-text h1 { font-size: 2.3rem; }
-  .who-we-are { padding: 1.5rem 0.5rem; }
-}
-@media (max-width: 650px) {
-  #navbar { flex-direction: column; gap: 0.5rem; padding: 0.7rem 0.5rem; }
-  .nav-links { gap: 1rem; }
-  .main-content { padding-top: 80px; padding-bottom: 40px; }
-  .hero-text { margin-top: 1rem; padding-bottom: 1rem; }
-  .cta-buttons { flex-direction: column; gap: 1rem; }
-  .who-we-are { margin: 2rem auto; }
-  .services-icons { gap: 1.2rem; }
-  .service-icon img { width: 32px; height: 32px; }
+/* Responsive for mobile */
+@media (max-width: 700px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .footer-logo h3 {
+    font-size: 1.35rem;
+  }
+  .footer-logo p {
+    font-size: 0.98rem;
+  }
+  .footer-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .site-footer {
+    padding: 1.2rem 0.5rem 0.8rem 0.5rem;
+    margin-top: 2rem;
+  }
 }
