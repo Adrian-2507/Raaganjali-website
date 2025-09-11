@@ -8,7 +8,11 @@ html, body {
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
   color: #13336b;
-  background: linear-gradient(135deg, #13336b 0%, #5f3dc4 60%, #ef233c 100%);
+  background: linear-gradient(120deg,
+  #13336b 0%,
+  #3056a0 35%,
+  #6a4fb6 65%,
+  #f7c873 100%);
   min-height: 100vh;
   height: 100%;
   overflow-x: hidden;
