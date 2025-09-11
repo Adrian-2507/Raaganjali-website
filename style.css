@@ -563,12 +563,6 @@ nav a.active, nav a:hover {
   z-index: 1;
 }
 
-/* --- Gradient Background --- */
-.gradient-bg {
-  background: linear-gradient(135deg, #e7ddff 0%, #faf9f6 60%, #dbeafe 100%);
-  min-height: 100vh;
-}
-
 /* --- Events Page Styling --- */
 .events-main {
   max-width: 1200px;
