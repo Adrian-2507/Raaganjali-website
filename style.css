@@ -715,15 +715,21 @@ section[data-aos] h2 {
 
 /* --- End Raaganjali Event Cards Styling --- */
 
-/* --- Contact Page Styling --- */
-
-.contact-section {
+/* --- Contact Card Styling --- */
+.contact-card {
   max-width: 700px;
   margin: 3rem auto 3rem auto;
-  background: rgba(255,255,255,0.92);
-  border-radius: 1.2rem;
-  box-shadow: 0 8px 32px rgba(19,51,107,0.11);
+  background: rgba(255,255,255,0.97);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(19,51,107,0.13);
   padding: 2.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-card-inner {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -734,12 +740,12 @@ section[data-aos] h2 {
   flex-direction: column;
   gap: 1.3rem;
   width: 100%;
-  max-width: 430px;
-  margin: 0 auto 2.2rem auto;
+  max-width: 420px;
   background: #faf9f6;
   border-radius: 1rem;
   box-shadow: 0 2px 10px rgba(95,61,196,0.07);
   padding: 2rem 1.2rem;
+  margin-bottom: 2.5rem;
 }
 
 .contact-form label {
@@ -785,13 +791,23 @@ section[data-aos] h2 {
   background: #e48b13;
 }
 
+/* Contact info section inside the card */
 .contact-info {
   text-align: center;
   font-size: 1.07rem;
   color: #13336b;
-  margin-top: 1.2rem;
+  margin-top: 0;
   margin-bottom: 0.5rem;
 }
+
+.contact-info h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #5f3dc4;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
 .contact-info a {
   color: #ef233c;
   text-decoration: none;
@@ -800,38 +816,23 @@ section[data-aos] h2 {
   text-decoration: underline;
 }
 
-.lang-switcher {
-  margin-left: 2rem;
-  display: inline-block;
-  vertical-align: middle;
-}
-.lang-switcher select {
-  font-family: 'Montserrat', 'Segoe UI', sans-serif;
-  font-size: 1rem;
-  background: #efefef;
-  color: #13336b;
-  border: 1.2px solid #5f3dc4;
-  border-radius: 8px;
-  padding: 0.3rem 1rem;
-  cursor: pointer;
-  transition: border-color 0.2s;
-}
-.lang-switcher select:focus {
-  border-color: orange;
-  outline: none;
-}
-
 /* Responsive for mobile */
 @media (max-width: 700px) {
-  .contact-section {
+  .contact-card {
     padding: 1.2rem 0.5rem;
     max-width: 98vw;
     margin: 1rem auto;
+    border-radius: 0.8rem;
+  }
+  .contact-card-inner {
+    width: 100%;
   }
   .contact-form {
     padding: 1rem 0.3rem;
     max-width: 99vw;
     gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.6rem;
   }
 }
 
