@@ -563,124 +563,135 @@ nav a.active, nav a:hover {
   z-index: 1;
 }
 
-/* --- Raaganjali Event Cards Styling --- */
-
-/* Center the page header and prevent overlap with navbar */
-.page-head {
-  text-align: center;
+/* --- Gradient Background --- */
+.gradient-bg {
+  background: linear-gradient(135deg, #e7ddff 0%, #faf9f6 60%, #dbeafe 100%);
+  min-height: 100vh;
 }
 
-/* Section headers (Upcoming & Past Events) */
-section[data-aos] h2 {
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  color: #5f3dc4;
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
+/* --- Events Page Styling --- */
+.events-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
-/* Events section spacing */
 .events-section {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  background: rgba(255,255,255,0.96);
+  border-radius: 2rem;
+  box-shadow: 0 8px 36px rgba(95,61,196,0.11);
+  padding: 2.5rem 2rem;
+  margin: 0 0 2.5rem 0;
 }
 
-/* Upcoming Events List */
+.events-section.upcoming h2 {
+  color: #5f3dc4;
+}
+.events-section.past h2 {
+  color: #13336b;
+}
+
 .event-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
 }
 
-.event-item h3, .event-item p {
-  text-align: center;
-  margin: 0.2rem 0;
+.event-item {
+  background: linear-gradient(90deg, #f3e8ff 0%, #e7ddff 100%);
+  border-radius: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(32,86,181,0.08);
+  transition: box-shadow 0.2s;
+  border-left: 6px solid #5f3dc4;
+}
+.event-item:hover {
+  box-shadow: 0 8px 32px rgba(95,61,196,0.14);
+  border-left-color: #ef233c;
+}
+
+.event-item h3 {
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.18rem;
+  color: #13336b;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+.event-item p {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  margin: 0;
 }
 
-/* Past Events Grid & Cards */
+/* --- Past Events Grid --- */
 .event-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  margin-top: 2rem;
 }
 
+/* --- Event Card --- */
 .event-card {
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(95,61,196,0.08);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 18px rgba(95,61,196,0.09);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.25s cubic-bezier(.25,.8,.25,1), box-shadow 0.25s;
   text-align: center;
+  border: 3px solid transparent;
 }
-
-.event-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 8px 32px rgba(95,61,196,0.16), 0 0 0 3px #e7ddff;
+.event-card:hover, .event-card:focus-within {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 40px rgba(95,61,196,0.17);
+  border-color: #5f3dc4;
   z-index: 2;
+  outline: none;
+}
+.event-card:focus-within {
+  border-color: #ef233c;
 }
 
+/* --- Media Container --- */
 .media-container {
   width: 100%;
-  padding: 0;
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-height: 220px;
+  overflow: hidden;
+  border-radius: 1.2rem 1.2rem 0 0;
+  box-shadow: 0 4px 12px rgba(95,61,196,0.07);
+  background: #e7ddff;
+  margin-bottom: 0.5rem;
 }
-
-.media-container video {
+.media-container img, .media-container video {
   width: 100%;
-  max-width: 520px;              /* <-- Larger for desktop */
-  max-height: 250px;
-  border-radius: 12px;
-  background: #0e1b33;
-  box-shadow: 0 4px 24px rgba(19,51,107,0.13);
-  margin: auto;
-  display: block;
-}
-@media (max-width: 700px) {
-  .media-container video {
-    max-width: 100%;
-    max-height: 150px;
-  }
+  object-fit: cover;
+  border-radius: 1.2rem 1.2rem 0 0;
 }
 
+/* --- Event Content --- */
 .event-content {
-  padding: 0.8rem 1.3rem 1.5rem 1.3rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 1.2rem 1rem 1.5rem 1rem;
 }
-
 .event-content h3 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.25rem;
-  color: orange;
+  color: #5f3dc4;
+  font-size: 1.11rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  text-shadow: 0 2px 10px #13336b;
 }
-
 .event-content p {
   font-family: 'Montserrat', sans-serif;
-  color: #13336b; /* <-- Fixed from #fff */
+  color: #13336b;
   font-size: 1.07rem;
   margin-bottom: 0.9rem;
   margin-top: 0;
-  text-shadow: 0 1px 12px rgba(32,86,181,0.22);
-
 }
 
 .event-btn {
@@ -698,7 +709,6 @@ section[data-aos] h2 {
   transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
   box-shadow: 0 2px 8px rgba(95,61,196,0.09);
 }
-
 .event-btn:hover {
   background: #7b47d8;
   box-shadow: 0 4px 16px rgba(95,61,196,0.18);
@@ -706,23 +716,27 @@ section[data-aos] h2 {
   color: #fff;
   text-decoration: none;
 }
-
 .event-btn.youtube {
   background: #ef233c;
 }
-
 .event-btn.youtube:hover {
   background: #d90429;
 }
-
 .event-btn[style*="pointer-events:none"] {
   background: #bbb!important;
   color: #fff!important;
   cursor: not-allowed;
 }
 
-/* Responsive tweaks for mobile */
+/* --- Responsive Tweaks --- */
 @media (max-width: 700px) {
+  .events-main {
+    padding: 1rem 0.2rem 2rem 0.2rem;
+  }
+  .events-section {
+    padding: 1.3rem 0.7rem;
+    margin-bottom: 1.2rem;
+  }
   .event-grid {
     grid-template-columns: 1fr;
     gap: 1.3rem;
@@ -734,13 +748,8 @@ section[data-aos] h2 {
   .event-content {
     padding: 0.7rem 0.6rem 1.2rem 0.6rem;
   }
-  .events-section {
-    margin-top: 1.2rem;
-    margin-bottom: 1.2rem;
-  }
 }
-
-/* --- End Raaganjali Event Cards Styling --- */
+/* ---End of Event page --- */
 
 /* --- Contact Card Styling --- */
 .contact-card {
