@@ -549,10 +549,6 @@ nav a.active, nav a:hover {
 /* --- Raaganjali Event Cards Styling --- */
 
 /* Make sure page header is not hidden by navbar and is centered */
-.page-head {
-  margin-top: 80px;
-  text-align: center;
-}
 
 .page-head h1,
 .page-head p {
