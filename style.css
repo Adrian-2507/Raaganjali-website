@@ -847,6 +847,7 @@ section[data-aos] h2 {
   box-shadow: 0 -2px 32px rgba(19,51,107,0.18);
   z-index: 100;
   position: relative;
+  text-align: center; /* Center all text in the footer */
 }
 .footer-container {
   max-width: 1200px;
@@ -855,16 +856,19 @@ section[data-aos] h2 {
 }
 .footer-main {
   display: flex;
+  flex-direction: column; /* Stack everything vertically */
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 2.5rem;
   margin-bottom: 0.8rem;
+  text-align: center; /* Center child text */
 }
 .footer-logo {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+  text-align: center;
 }
 .footer-logo-img {
   width: 54px;
