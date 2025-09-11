@@ -675,11 +675,12 @@ section[data-aos] h2 {
 
 .event-content p {
   font-family: 'Montserrat', sans-serif;
-  color: #fff;
+  color: #13336b; /* <-- Fixed from #fff */
   font-size: 1.07rem;
   margin-bottom: 0.9rem;
   margin-top: 0;
-  text-shadow: 0 1px 12px rgba(32,86,181,0.22); /* Optional: adds readability */
+  text-shadow: 0 1px 12px rgba(32,86,181,0.22);
+
 }
 
 .event-btn {
