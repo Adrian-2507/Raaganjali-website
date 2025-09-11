@@ -563,6 +563,12 @@ nav a.active, nav a:hover {
   z-index: 1;
 }
 
+/* --- Remove Gradient for Events Page --- */
+body {
+  background: #faf9f6;
+  min-height: 100vh;
+}
+
 /* --- Events Page Styling --- */
 .events-main {
   max-width: 1200px;
