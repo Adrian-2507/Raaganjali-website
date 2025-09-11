@@ -548,13 +548,9 @@ nav a.active, nav a:hover {
 
 /* --- Raaganjali Event Cards Styling --- */
 
-/* Make sure page header is not hidden by navbar and is centered */
-
-.page-head h1,
-.page-head p {
+/* Center the page header and prevent overlap with navbar */
+.page-head {
   text-align: center;
-  width: 100%;
-  margin: 0 auto;
 }
 
 /* Section headers (Upcoming & Past Events) */
@@ -567,6 +563,7 @@ section[data-aos] h2 {
   font-weight: 700;
 }
 
+/* Events section spacing */
 .events-section {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
