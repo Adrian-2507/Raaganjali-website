@@ -715,6 +715,127 @@ section[data-aos] h2 {
 
 /* --- End Raaganjali Event Cards Styling --- */
 
+/* --- Contact Page Styling --- */
+
+.contact-section {
+  max-width: 700px;
+  margin: 3rem auto 3rem auto;
+  background: rgba(255,255,255,0.92);
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(19,51,107,0.11);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto 2.2rem auto;
+  background: #faf9f6;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(95,61,196,0.07);
+  padding: 2rem 1.2rem;
+}
+
+.contact-form label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #13336b;
+  margin-bottom: 0.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  border: 1.2px solid #5f3dc4;
+  border-radius: 8px;
+  background: #fff;
+  resize: vertical;
+  margin-bottom: 0.5rem;
+  transition: border-color 0.2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: orange;
+  outline: none;
+}
+
+.contact-form button {
+  font-size: 1.08rem;
+  font-family: 'Montserrat', sans-serif;
+  background: orange;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  margin-top: 0.6rem;
+  transition: background 0.2s;
+  box-shadow: 0 2px 12px rgba(19,51,107,0.07);
+}
+.contact-form button:hover {
+  background: #e48b13;
+}
+
+.contact-info {
+  text-align: center;
+  font-size: 1.07rem;
+  color: #13336b;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.contact-info a {
+  color: #ef233c;
+  text-decoration: none;
+}
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.lang-switcher {
+  margin-left: 2rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.lang-switcher select {
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  background: #efefef;
+  color: #13336b;
+  border: 1.2px solid #5f3dc4;
+  border-radius: 8px;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.lang-switcher select:focus {
+  border-color: orange;
+  outline: none;
+}
+
+/* Responsive for mobile */
+@media (max-width: 700px) {
+  .contact-section {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+    margin: 1rem auto;
+  }
+  .contact-form {
+    padding: 1rem 0.3rem;
+    max-width: 99vw;
+    gap: 0.8rem;
+  }
+}
+
+
 /* --- Footer --- */
 .site-footer {
   background: #13336b;
