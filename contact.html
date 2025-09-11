@@ -10,19 +10,20 @@
 </head>
 <body>
   <!-- NAVIGATION -->
-<nav id="navbar">
-  <a href="index.html" class="logo-link">
-    <img src="images/Raaganjali Logo.png" alt="Raaganjali Logo" class="navbar-logo" />
-    <span class="navbar-text">Raaganjali</span>
-  </a>
-  <button id="navbar-toggle" aria-label="Open menu">&#9776;</button>
   <nav id="navbar">
-    <a href="index.html">Home</a>
-    <a href="team.html">About Us</a>
-    <a href="services.html">Services</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html" class="active">Contact</a>
+    <a href="index.html" class="logo-link">
+      <img src="images/Raaganjali Logo.png" alt="Raaganjali Logo" class="navbar-logo" />
+      <span class="navbar-text">Raaganjali</span>
+    </a>
+    <button id="navbar-toggle" aria-label="Open menu">&#9776;</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="team.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
   </nav>
 
   <header class="page-head" data-aos="fade">
@@ -55,37 +56,52 @@
     </div>
   </section>
 
- <footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-main">
-      <div class="footer-logo">
-        <img src="images/raaganjali-logo.svg" alt="Raaganjali Logo" class="footer-logo-img">
-        <div>
-          <h3>Raaganjali</h3>
-          <p>Celebrating Indian Music in Finland</p>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <div class="footer-logo">
+          <img src="images/raaganjali-logo.svg" alt="Raaganjali Logo" class="footer-logo-img">
+          <div>
+            <h3>Raaganjali</h3>
+            <p>Celebrating Indian Music in Finland</p>
+          </div>
+        </div>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/raaganjalsuomi" target="_blank" title="Instagram">
+            <img src="images/instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" target="_blank" title="Facebook">
+            <img src="images/facebook.svg" alt="Facebook">
+          </a>
+          <a href="https://youtube.com/@raaganjalisuomi" target="_blank" title="YouTube">
+            <img src="images/youtube.svg" alt="YouTube">
+          </a>
         </div>
       </div>
-      <div class="footer-socials">
-        <a href="https://www.instagram.com/raaganjalsuomi" target="_blank" title="Instagram">
-          <img src="images/instagram.svg" alt="Instagram">
-        </a>
-        <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" target="_blank" title="Facebook">
-          <img src="images/facebook.svg" alt="Facebook">
-        </a>
-        <a href="https://youtube.com/@raaganjalisuomi" target="_blank" title="YouTube">
-          <img src="images/youtube.svg" alt="YouTube">
-        </a>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Raaganjali. All rights reserved.</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Raaganjali. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ once:true });</script>
   <script>
+    // Hamburger menu toggle
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navbarToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('open');
+    });
+
+    // Optional: Close menu when a link is clicked (for better UX)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Navbar scroll effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 10) {
@@ -95,21 +111,5 @@
       }
     });
   </script>
-
-<script>
-  // Hamburger menu toggle
-  const navbarToggle = document.getElementById('navbar-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  navbarToggle.addEventListener('click', function() {
-    navLinks.classList.toggle('open');
-  });
-
-  // Optional: Close menu when a link is clicked (for better UX)
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-    });
-  });
-</script>
 </body>
 </html>
