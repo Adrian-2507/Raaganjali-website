@@ -9,6 +9,13 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="index.html" class="logo-link">
+    <img src="images/Raaganjali Logo.png" alt="Raaganjali Logo" class="navbar-logo" />
+    <span class="navbar-text">Raaganjali</span>
+  </a>
+  <button id="navbar-toggle" aria-label="Open menu">&#9776;</button>
   <nav id="navbar">
     <a href="index.html">Home</a>
     <a href="team.html">About Us</a>
@@ -88,5 +95,21 @@
       }
     });
   </script>
+
+<script>
+  // Hamburger menu toggle
+  const navbarToggle = document.getElementById('navbar-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  navbarToggle.addEventListener('click', function() {
+    navLinks.classList.toggle('open');
+  });
+
+  // Optional: Close menu when a link is clicked (for better UX)
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+  });
+</script>
 </body>
 </html>
