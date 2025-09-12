@@ -316,6 +316,7 @@ nav a.active, nav a:hover {
 .team-shell h2 {
   text-align: center;
   width: 100%;
+  color: #fff;
 }
 .core-members {
   display: flex;
