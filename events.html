@@ -26,65 +26,67 @@
   </div>
 </nav>
 
-<!-- HEADER -->
-<header class="hero-text" data-aos="fade">
-  <h1>Events</h1>
-  <p>Celebrating culture, music, and togetherness</p>
-</header>
+<!-- EVENTS PAGE HEADER -->
+<section class="events-hero">
+  <h1>Raaganjali Events</h1>
+  <p>Explore our upcoming celebrations and relive magical moments from past performances.</p>
+  <a href="/gallery.html" class="cta-btn">View Gallery</a>
+</section>
 
-<main class="events-main">
-  <!-- UPCOMING EVENTS -->
-  <section class="events-section upcoming" data-aos="fade-up">
-    <h2>🔔 Upcoming Events (2025)</h2>
-    <div class="event-list">
-      <div class="event-item">
-        <h3>🌸 Durga Pooja – 3rd October</h3>
-        <p>Hosted by Association of Bengal — devotional music for the celebration.</p>
+<!-- UPCOMING EVENTS SLIDER -->
+<section class="events-upcoming">
+  <h2>Upcoming Events</h2>
+  <div class="events-slider">
+    <div class="event-slide">
+      <h3>Durga Pooja</h3>
+      <p>3rd October 2025</p>
+      <span>Devotional music with Association of Bengal</span>
+    </div>
+    <div class="event-slide">
+      <h3>Diwali – Swami Ishta Seva</h3>
+      <p>18th October 2025</p>
+      <span>Traditional devotional music for Diwali</span>
+    </div>
+    <div class="event-slide">
+      <h3>Dussehra & Bathukamma</h3>
+      <p>19th October 2025</p>
+      <span>Festive music and cultural performances</span>
+    </div>
+    <!-- Add more upcoming events here -->
+  </div>
+</section>
+
+<!-- PAST EVENTS GRID -->
+<section class="events-past">
+  <h2>Past Events</h2>
+  <div class="event-grid">
+    <div class="event-card">
+      <div class="media-container">
+        <video controls>
+          <source src="videos/performance-video.mp4" type="video/mp4">
+        </video>
       </div>
-      <div class="event-item">
-        <h3>🎆 Diwali – Swami Ishta Seva – 18th October</h3>
-        <p>Traditional devotional music celebrating the festival of lights.</p>
-      </div>
-      <div class="event-item">
-        <h3>🪔 Dussehra & Bathukamma – 19th October</h3>
-        <p>With Finland Telugu Association — festive music and cultural performances.</p>
+      <div class="event-content">
+        <h3>Folklore Performance</h3>
+        <p>Brahmamokate – Andhra and Telangana</p>
+        <a href="https://youtu.be/BF-bZC6cUnE?si=5VxmbgRpa_fW2Y6w" target="_blank" class="event-btn youtube">▶ Watch Full Video</a>
       </div>
     </div>
-  </section>
-
-  <!-- PAST EVENTS -->
- <section class="events-section past" data-aos="fade-up">
-  <h2>📽️ Past Events</h2>
-  <div class="event-grid">
     <div class="event-card">
       <div class="media-container">
         <img src="images/Group[2].jpg" alt="India Day 2025">
       </div>
       <div class="event-content">
         <h3>India Day 2025</h3>
-        <p>Raaganjali proudly performed at India Day.</p>
-        <a href="#" class="event-btn youtube" style="pointer-events:none; opacity:0.6;">
-          Watch Highlights (Coming Soon)
-        </a>
+        <p>Raaganjali performed at India Day, celebrating culture, music, and unity.</p>
+        <a href="#" class="event-btn youtube" style="pointer-events:none; opacity:0.6;">Watch Highlights (Coming Soon)</a>
       </div>
     </div>
-    <div class="event-card">
-      <div class="media-container">
-        <video width="100%" controls>
-          <source src="videos/performance video.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="event-content">
-        <h3>Folklore Performance</h3>
-        <p>Andhra and Telangana — Brahmamokate</p>
-        <a href="https://youtu.be/BF-bZC6cUnE?si=5VxmbgRpa_fW2Y6w" target="_blank" class="event-btn youtube">▶ Watch Full Video</a>
-      </div>
-    </div>
+    <!-- Add more cards as needed -->
   </div>
 </section>
-</main>
 
-<!-- FOOTER -->
+<!-- FOOTER (your provided version, unchanged) -->
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-main">
@@ -113,6 +115,51 @@
   </div>
 </footer>
 
+<!-- JS: Drag-to-Scroll Slider Script (just before </body>) -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.querySelector('.events-slider');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  if (slider) {
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2; //scroll-fast
+      slider.scrollLeft = scrollLeft - walk;
+    });
+    // Touch support
+    let touchStartX = 0;
+    let touchScrollLeft = 0;
+    slider.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].pageX;
+      touchScrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('touchmove', (e) => {
+      const x = e.touches[0].pageX;
+      const walk = (x - touchStartX) * 2;
+      slider.scrollLeft = touchScrollLeft - walk;
+    });
+  }
+});
+</script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
