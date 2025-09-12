@@ -569,7 +569,7 @@ nav a.active, nav a:hover {
 /* HERO/HEADER */
 .events-hero {
   text-align: center;
-  padding: 3rem 1rem 2rem 1rem;
+  padding: 6rem 1rem 2rem 1rem; /* increased top padding for navbar! */
   background: linear-gradient(90deg, #13336b 70%, #5f3dc4 110%);
   color: #fff;
 }
@@ -785,7 +785,7 @@ nav a.active, nav a:hover {
 /* --- Responsive Tweaks --- */
 @media (max-width: 700px) {
   .events-hero {
-    padding: 2rem 0.5rem 1rem 0.5rem;
+    padding: 4.5rem 0.5rem 1rem 0.5rem; /* smaller top padding for mobile */
   }
   .events-slider {
     gap: 1rem;
