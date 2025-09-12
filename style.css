@@ -563,16 +563,126 @@ nav a.active, nav a:hover {
   z-index: 1;
 }
 
-/* --- Remove Gradient for Events Page --- */
-body {
-  background: #faf9f6;
-  min-height: 100vh;
+
+/* --- Raaganjali Events Page CSS --- */
+
+/* HERO/HEADER */
+.events-hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem 1rem;
+  background: linear-gradient(90deg, #13336b 70%, #5f3dc4 110%);
+  color: #fff;
 }
-/* --- Events Page Styling --- */
+.events-hero h1 {
+  font-size: 2.7rem;
+  color: orange;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 0 2px 12px #13336b;
+}
+.events-hero p {
+  font-size: 1.18rem;
+  color: #fff;
+}
+.cta-btn {
+  display: inline-block;
+  margin-top: 1.3rem;
+  padding: 0.9rem 2.1rem;
+  background: orange;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  border-radius: 40px;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 12px rgba(19,51,107,0.11);
+  text-decoration: none;
+  transition: background 0.25s, transform 0.22s;
+}
+.cta-btn:hover {
+  background: #e48b13;
+  transform: scale(1.05);
+}
+
+/* SECTION HEADINGS */
+.events-upcoming h2,
+.events-past h2 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px #13336b;
+}
+
+/* UPCOMING EVENTS SLIDER */
+.events-slider {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  margin-bottom: 2.5rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #5f3dc4 #13336b;
+}
+.event-slide {
+  background: #5f3dc4;
+  color: #fff;
+  min-width: 270px;
+  max-width: 320px;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 18px rgba(95,61,196,0.13);
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.22s, box-shadow 0.22s;
+  scroll-snap-align: start;
+  cursor: grab;
+  user-select: none;
+}
+.event-slide:active {
+  cursor: grabbing;
+}
+.event-slide:hover {
+  background: orange;
+  color: #fff;
+  transform: scale(1.06);
+  box-shadow: 0 8px 32px rgba(255,140,0,0.13);
+}
+.event-slide h3 {
+  font-size: 1.13rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  color: #fff;
+}
+.event-slide p {
+  font-size: 1.03rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  color: #ffeebd;
+}
+.event-slide span {
+  font-size: 0.98rem;
+  opacity: 0.95;
+}
+
+/* PAST EVENTS GRID & CARDS */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
 .event-card {
-  background: rgba(19,51,107,0.93);   /* Deep blue, strong contrast */
+  background: rgba(19,51,107,0.95);
   border-radius: 1.5rem;
-  box-shadow: 0 4px 18px rgba(95,61,196,0.18);
+  box-shadow: 0 4px 18px rgba(95,61,196,0.16);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -580,21 +690,14 @@ body {
   transition: transform 0.25s cubic-bezier(.25,.8,.25,1), box-shadow 0.25s;
   text-align: center;
   border: 3px solid transparent;
-  min-width: 300px;
-  max-width: 380px;
 }
 .event-card:hover, .event-card:focus-within {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 40px rgba(95,61,196,0.28);
+  transform: scale(1.03) translateY(-7px);
+  box-shadow: 0 10px 40px rgba(95,61,196,0.27);
   border-color: orange;
   z-index: 2;
   outline: none;
 }
-.event-card:focus-within {
-  border-color: #ef233c;
-}
-
-/* --- Media Container --- */
 .media-container {
   width: 100%;
   max-height: 220px;
@@ -620,8 +723,6 @@ body {
   background: #0e1b33;
   border: 2px solid #5f3dc4;
 }
-
-/* --- Event Content --- */
 .event-content {
   padding: 1.2rem 1rem 1.5rem 1rem;
   flex: 1;
@@ -647,45 +748,6 @@ body {
   margin-top: 0;
   text-shadow: 0 1px 12px rgba(32,86,181,0.22);
 }
-
-/* --- Event Grid --- */
-.event-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-/* --- Upcoming Events --- */
-.event-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.2rem;
-  margin-top: 1.5rem;
-}
-.event-item h3, .event-item p {
-  text-align: center;
-  margin: 0.2rem 0;
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
-  text-shadow: 0 2px 10px #13336b;
-}
-
-/* --- Section Headings --- */
-section[data-aos] h2 {
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
-  text-shadow: 0 2px 10px #13336b;
-}
-
-/* --- Event Button --- */
 .event-btn {
   display: inline-block;
   background-color: #5f3dc4;
@@ -722,19 +784,28 @@ section[data-aos] h2 {
 
 /* --- Responsive Tweaks --- */
 @media (max-width: 700px) {
+  .events-hero {
+    padding: 2rem 0.5rem 1rem 0.5rem;
+  }
+  .events-slider {
+    gap: 1rem;
+    padding: 0.7rem 0;
+    margin-bottom: 1.2rem;
+  }
   .event-grid {
     grid-template-columns: 1fr;
     gap: 1.3rem;
   }
   .media-container img,
   .media-container video {
-    max-height: 150px;
+    max-height: 130px;
   }
   .event-content {
     padding: 0.7rem 0.6rem 1.2rem 0.6rem;
   }
 }
 /* ---End of Event page --- */
+
 
 /* --- Contact Card Styling --- */
 .contact-card {
