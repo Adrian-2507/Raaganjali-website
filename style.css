@@ -156,6 +156,7 @@ nav a.active, nav a:hover {
   margin-bottom: 1rem;
   letter-spacing: 2px;
   color: orange;
+  text-align: center;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 .hero-text p {
@@ -314,6 +315,7 @@ nav a.active, nav a:hover {
 
 .blue-text {
   color: #13336b;
+  text-align: center;
 }
 
 /* --- Services Cards --- */
