@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <!-- Swiper CSS for slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
 <!-- NAVIGATION -->
@@ -33,26 +35,29 @@
   <a href="/gallery.html" class="cta-btn">View Gallery</a>
 </section>
 
-<!-- UPCOMING EVENTS SLIDER -->
+<!-- UPCOMING EVENTS SLIDER (Swiper version) -->
 <section class="events-upcoming">
   <h2>Upcoming Events</h2>
-  <div class="events-slider">
-    <div class="event-slide">
-      <h3>Durga Pooja</h3>
-      <p>3rd October 2025</p>
-      <span>Devotional music with Association of Bengal</span>
+  <div class="swiper events-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <h3>Durga Pooja</h3>
+        <p>3rd October 2025</p>
+        <span>Devotional music with Association of Bengal</span>
+      </div>
+      <div class="swiper-slide">
+        <h3>Diwali – Swami Ishta Seva</h3>
+        <p>18th October 2025</p>
+        <span>Traditional devotional music for Diwali</span>
+      </div>
+      <div class="swiper-slide">
+        <h3>Dussehra & Bathukamma</h3>
+        <p>19th October 2025</p>
+        <span>Festive music and cultural performances</span>
+      </div>
+      <!-- Add more upcoming events here -->
     </div>
-    <div class="event-slide">
-      <h3>Diwali – Swami Ishta Seva</h3>
-      <p>18th October 2025</p>
-      <span>Traditional devotional music for Diwali</span>
-    </div>
-    <div class="event-slide">
-      <h3>Dussehra & Bathukamma</h3>
-      <p>19th October 2025</p>
-      <span>Festive music and cultural performances</span>
-    </div>
-    <!-- Add more upcoming events here -->
+    <div class="swiper-pagination"></div>
   </div>
 </section>
 
@@ -137,49 +142,34 @@
   </div>
 </footer>
 
-<!-- JS: Drag-to-Scroll Slider Script (just before </body>) -->
+<!-- Swiper JS for the slider (after all other scripts, before </body>) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const slider = document.querySelector('.events-slider');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  if (slider) {
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('active');
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2; //scroll-fast
-      slider.scrollLeft = scrollLeft - walk;
-    });
-    // Touch support
-    let touchStartX = 0;
-    let touchScrollLeft = 0;
-    slider.addEventListener('touchstart', (e) => {
-      touchStartX = e.touches[0].pageX;
-      touchScrollLeft = slider.scrollLeft;
-    });
-    slider.addEventListener('touchmove', (e) => {
-      const x = e.touches[0].pageX;
-      const walk = (x - touchStartX) * 2;
-      slider.scrollLeft = touchScrollLeft - walk;
-    });
-  }
+  var swiper = new Swiper('.events-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 18,
+    loop: true,
+    speed: 650,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 4200,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      700: {
+        slidesPerView: 2,
+        spaceBetween: 24,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 32,
+      }
+    }
+  });
 });
 </script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -196,51 +186,6 @@ document.addEventListener('DOMContentLoaded', function() {
       navLinks.classList.remove('open');
     });
   });
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const slider = document.querySelector('.events-slider');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  if (slider) {
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('active');
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
-      slider.scrollLeft = scrollLeft - walk;
-    });
-    // Touch support
-    let touchStartX = 0;
-    let touchScrollLeft = 0;
-    slider.addEventListener('touchstart', (e) => {
-      touchStartX = e.touches[0].pageX;
-      touchScrollLeft = slider.scrollLeft;
-    });
-    slider.addEventListener('touchmove', (e) => {
-      const x = e.touches[0].pageX;
-      const walk = (x - touchStartX) * 2;
-      slider.scrollLeft = touchScrollLeft - walk;
-    });
-  }
-});
 </script>
 </body>
 </html>
