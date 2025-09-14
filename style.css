@@ -689,60 +689,57 @@ nav a.active, nav a:hover {
   text-shadow: 0 2px 10px #13336b;
 }
 
-/* UPCOMING EVENTS SLIDER */
-.events-slider {
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-  padding: 1rem 0;
-  margin-bottom: 2.5rem;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: #5f3dc4 #13336b;
+/* --- Add/Replace for Swiper (Slider) --- */
+.events-upcoming .swiper {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
 }
-.event-slide {
+.events-upcoming .swiper-slide {
   background: #5f3dc4;
   color: #fff;
-  min-width: 270px;
-  max-width: 320px;
   border-radius: 1rem;
-  padding: 2rem 1rem;
   box-shadow: 0 4px 18px rgba(95,61,196,0.13);
   font-family: 'Montserrat', sans-serif;
+  padding: 2rem 1rem;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   transition: transform 0.22s, box-shadow 0.22s;
-  scroll-snap-align: start;
-  cursor: grab;
-  user-select: none;
 }
-.event-slide:active {
-  cursor: grabbing;
-}
-.event-slide:hover {
-  background: orange;
-  color: #fff;
-  transform: scale(1.06);
-  box-shadow: 0 8px 32px rgba(255,140,0,0.13);
-}
-.event-slide h3 {
+.events-upcoming .swiper-slide h3 {
   font-size: 1.13rem;
   font-weight: 700;
   margin-bottom: 0.7rem;
   color: #fff;
 }
-.event-slide p {
+.events-upcoming .swiper-slide p {
   font-size: 1.03rem;
   font-weight: 500;
   margin-bottom: 0.6rem;
   color: #ffeebd;
 }
-.event-slide span {
+.events-upcoming .swiper-slide span {
   font-size: 0.98rem;
   opacity: 0.95;
+  color: #ffeebd;
 }
+.events-upcoming .swiper-pagination {
+  margin-top: 12px;
+}
+
+@media (max-width: 700px) {
+  .events-upcoming .swiper {
+    max-width: 95vw;
+  }
+  .events-upcoming .swiper-slide {
+    padding: 1.2rem 0.5rem;
+  }
+}
+/* Remove the old .events-slider and .event-slide styles from your CSS. 
+   The rest of your CSS (navbar, hero, grid, etc.) can stay unchanged. */
+
 
 /* PAST EVENTS GRID & CARDS */
 .event-grid {
