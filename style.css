@@ -689,56 +689,71 @@ nav a.active, nav a:hover {
   text-shadow: 0 2px 10px #13336b;
 }
 
-/* --- Add/Replace for Swiper (Slider) --- */
-.events-upcoming .swiper {
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-}
+/* UPCOMING EVENTS SWIPER SLIDER - RECTANGULAR CARDS WITH ZOOM EFFECT */
 .events-upcoming .swiper-slide {
-  background: #5f3dc4;
+  background: linear-gradient(120deg, #5f3dc4 0%, #825fd6 100%);
   color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 18px rgba(95,61,196,0.13);
+  border-radius: 28px;
+  box-shadow: 0 2px 28px rgba(95,61,196,0.18);
   font-family: 'Montserrat', sans-serif;
-  padding: 2rem 1rem;
+  padding: 2.2rem 1.3rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.22s, box-shadow 0.22s;
+  transition: 
+    transform 0.33s cubic-bezier(.25,.8,.25,1), 
+    box-shadow 0.33s cubic-bezier(.25,.8,.25,1),
+    background 0.24s;
+  margin-bottom: 16px;
+  min-height: 320px;
+  /* Rectangle shape */
+  min-width: 270px;
+  max-width: 315px;
 }
+
+.events-upcoming .swiper-slide:hover,
+.events-upcoming .swiper-slide:focus {
+  transform: scale(1.07) translateY(-6px);
+  box-shadow: 0 8px 36px rgba(130,95,214,0.22);
+  background: linear-gradient(120deg, #825fd6 0%, #ff9800 100%);
+  z-index: 2;
+}
+
 .events-upcoming .swiper-slide h3 {
-  font-size: 1.13rem;
+  font-size: 1.16rem;
   font-weight: 700;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
   color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px #5f3dc4;
 }
 .events-upcoming .swiper-slide p {
-  font-size: 1.03rem;
+  font-size: 1.04rem;
   font-weight: 500;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.7rem;
   color: #ffeebd;
 }
 .events-upcoming .swiper-slide span {
-  font-size: 0.98rem;
-  opacity: 0.95;
+  font-size: 0.99rem;
+  opacity: 0.96;
   color: #ffeebd;
 }
+
 .events-upcoming .swiper-pagination {
   margin-top: 12px;
 }
 
 @media (max-width: 700px) {
   .events-upcoming .swiper {
-    max-width: 95vw;
+    max-width: 98vw;
   }
   .events-upcoming .swiper-slide {
-    padding: 1.2rem 0.5rem;
+    min-width: 70vw;
+    padding: 1.25rem 0.6rem;
+    min-height: 220px;
   }
 }
-/* Remove the old .events-slider and .event-slide styles from your CSS. 
-   The rest of your CSS (navbar, hero, grid, etc.) can stay unchanged. */
 
 
 /* PAST EVENTS GRID & CARDS */
