@@ -127,60 +127,77 @@ nav a.active, nav a:hover {
 }
 
 /* --- Hero Text Section --- */
-.hero-text {
+.hero-section {
+  width: 100vw;
+  padding: 3.5rem 2rem 2.3rem 2rem;
+  background: linear-gradient(90deg, #13336b 70%, #5f3dc4 110%);
+  margin-bottom: 2rem;
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
   margin: 0 auto;
-  text-align: center;
-  color: #fff;
+  gap: 2rem;
   width: 100%;
-  margin-top: 110px;
-  padding-bottom: 2rem;
+}
+.hero-text {
+  text-align: left;
+  color: #fff;
+  flex: 1;
+  margin: 0;
+  padding: 0;
   z-index: 3;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
-
-.hero-overlay {
-  background: rgba(19, 51, 107, 0.75);
-  backdrop-filter: blur(8px);
-  border-radius: 1.5rem;
-  padding: 3rem 2.5rem;
-  max-width: 700px;
-  width: 90%;
-  box-shadow: 0 8px 32px rgba(19, 51, 107, 0.3);
-  border: 1px solid rgba(255, 140, 0, 0.2);
-}
-
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
+  margin-bottom: 0.6rem;
+  letter-spacing: 1px;
   color: orange;
-  text-align: center;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero-text .hero-divider {
+  margin: 0 0.7rem;
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 400;
+}
+.hero-text .hero-sub {
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
 }
 .hero-text p {
-  font-size: 1.25rem;
+  font-size: 1.07rem;
   color: #fff;
-  margin-bottom: 2rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
-
 .hero-cta-btn {
   display: inline-block;
-  padding: 1rem 2.5rem;
+  padding: 1rem 2.3rem;
   background: orange;
   color: #fff;
   text-decoration: none;
   border-radius: 30px;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   font-family: 'Montserrat', sans-serif;
   box-shadow: 0 4px 16px rgba(255, 140, 0, 0.3);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border: 2px solid transparent;
+  margin-left: 2rem;
 }
-
 .hero-cta-btn:hover {
   background: #e48b13;
   transform: translateY(-2px);
@@ -189,36 +206,49 @@ nav a.active, nav a:hover {
 }
 
 /* Hero responsive styles */
-@media (max-width: 700px) {
-  .hero-text {
-    margin-top: 80px;
-  }
-  .hero-overlay {
-    padding: 2.5rem 2rem;
-    width: 95%;
-  }
-  .hero-text h1 {
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-  }
-  .hero-text p {
-    font-size: 1.1rem;
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
   }
   .hero-cta-btn {
-    padding: 0.9rem 2rem;
+    margin-left: 0;
+    margin-top: 1.2rem;
+  }
+  .hero-section {
+    padding-top: 2.3rem;
+    padding-bottom: 1.6rem;
+  }
+}
+@media (max-width: 700px) {
+  .hero-section {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+  .hero-text h1 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+  .hero-text .hero-divider,
+  .hero-text .hero-sub {
+    font-size: 0.99rem;
+  }
+  .hero-text p {
     font-size: 1rem;
+  }
+  .hero-cta-btn {
+    padding: 0.9rem 1.7rem;
+    font-size: 0.99rem;
   }
 }
 
 @media (max-width: 500px) {
-  .hero-overlay {
-    padding: 2rem 1.5rem;
-  }
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 1.1rem;
   }
   .hero-text p {
-    font-size: 1rem;
+    font-size: 0.93rem;
   }
 }
 
@@ -310,7 +340,6 @@ nav a.active, nav a:hover {
   margin-top: 0.2rem;
   font-weight: 500;
 }
-
 /* --- Add this to your style.css --- */
 
 .blue-text {
