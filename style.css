@@ -1157,7 +1157,7 @@ body.black-bg {
   min-height: 0;
 }
 
-/* Visible divider lines */
+/* Divider lines: more visible */
 @media (min-width: 900px) {
   .footer-links {
     border-right: 2.5px solid rgba(255,255,255,0.27);
@@ -1319,20 +1319,23 @@ body.black-bg {
   box-shadow: 0 2px 12px orange;
 }
 
-/* Legal/Bottom Bar: always centered, stacked */
+/* Legal/Bottom Bar: centered, stacked under logo */
 .footer-bottom {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 0.3rem;
+  margin: 0.5rem 0 0 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
 }
 .footer-legal-stack {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.15rem;
   width: 100%;
 }
 .footer-copyright {
@@ -1350,7 +1353,7 @@ body.black-bg {
   gap: 0.6rem;
   justify-content: center;
   align-items: center;
-  margin-top: 0.1rem;
+  margin: 0.1rem 0 0 0;
 }
 .footer-legal a {
   color: #ffeebd;
