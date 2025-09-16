@@ -1148,12 +1148,28 @@ body.black-bg {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   gap: 2.2rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
   text-align: left;
   width: 100%;
+  min-height: 0;
+}
+
+/* Subtle vertical dividers between sections on desktop */
+@media (min-width: 900px) {
+  .footer-links {
+    border-right: 1.5px solid rgba(255,255,255,0.09);
+    padding-right: 2.5rem;
+  }
+  .footer-logo {
+    padding: 0 2.5rem;
+  }
+  .footer-socials {
+    border-left: 1.5px solid rgba(255,255,255,0.09);
+    padding-left: 2.5rem;
+  }
 }
 
 /* Quick Links Block */
@@ -1260,6 +1276,16 @@ body.black-bg {
   gap: 1.2rem;
   align-items: flex-end;
 }
+.footer-social-icons a {
+  display: inline-block;
+  border-radius: 50%;
+  transition: background 0.2s;
+  padding: 2px;
+}
+.footer-social-icons a:hover,
+.footer-social-icons a:focus {
+  background: rgba(255,140,0,0.13);
+}
 .footer-social-icons a img {
   width: 32px;
   height: 32px;
@@ -1308,6 +1334,14 @@ body.black-bg {
 }
 
 /* Responsive Footer */
+@media (max-width: 900px) {
+  .footer-links,
+  .footer-logo,
+  .footer-socials {
+    border: none;
+    padding: 0;
+  }
+}
 @media (max-width: 800px) {
   .footer-main {
     flex-direction: column;
