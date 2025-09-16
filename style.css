@@ -252,6 +252,125 @@ nav a.active, nav a:hover {
   }
 }
 
+/* --- Banner Slider Section --- */
+.homepage-events-banner {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #5f3dc4 0%, #f7c873 100%);
+  padding: 2.5rem 0 1.2rem 0;
+}
+.banner-slider {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #825fd6 #f7c873;
+  padding: 0.7rem 1rem;
+  border-radius: 32px;
+  box-shadow: 0 4px 32px rgba(95,61,196,0.13);
+  background: rgba(255,255,255,0.04);
+  max-width: 1100px;
+  width: 98vw;
+  scroll-behavior: smooth;
+}
+.banner-slide {
+  min-width: 300px;
+  max-width: 340px;
+  background: linear-gradient(120deg, #5f3dc4 0%, #825fd6 100%);
+  color: #fff;
+  border-radius: 28px;
+  box-shadow: 0 2px 28px rgba(95,61,196,0.18);
+  font-family: 'Montserrat', sans-serif;
+  padding: 2.2rem 1.3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.33s cubic-bezier(.25,.8,.25,1),
+    box-shadow 0.33s cubic-bezier(.25,.8,.25,1),
+    background 0.24s;
+  margin-bottom: 12px;
+}
+.banner-slide:hover,
+.banner-slide:focus {
+  transform: scale(1.07) translateY(-6px);
+  box-shadow: 0 8px 36px rgba(130,95,214,0.22);
+  background: linear-gradient(120deg, #825fd6 0%, #ff9800 100%);
+  z-index: 2;
+}
+.banner-slide h3 {
+  font-size: 1.16rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px #5f3dc4;
+}
+.banner-slide p {
+  font-size: 1.04rem;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+  color: #ffeebd;
+}
+.banner-slide span {
+  font-size: 0.99rem;
+  opacity: 0.96;
+  color: #ffeebd;
+}
+
+.banner-slider::-webkit-scrollbar {
+  height: 8px;
+  border-radius: 5px;
+}
+.banner-slider::-webkit-scrollbar-thumb {
+  background: #825fd6;
+  border-radius: 5px;
+}
+.banner-slider::-webkit-scrollbar-track {
+  background: #f7c873;
+  border-radius: 5px;
+}
+
+.banner-pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+}
+.banner-dot {
+  width: 14px;
+  height: 14px;
+  background: #ffeebd;
+  border-radius: 50%;
+  opacity: 0.45;
+  cursor: pointer;
+  transition: background 0.23s, opacity 0.24s;
+  border: 2px solid #825fd6;
+  box-sizing: border-box;
+}
+.banner-dot.active {
+  background: orange;
+  opacity: 1;
+  border-color: #ff9800;
+}
+
+@media (max-width: 700px) {
+  .banner-slide {
+    min-width: 70vw;
+    padding: 1.25rem 0.6rem;
+  }
+  .banner-slider {
+    gap: 1.2rem;
+    padding: 0.5rem 0.5rem;
+  }
+}
+
 /* --- Who We Are Section --- */
 .who-we-are {
   max-width: 900px;
