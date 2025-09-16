@@ -24,6 +24,20 @@ body {
   flex-direction: column;
 }
 
+/* Add this: */
+.main-content {
+  padding-top: 80px; /* Adjust to match your navbar height (try 70-80px) */
+  flex: 1 0 auto;
+  width: 100vw;
+}
+
+.site-footer {
+  width: 100vw;
+  margin-top: auto;
+  position: static;
+  z-index: 1;
+}
+
 /* --- Full Background Slider --- */
 .full-bg-slider {
   position: fixed;
