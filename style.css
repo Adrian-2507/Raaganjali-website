@@ -1128,7 +1128,7 @@ body.black-bg {
   width: 100vw;
   background: linear-gradient(90deg, #13336b 75%, #5f3dc4 120%);
   color: #fff;
-  padding: 1.3rem 0.7rem 0.5rem 0.7rem; /* Slightly reduced */
+  padding: 1.3rem 0.7rem 0.5rem 0.7rem;
   border-top: 5px solid orange;
   box-shadow: 0 -2px 32px rgba(19,51,107,0.18);
   z-index: 100;
@@ -1150,24 +1150,24 @@ body.black-bg {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.2rem; /* Slightly reduced */
-  margin-bottom: 0.1rem; /* Tighter */
+  gap: 1.2rem;
+  margin-bottom: 0.1rem;
   text-align: left;
   width: 100%;
   min-height: 0;
 }
 
-/* Subtle vertical dividers between sections on desktop */
+/* Visible divider lines */
 @media (min-width: 900px) {
   .footer-links {
-    border-right: 1px solid rgba(255,255,255,0.04); /* More subtle */
-    padding-right: 1.5rem; /* Less space */
+    border-right: 2.5px solid rgba(255,255,255,0.27);
+    padding-right: 1.5rem;
   }
   .footer-logo {
     padding: 0 1.5rem;
   }
   .footer-socials {
-    border-left: 1px solid rgba(255,255,255,0.04); /* More subtle */
+    border-left: 2.5px solid rgba(255,255,255,0.27);
     padding-left: 1.5rem;
   }
 }
@@ -1209,26 +1209,42 @@ body.black-bg {
   text-decoration: underline;
 }
 
-/* Footer Logo & Tagline */
+/* Center align everything under the logo */
 .footer-logo {
   flex: 2 1 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.3rem; /* Tighter */
+  justify-content: center;
+  gap: 0.3rem;
   text-align: center;
   margin: 0 auto;
 }
+.footer-logo > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.footer-logo h3,
+.footer-logo p,
+.footer-contact {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .footer-logo-img {
-  width: 50px; /* Slightly smaller */
+  width: 50px;
   height: 50px;
   border-radius: 12px;
   box-shadow: 0 2px 12px orange;
   background: #fff;
-  margin-bottom: 0.25rem; /* Tighter */
+  margin-bottom: 0.25rem;
 }
 .footer-logo h3 {
-  font-size: 1.5rem; /* Slightly smaller */
+  font-size: 1.5rem;
   color: orange;
   font-weight: 800;
   letter-spacing: 2px;
@@ -1245,11 +1261,15 @@ body.black-bg {
   margin: 0.25rem 0 0 0;
   font-size: 1rem;
   color: #fff;
+  width: 100%;
 }
 .footer-contact a {
   color: #fff;
   text-decoration: underline dotted;
   transition: color 0.15s;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
 }
 .footer-contact a:hover,
 .footer-contact a:focus-visible {
@@ -1299,14 +1319,30 @@ body.black-bg {
   box-shadow: 0 2px 12px orange;
 }
 
-/* Legal/Bottom Bar */
+/* Legal/Bottom Bar: always centered, stacked */
 .footer-bottom {
-  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-top: 0.3rem;
+}
+.footer-legal-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  width: 100%;
+}
+.footer-copyright {
+  text-align: center;
   font-size: 1rem;
   color: #ffeebd;
   opacity: 0.92;
   letter-spacing: 0.2px;
+  margin: 0;
+  padding: 0;
 }
 .footer-legal {
   display: flex;
@@ -1385,6 +1421,9 @@ body.black-bg {
   }
   .site-footer {
     padding: 0.7rem 0.15rem 0.3rem 0.15rem;
+  }
+  .footer-legal-stack {
+    gap: 0.15rem;
   }
 }
 /* --- Footer ending --- */
