@@ -23,16 +23,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-main, .main-content {
-  flex: 1 0 auto;
-}
-.site-footer {
-  flex-shrink: 0;
-  position: static; /* Make sure it's not absolute/fixed */
-  z-index: 1;
-  width: 100%;
-  margin-top: auto;
-}
 
 /* --- Full Background Slider --- */
 .full-bg-slider {
