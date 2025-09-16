@@ -27,7 +27,6 @@
   <!-- Hero/Slider Section -->
   <section class="hero-slider-section" aria-label="Featured Events">
     <div class="hero-slider" id="heroSlider" tabindex="0">
-      <!-- ...slides as before... -->
       <div class="hero-slide active" style="background-image: url('images/Ravi[1].jpg');" data-alt="Live performance by Raaganjali">
         <div class="hero-slide-overlay"></div>
         <div class="hero-slide-content">
@@ -100,7 +99,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+   <!-- Footer -->
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-main">
@@ -156,8 +155,8 @@
     </div>
   </div>
 </footer>
-  
-  <!-- Hero Slider JS (inline, accessible, performant, lazy, pause on hover, keyboard, dots, arrows) -->
+
+  <!-- Hero Slider JS -->
   <script>
     // Accessible, performant hero slider for Raaganjali
     const slides = Array.from(document.querySelectorAll('.hero-slide'));
@@ -189,8 +188,7 @@
     function pauseAutoplay() { paused = true; }
     function resumeAutoplay() { paused = false; }
     function lazyLoadSlide(idx) {
-      // If background image is not loaded, force load it (not needed here as bg images in CSS)
-      // You can also load extra images for performance if needed
+      // Not needed here as bg images in CSS
     }
     function handleKey(e) {
       if (e.key === "ArrowLeft") { prevSlide(); }
