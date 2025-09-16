@@ -1128,12 +1128,11 @@ body.black-bg {
   width: 100vw;
   background: linear-gradient(90deg, #13336b 75%, #5f3dc4 120%);
   color: #fff;
-  padding: 2.5rem 1.2rem 1.2rem 1.2rem;
+  padding: 2rem 1.2rem 1rem 1.2rem;
   border-top: 5px solid orange;
   box-shadow: 0 -2px 32px rgba(19,51,107,0.18);
   z-index: 100;
   position: relative;
-  text-align: center;
 }
 .footer-container {
   max-width: 1200px;
@@ -1141,18 +1140,18 @@ body.black-bg {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;   /* Center all children horizontally */
+  align-items: center;
   justify-content: center;
 }
 .footer-main {
   display: flex;
-  flex-direction: row;     /* Row for desktop layout */
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 2.5rem;
-  margin-bottom: 0.8rem;
-  text-align: left;        /* Left-align text inside columns */
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
   width: 100%;
 }
 
@@ -1181,19 +1180,25 @@ body.black-bg {
   text-decoration: none;
   font-weight: 500;
   font-size: 1.02rem;
-  transition: color 0.15s;
+  transition: color 0.15s, background 0.15s;
+  padding: 2px 6px;
+  border-radius: 4px;
+  outline: none;
 }
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links a:focus {
   color: orange;
+  background: rgba(255,140,0,0.09);
+  text-decoration: underline;
 }
 
-/* Footer Logo & tagline */
+/* Footer Logo & Tagline */
 .footer-logo {
   flex: 2 1 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  gap: 0.8rem;
   text-align: center;
   margin: 0 auto;
 }
@@ -1218,36 +1223,76 @@ body.black-bg {
   margin-bottom: 0;
   letter-spacing: 0.5px;
 }
+.footer-contact {
+  margin: 0.6rem 0 0 0;
+  font-size: 1rem;
+  color: #fff;
+}
+.footer-contact a {
+  color: #fff;
+  text-decoration: underline dotted;
+  transition: color 0.15s;
+}
+.footer-contact a:hover {
+  color: orange;
+}
 
-/* Social Icons */
+/* Social Icons Block */
 .footer-socials {
   flex: 1 1 110px;
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
   align-items: flex-end;
-  margin: 0;
-  margin-top: 0.4rem;
 }
-.footer-socials a img {
+.footer-socials h4 {
+  color: orange;
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 1px;
+}
+.footer-social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-end;
+}
+.footer-social-icons a img {
   width: 32px;
   height: 32px;
   filter: grayscale(40%) brightness(0.95);
   transition: transform 0.25s, filter 0.18s;
 }
-.footer-socials a:hover img {
+.footer-social-icons a:hover img,
+.footer-social-icons a:focus img {
   filter: none;
   transform: scale(1.13) rotate(-8deg);
   box-shadow: 0 2px 12px orange;
 }
+
+/* Legal/Bottom Bar */
 .footer-bottom {
   text-align: center;
-  margin-top: 1.2rem;
+  margin-top: 0.3rem;
   font-size: 1rem;
   color: #ffeebd;
-  opacity: 0.82;
+  opacity: 0.88;
   letter-spacing: 0.2px;
-  margin: 0 auto;
+}
+.footer-legal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: center;
+  font-size: 0.97rem;
+}
+.footer-legal a {
+  color: #ffeebd;
+  text-decoration: underline;
+  margin: 0 0.15rem;
+  font-size: 0.98em;
+}
+.footer-legal a:hover {
+  color: orange;
 }
 
 /* Responsive Footer */
@@ -1278,7 +1323,7 @@ body.black-bg {
   .footer-links li {
     margin-bottom: 0;
   }
-  .footer-socials {
+  .footer-social-icons {
     flex-direction: row;
     justify-content: center;
     gap: 1.7rem;
@@ -1288,7 +1333,7 @@ body.black-bg {
     width: 42px;
     height: 42px;
   }
-  .footer-socials a img {
+  .footer-social-icons a img {
     width: 27px;
     height: 27px;
   }
