@@ -130,7 +130,21 @@ body.black-bg {
   font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
 }
 
-/* --- Hero Fullscreen Slider --- */
+/* --- Navbar (assumed sticky/fixed at top) --- */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px; /* Adjust if your navbar is a different height */
+  background: #111;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/* --- Push hero section below navbar --- */
 .hero-slider-section {
   width: 100vw;
   height: 100vh;
@@ -140,7 +154,10 @@ body.black-bg {
   margin: 0;
   padding: 0;
   z-index: 1;
+  margin-top: 70px; /* Ensures the slider is not hidden behind navbar */
 }
+
+/* --- Hero Fullscreen Slider --- */
 .hero-slider {
   width: 100vw;
   height: 100vh;
@@ -175,7 +192,7 @@ body.black-bg {
 }
 .hero-slide-content {
   position: relative;
-  z-index: 2;
+  z-index: 3; /* Ensure text appears above overlay and images */
   text-align: center;
   padding-bottom: 7vh;
   width: 100vw;
@@ -418,6 +435,7 @@ body.black-bg {
   .service-icon img { width: 39px; height: 39px; }
 }
 /* --- Homepage styling end --- */
+
 /* --- Add this to your style.css --- */
 
 .blue-text {
