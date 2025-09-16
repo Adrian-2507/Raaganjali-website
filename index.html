@@ -7,255 +7,218 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Full-background slider -->
-  <div class="full-bg-slider">
-    <div class="slider-overlay"></div>
-    <div class="slider">
-      <img src="images/Ravi[1].jpg" class="slide" alt="Slide 1" />
-      <img src="images/saket_bg.jpg" class="slide" alt="Slide 2" />
-      <img src="images/allan_bg2.jpg" class="slide" alt="Slide 3" />
-      <img src="images/satvik.jpg" class="slide" alt="Slide 4" />
+  <!-- Banner Image Slider (rectangle banner, not full-screen) -->
+  <section class="banner-slider-section">
+    <div class="banner-slider" id="bannerSlider">
+      <div class="banner-slide-img">
+        <img src="images/Ravi[1].jpg" alt="Slide 1">
+      </div>
+      <div class="banner-slide-img">
+        <img src="images/saket_bg.jpg" alt="Slide 2">
+      </div>
+      <div class="banner-slide-img">
+        <img src="images/allan_bg2.jpg" alt="Slide 3">
+      </div>
+      <div class="banner-slide-img">
+        <img src="images/satvik.jpg" alt="Slide 4">
+      </div>
     </div>
-  </div>
+    <div class="banner-pagination" id="bannerPagination"></div>
+  </section>
 
-  <!-- Navbar with logo and Raaganjali text -->
-  <nav id="navbar">
-    <a href="index.html" class="logo-link">
-      <img src="images/Raaganjali Logo.png" alt="Raaganjali Logo" class="navbar-logo" />
-      <span class="navbar-text">Raaganjali</span>
-    </a>
-    <button id="navbar-toggle" aria-label="Open menu">&#9776;</button>
-    <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="team.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="events.html">Events</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-
-  <!-- Main Content: overlays to float above slider -->
-  <main class="main-content">
-    <!-- Updated HERO SECTION -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>
-            Raaganjali <span class="hero-divider">|</span>
-            <span class="hero-sub">The Rhythm of Tradition, The Voice of Culture</span>
-          </h1>
-          <p>Celebrating Indian Music and Culture in Finland</p>
-        </div>
-        <a href="events.html" class="hero-cta-btn">See Upcoming Events</a>
-      </div>
-    </section>
-
-    <!-- HOMEPAGE EVENTS BANNER SLIDER with Dots & Autoplay -->
-    <section class="homepage-events-banner">
-      <div class="banner-slider" id="bannerSlider">
-        <div class="banner-slide">
-          <h3>Durga Pooja</h3>
-          <p>3rd October 2025</p>
-          <span>Devotional music with Association of Bengal</span>
-        </div>
-        <div class="banner-slide">
-          <h3>Diwali – Swami Ishta Seva</h3>
-          <p>18th October 2025</p>
-          <span>Traditional devotional music for Diwali</span>
-        </div>
-        <div class="banner-slide">
-          <h3>Dussehra & Bathukamma</h3>
-          <p>19th October 2025</p>
-          <span>Festive music and cultural performances</span>
-        </div>
-        <!-- Add more .banner-slide as needed -->
-      </div>
-      <div class="banner-pagination" id="bannerPagination"></div>
-    </section>
-
-    <section class="who-we-are">
-      <h2>Who We Are</h2>
-      <p>
-        Raaganjali is a passionate community that brings alive the rich tradition 
-        of Indian classical and devotional music in Finland. Through performances, 
-        collaboration, and community, we share the joy of sound and heritage with the world.
-      </p>
-      <div class="cta-buttons">
-        <a href="services.html" class="btn orange">Our Services</a>
-        <a href="contact.html" class="btn blue">Contact Us</a>
-      </div>
-    </section>
-
-    <!-- Service Icons Section -->
-    <section class="services-icons">
-      <a href="services.html" class="service-icon" title="Performances">
-        <img src="images/microphone.svg" alt="Microphone" />
-        <span>Performances</span>
+  <!-- Gradient background wrapper for all main content -->
+  <div class="gradient-bg">
+    <!-- Navbar with logo and Raaganjali text -->
+    <nav id="navbar">
+      <a href="index.html" class="logo-link">
+        <img src="images/Raaganjali Logo.png" alt="Raaganjali Logo" class="navbar-logo" />
+        <span class="navbar-text">Raaganjali</span>
       </a>
-      <a href="services.html" class="service-icon" title="Sound & Tech">
-        <img src="images/speaker.svg" alt="Speaker" />
-        <span>Sound & Tech</span>
-      </a>
-      <a href="services.html" class="service-icon" title="Events">
-        <img src="images/stage.svg" alt="Stage" />
-        <span>Events</span>
-      </a>
-    </section>
-  </main>
+      <button id="navbar-toggle" aria-label="Open menu">&#9776;</button>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="team.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-main">
-        <div class="footer-logo">
-          <img src="images/Raaganjali Logo.png" alt="Raaganjali Logo" class="footer-logo-img">
-          <div>
-            <h3>Raaganjali</h3>
-            <p>Celebrating Indian Music in Finland</p>
+    <!-- Main Content: overlays to float above slider -->
+    <main class="main-content">
+      <!-- Updated HERO SECTION -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>
+              Raaganjali <span class="hero-divider">|</span>
+              <span class="hero-sub">The Rhythm of Tradition, The Voice of Culture</span>
+            </h1>
+            <p>Celebrating Indian Music and Culture in Finland</p>
+          </div>
+          <a href="events.html" class="hero-cta-btn">See Upcoming Events</a>
+        </div>
+      </section>
+
+      <section class="who-we-are">
+        <h2>Who We Are</h2>
+        <p>
+          Raaganjali is a passionate community that brings alive the rich tradition 
+          of Indian classical and devotional music in Finland. Through performances, 
+          collaboration, and community, we share the joy of sound and heritage with the world.
+        </p>
+        <div class="cta-buttons">
+          <a href="services.html" class="btn orange">Our Services</a>
+          <a href="contact.html" class="btn blue">Contact Us</a>
+        </div>
+      </section>
+
+      <!-- Service Icons Section -->
+      <section class="services-icons">
+        <a href="services.html" class="service-icon" title="Performances">
+          <img src="images/microphone.svg" alt="Microphone" />
+          <span>Performances</span>
+        </a>
+        <a href="services.html" class="service-icon" title="Sound & Tech">
+          <img src="images/speaker.svg" alt="Speaker" />
+          <span>Sound & Tech</span>
+        </a>
+        <a href="services.html" class="service-icon" title="Events">
+          <img src="images/stage.svg" alt="Stage" />
+          <span>Events</span>
+        </a>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-main">
+          <div class="footer-logo">
+            <img src="images/Raaganjali Logo.png" alt="Raaganjali Logo" class="footer-logo-img">
+            <div>
+              <h3>Raaganjali</h3>
+              <p>Celebrating Indian Music in Finland</p>
+            </div>
+          </div>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/raaganjalsuomi" target="_blank" title="Instagram">
+              <img src="images/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" target="_blank" title="Facebook">
+              <img src="images/facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://youtube.com/@raaganjalisuomi" target="_blank" title="YouTube">
+              <img src="images/youtube.svg" alt="YouTube">
+            </a>
           </div>
         </div>
-        <div class="footer-socials">
-          <a href="https://www.instagram.com/raaganjalsuomi" target="_blank" title="Instagram">
-            <img src="images/instagram.svg" alt="Instagram">
-          </a>
-          <a href="https://www.facebook.com/share/1BACGW6q2k/?mibextid=wwXIfr" target="_blank" title="Facebook">
-            <img src="images/facebook.svg" alt="Facebook">
-          </a>
-          <a href="https://youtube.com/@raaganjalisuomi" target="_blank" title="YouTube">
-            <img src="images/youtube.svg" alt="YouTube">
-          </a>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Raaganjali. All rights reserved.</p>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Raaganjali. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div> <!-- end .gradient-bg -->
 
-  <!-- Slider JS (background slider) -->
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    let currentSlide = 0;
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.style.opacity = i === index ? '1' : '0';
-        slide.style.zIndex = i === index ? '1' : '0';
-      });
-    }
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-    showSlide(currentSlide);
-    setInterval(nextSlide, 5000);
-  </script>
-
-  <!-- Banner Slider: Autoplay, Dots, Drag/Swipe -->
+  <!-- Banner Slider JS: Autoplay, Dots, Drag/Swipe -->
   <script>
     const bannerSlider = document.getElementById('bannerSlider');
-    const slides2 = Array.from(bannerSlider.getElementsByClassName('banner-slide'));
+    const slides = Array.from(bannerSlider.getElementsByClassName('banner-slide-img'));
     const bannerPagination = document.getElementById('bannerPagination');
-    const slideCount2 = slides2.length;
-    let currentIndex2 = 0;
-    let autoplayInterval2;
+    const slideCount = slides.length;
+    let currentIndex = 0;
+    let autoplayInterval;
 
-    // --- Pagination dots ---
-    function renderPagination2() {
+    function renderPagination() {
       bannerPagination.innerHTML = '';
-      for (let i = 0; i < slideCount2; i++) {
+      for (let i = 0; i < slideCount; i++) {
         const dot = document.createElement('span');
-        dot.className = 'banner-dot' + (i === currentIndex2 ? ' active' : '');
+        dot.className = 'banner-dot' + (i === currentIndex ? ' active' : '');
         dot.addEventListener('click', () => {
-          goToSlide2(i);
-          resetAutoplay2();
+          goToSlide(i);
+          resetAutoplay();
         });
         bannerPagination.appendChild(dot);
       }
     }
 
-    // --- Scroll to slide by index ---
-    function goToSlide2(idx) {
-      const target = slides2[idx];
+    function goToSlide(idx) {
+      const target = slides[idx];
       if (!target) return;
       const left = target.offsetLeft - bannerSlider.offsetLeft;
       bannerSlider.scrollTo({ left, behavior: 'smooth' });
-      currentIndex2 = idx;
-      renderPagination2();
+      currentIndex = idx;
+      renderPagination();
     }
 
-    // --- Autoplay ---
-    function nextSlide2() {
-      let idx = currentIndex2 + 1;
-      if (idx >= slideCount2) idx = 0;
-      goToSlide2(idx);
+    function nextSlide() {
+      let idx = currentIndex + 1;
+      if (idx >= slideCount) idx = 0;
+      goToSlide(idx);
     }
-    function startAutoplay2() {
-      autoplayInterval2 = setInterval(nextSlide2, 4200);
+    function startAutoplay() {
+      autoplayInterval = setInterval(nextSlide, 4200);
     }
-    function resetAutoplay2() {
-      clearInterval(autoplayInterval2);
-      startAutoplay2();
+    function resetAutoplay() {
+      clearInterval(autoplayInterval);
+      startAutoplay();
     }
-
-    // --- Update active dot on manual scroll ---
     bannerSlider.addEventListener('scroll', () => {
       let closest = 0, minDist = Infinity;
-      slides2.forEach((slide, i) => {
+      slides.forEach((slide, i) => {
         const dist = Math.abs(bannerSlider.scrollLeft - (slide.offsetLeft - bannerSlider.offsetLeft));
         if (dist < minDist) { minDist = dist; closest = i; }
       });
-      if (closest !== currentIndex2) {
-        currentIndex2 = closest;
-        renderPagination2();
+      if (closest !== currentIndex) {
+        currentIndex = closest;
+        renderPagination();
       }
     });
-
-    // --- Drag-to-scroll support ---
-    let isDown2 = false, startX2, scrollLeft2;
+    // Drag/swipe support
+    let isDown = false, startX, scrollLeft;
     bannerSlider.addEventListener('mousedown', (e) => {
-      isDown2 = true;
-      startX2 = e.pageX - bannerSlider.offsetLeft;
-      scrollLeft2 = bannerSlider.scrollLeft;
+      isDown = true;
+      startX = e.pageX - bannerSlider.offsetLeft;
+      scrollLeft = bannerSlider.scrollLeft;
       bannerSlider.classList.add('active');
     });
     bannerSlider.addEventListener('mouseleave', () => {
-      isDown2 = false;
+      isDown = false;
       bannerSlider.classList.remove('active');
     });
     bannerSlider.addEventListener('mouseup', () => {
-      isDown2 = false;
+      isDown = false;
       bannerSlider.classList.remove('active');
     });
     bannerSlider.addEventListener('mousemove', (e) => {
-      if (!isDown2) return;
+      if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - bannerSlider.offsetLeft;
-      const walk = (x - startX2) * 1.7;
-      bannerSlider.scrollLeft = scrollLeft2 - walk;
+      const walk = (x - startX) * 1.7;
+      bannerSlider.scrollLeft = scrollLeft - walk;
     });
-
     bannerSlider.addEventListener('touchstart', (e) => {
-      isDown2 = true;
-      startX2 = e.touches[0].pageX - bannerSlider.offsetLeft;
-      scrollLeft2 = bannerSlider.scrollLeft;
+      isDown = true;
+      startX = e.touches[0].pageX - bannerSlider.offsetLeft;
+      scrollLeft = bannerSlider.scrollLeft;
     });
     bannerSlider.addEventListener('touchend', () => {
-      isDown2 = false;
+      isDown = false;
     });
     bannerSlider.addEventListener('touchmove', (e) => {
-      if (!isDown2) return;
+      if (!isDown) return;
       const x = e.touches[0].pageX - bannerSlider.offsetLeft;
-      const walk = (x - startX2) * 1.7;
-      bannerSlider.scrollLeft = scrollLeft2 - walk;
+      const walk = (x - startX) * 1.7;
+      bannerSlider.scrollLeft = scrollLeft - walk;
     });
 
-    // --- Initialize ---
-    renderPagination2();
-    goToSlide2(0);
-    startAutoplay2();
+    // Init
+    renderPagination();
+    goToSlide(0);
+    startAutoplay();
   </script>
-  
+
   <script>
   // Hamburger menu toggle
   const navbarToggle = document.getElementById('navbar-toggle');
