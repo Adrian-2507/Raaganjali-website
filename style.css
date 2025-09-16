@@ -340,7 +340,7 @@ body.black-bg {
   overflow: hidden;
 }
 .services-scroll {
-  display: flex;
+  display: block;
   gap: 2.5rem;
   justify-content: center;
   align-items: stretch;
@@ -352,7 +352,7 @@ body.black-bg {
   box-shadow: 0 3px 16px rgba(19,51,107,0.10);
   padding: 1.4rem 1.6rem 0.9rem 1.6rem;
   transition: transform .22s, box-shadow .22s, background .22s;
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
   min-width: 220px;
@@ -363,7 +363,7 @@ body.black-bg {
   box-shadow: 0 8px 32px rgba(255,140,0,0.11);
 }
 .service-icon {
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
