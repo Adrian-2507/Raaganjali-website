@@ -112,6 +112,112 @@ nav a.active, nav a:hover {
   color: orange;
 }
 
+/* --- Gradient full background for all content below slider --- */
+body, html {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.gradient-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(90deg, #13336b 70%, #5f3dc4 110%);
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Banner Image Slider --- */
+.banner-slider-section {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(90deg, #13336b 70%, #5f3dc4 110%);
+  padding: 0 0 2rem 0;
+  margin-bottom: 0;
+  z-index: 2;
+}
+.banner-slider {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  max-width: 1100px;
+  width: 96vw;
+  border-radius: 2rem;
+  box-shadow: 0 4px 32px rgba(95,61,196,0.13);
+  background: #fff;
+  position: relative;
+  padding: 1rem 0;
+}
+.banner-slide-img {
+  min-width: 92vw;
+  max-width: 1050px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 28px rgba(95,61,196,0.07);
+  background: #111;
+}
+.banner-slide-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  transition: transform 0.4s;
+}
+.banner-slide-img:focus,
+.banner-slide-img:hover img {
+  transform: scale(1.04);
+}
+
+.banner-pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+}
+.banner-dot {
+  width: 14px;
+  height: 14px;
+  background: #ffeebd;
+  border-radius: 50%;
+  opacity: 0.45;
+  cursor: pointer;
+  transition: background 0.23s, opacity 0.24s;
+  border: 2px solid #825fd6;
+  box-sizing: border-box;
+}
+.banner-dot.active {
+  background: orange;
+  opacity: 1;
+  border-color: #ff9800;
+}
+@media (max-width: 900px) {
+  .banner-slide-img {
+    min-width: 98vw;
+    height: 180px;
+  }
+  .banner-slider {
+    max-width: 100vw;
+    padding: 0.6rem 0;
+    gap: 0.7rem;
+  }
+}
+@media (max-width: 600px) {
+  .banner-slide-img {
+    min-width: 100vw;
+    height: 30vw;
+    min-height: 120px;
+    max-height: 180px;
+  }
+}
+
 /* --- Main Content --- */
 .main-content {
   position: relative;
@@ -130,7 +236,7 @@ nav a.active, nav a:hover {
 .hero-section {
   width: 100vw;
   padding: 3.5rem 2rem 2.3rem 2rem;
-  background: linear-gradient(90deg, #13336b 70%, #5f3dc4 110%);
+  background: transparent;
   margin-bottom: 2rem;
 }
 .hero-content {
@@ -252,125 +358,6 @@ nav a.active, nav a:hover {
   }
 }
 
-/* --- Banner Slider Section --- */
-.homepage-events-banner {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(120deg, #5f3dc4 0%, #f7c873 100%);
-  padding: 2.5rem 0 1.2rem 0;
-}
-.banner-slider {
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #825fd6 #f7c873;
-  padding: 0.7rem 1rem;
-  border-radius: 32px;
-  box-shadow: 0 4px 32px rgba(95,61,196,0.13);
-  background: rgba(255,255,255,0.04);
-  max-width: 1100px;
-  width: 98vw;
-  scroll-behavior: smooth;
-}
-.banner-slide {
-  min-width: 300px;
-  max-width: 340px;
-  background: linear-gradient(120deg, #5f3dc4 0%, #825fd6 100%);
-  color: #fff;
-  border-radius: 28px;
-  box-shadow: 0 2px 28px rgba(95,61,196,0.18);
-  font-family: 'Montserrat', sans-serif;
-  padding: 2.2rem 1.3rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition:
-    transform 0.33s cubic-bezier(.25,.8,.25,1),
-    box-shadow 0.33s cubic-bezier(.25,.8,.25,1),
-    background 0.24s;
-  margin-bottom: 12px;
-}
-.banner-slide:hover,
-.banner-slide:focus {
-  transform: scale(1.07) translateY(-6px);
-  box-shadow: 0 8px 36px rgba(130,95,214,0.22);
-  background: linear-gradient(120deg, #825fd6 0%, #ff9800 100%);
-  z-index: 2;
-}
-.banner-slide h3 {
-  font-size: 1.16rem;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
-  color: #fff;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 10px #5f3dc4;
-}
-.banner-slide p {
-  font-size: 1.04rem;
-  font-weight: 500;
-  margin-bottom: 0.7rem;
-  color: #ffeebd;
-}
-.banner-slide span {
-  font-size: 0.99rem;
-  opacity: 0.96;
-  color: #ffeebd;
-}
-
-.banner-slider::-webkit-scrollbar {
-  height: 8px;
-  border-radius: 5px;
-}
-.banner-slider::-webkit-scrollbar-thumb {
-  background: #825fd6;
-  border-radius: 5px;
-}
-.banner-slider::-webkit-scrollbar-track {
-  background: #f7c873;
-  border-radius: 5px;
-}
-
-.banner-pagination {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 9px;
-  margin-top: 18px;
-}
-.banner-dot {
-  width: 14px;
-  height: 14px;
-  background: #ffeebd;
-  border-radius: 50%;
-  opacity: 0.45;
-  cursor: pointer;
-  transition: background 0.23s, opacity 0.24s;
-  border: 2px solid #825fd6;
-  box-sizing: border-box;
-}
-.banner-dot.active {
-  background: orange;
-  opacity: 1;
-  border-color: #ff9800;
-}
-
-@media (max-width: 700px) {
-  .banner-slide {
-    min-width: 70vw;
-    padding: 1.25rem 0.6rem;
-  }
-  .banner-slider {
-    gap: 1.2rem;
-    padding: 0.5rem 0.5rem;
-  }
-}
-
 /* --- Who We Are Section --- */
 .who-we-are {
   max-width: 900px;
@@ -427,38 +414,6 @@ nav a.active, nav a:hover {
   background: #2056b5;
 }
 
-/* --- Service Icons Section --- */
-.services-icons {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin: 2.5rem auto 0 auto;
-  z-index: 3;
-}
-.service-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #13336b;
-  font-size: 1.1rem;
-  transition: transform 0.2s;
-}
-.service-icon img {
-  width: 42px;
-  height: 42px;
-  margin-bottom: 0.5rem;
-  filter: drop-shadow(0 2px 8px orange);
-  transition: filter 0.2s, transform 0.2s;
-}
-.service-icon:hover img {
-  filter: drop-shadow(0 4px 12px #2056b5);
-  transform: scale(1.1);
-}
-.service-icon span {
-  margin-top: 0.2rem;
-  font-weight: 500;
-}
 /* --- Add this to your style.css --- */
 
 .blue-text {
