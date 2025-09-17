@@ -201,6 +201,16 @@
       const navbarToggle = document.getElementById('navbar-toggle');
       const navLinks = document.getElementById('nav-links');
 
+      // Check if required elements exist
+      if (!navbarToggle) {
+        console.error('Hamburger menu error: navbar-toggle element not found');
+        return;
+      }
+      if (!navLinks) {
+        console.error('Hamburger menu error: nav-links element not found');
+        return;
+      }
+
       // Toggle menu open/close
       navbarToggle.addEventListener('click', function() {
         const isOpen = navLinks.classList.toggle('open');

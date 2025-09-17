@@ -14,7 +14,7 @@
       <span class="navbar-text">Raaganjali</span>
     </a>
     <button id="navbar-toggle" aria-label="Open menu">&#9776;</button>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links">
       <a href="index.html">Home</a>
       <a href="team.html">About Us</a>
       <a href="services.html" class="active">Services</a>
@@ -122,6 +122,16 @@
     document.addEventListener('DOMContentLoaded', function() {
       const navbarToggle = document.getElementById('navbar-toggle');
       const navLinks = document.getElementById('nav-links');
+
+      // Check if required elements exist
+      if (!navbarToggle) {
+        console.error('Hamburger menu error: navbar-toggle element not found');
+        return;
+      }
+      if (!navLinks) {
+        console.error('Hamburger menu error: nav-links element not found');
+        return;
+      }
 
       // Toggle menu open/close
       navbarToggle.addEventListener('click', function() {
