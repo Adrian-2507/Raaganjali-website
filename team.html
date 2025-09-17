@@ -209,20 +209,37 @@
     document.addEventListener('DOMContentLoaded', startCarousel);
   </script>
   
+   <!-- Hamburger menu script -->
   <script>
-  // Hamburger menu toggle
-  const navbarToggle = document.getElementById('navbar-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  navbarToggle.addEventListener('click', function() {
-    navLinks.classList.toggle('open');
-  });
+    document.addEventListener('DOMContentLoaded', function() {
+      const navbarToggle = document.getElementById('navbar-toggle');
+      const navLinks = document.getElementById('nav-links');
 
-  // Optional: Close menu when a link is clicked (for better UX)
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
+      // Toggle menu open/close
+      navbarToggle.addEventListener('click', function() {
+        const isOpen = navLinks.classList.toggle('open');
+        navbarToggle.setAttribute('aria-expanded', isOpen ? "true" : "false");
+      });
+
+      // Close menu when a nav link is clicked (on mobile)
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 800) {
+            navLinks.classList.remove('open');
+            navbarToggle.setAttribute('aria-expanded', "false");
+          }
+        });
+      });
+
+      // Close menu if window resized to desktop
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 800) {
+          navLinks.classList.remove('open');
+          navbarToggle.setAttribute('aria-expanded', "false");
+        }
+      });
     });
-  });
+  </script>
 </script>
 </body>
 </html>
