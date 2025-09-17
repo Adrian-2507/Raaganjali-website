@@ -209,20 +209,6 @@
     document.addEventListener('DOMContentLoaded', startCarousel);
   </script>
   
-  <script>
-  // Hamburger menu toggle
-  const navbarToggle = document.getElementById('navbar-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  navbarToggle.addEventListener('click', function() {
-    navLinks.classList.toggle('open');
-  });
-
-  // Optional: Close menu when a link is clicked (for better UX)
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-    });
-  });
-</script>
+  <script src="script.js"></script>
 </body>
 </html>

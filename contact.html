@@ -115,21 +115,8 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ once:true });</script>
+  <script src="script.js"></script>
   <script>
-    // Hamburger menu toggle
-    const navbarToggle = document.getElementById('navbar-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    navbarToggle.addEventListener('click', function() {
-      navLinks.classList.toggle('open');
-    });
-
-    // Optional: Close menu when a link is clicked (for better UX)
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-      });
-    });
-
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
