@@ -619,11 +619,13 @@ body.black-bg {
   justify-content: center;
   align-items: center;
 }
+
+/* --- Updated Team Card Styles for Homepage Look & Smooth Hover --- */
 .team-card, .member-slide {
-  background: #fff;
-  border: 2px solid #ff7a30;
+  background: rgba(30,30,30,0.92);
+  border: 2px solid orange;
   border-radius: 18px;
-  box-shadow: 0 0 16px rgba(32,86,181,0.07);
+  box-shadow: 0 5px 25px rgba(19,51,107,0.14);
   padding: 1.5rem 1rem;
   text-align: center;
   max-width: 200px;
@@ -631,6 +633,24 @@ body.black-bg {
   min-height: 320px;
   box-sizing: border-box;
   margin: 0.5rem;
+  color: #fff;
+  transition:
+    background 0.33s cubic-bezier(.55,.08,.29,.99),
+    box-shadow 0.33s cubic-bezier(.55,.08,.29,.99),
+    transform 0.33s cubic-bezier(.55,.08,.29,.99),
+    border-color 0.28s cubic-bezier(.55,.08,.29,.99);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.team-card:hover,
+.member-slide:hover,
+.team-card:focus-within,
+.member-slide:focus-within {
+  background: rgba(255,140,0,0.11);
+  border-color: #ffb340;
+  box-shadow: 0 8px 32px 0 rgba(255,140,0,0.18), 0 5px 25px rgba(19,51,107,0.14);
+  transform: translateY(-7px) scale(1.035);
 }
 .team-img {
   width: 100px;
@@ -638,53 +658,39 @@ body.black-bg {
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 1rem;
-  box-shadow: 0 2px 8px rgba(32,86,181,0.11);
+  border: 3px solid orange;
+  box-shadow: 0 2px 16px 2px #ffb34033;
+  transition: box-shadow 0.33s, border-color 0.28s, transform 0.32s cubic-bezier(.55,.08,.29,.99);
+}
+.team-card:hover .team-img,
+.member-slide:hover .team-img,
+.team-card:focus-within .team-img,
+.member-slide:focus-within .team-img {
+  border-color: #fff;
+  box-shadow: 0 0 32px 4px orange, 0 2px 16px 2px #ffb34033;
+  transform: scale(1.12) rotate(-4deg);
 }
 .team-name {
-  color: #13336b;
+  color: orange;
   font-size: 1.15rem;
   font-weight: 700;
   margin: 0.5rem 0 0.2rem 0;
+  transition: color 0.22s;
+}
+.team-card:hover .team-name,
+.member-slide:hover .team-name,
+.team-card:focus-within .team-name,
+.member-slide:focus-within .team-name {
+  color: #fff;
 }
 .team-role {
-  color: #ff7a30;
+  color: #ffeebd;
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
-.team-card:hover .team-img,
-.member-slide:hover .team-img {
-  transform: scale(1.12) rotate(-4deg);
-  box-shadow: 0 4px 18px orange;
-}
-.team-card:hover,
-.member-slide:hover {
-  transform: scale(1.04);
-  box-shadow: 0 6px 24px orange;
-}
-.member-slider {
-  overflow-x: auto;
-  padding: 1rem 0;
-}
-.member-track {
-  display: flex;
-  gap: 1.5rem;
-  min-width: 100%;
-}
-.member-slide {
-  min-width: 200px;
-}
 
-@media (max-width: 700px) {
-  .core-members {
-    flex-direction: column;
-    align-items: center;
-  }
-  .member-track {
-    gap: 0.7rem;
-  }
-}
-/* Add this to the end of your style.css for bigger carousel cards */
+/* --- Carousel Card Styles --- */
 .member-carousel-container {
   display: flex;
   flex-direction: row;
@@ -715,20 +721,31 @@ body.black-bg {
   transition: none;
 }
 .carousel-card {
-  background: #fff;
-  border: 3px solid #ff7a30;
+  background: rgba(30,30,30,0.92);
+  border: 3px solid orange;
   border-radius: 22px;
-  box-shadow: 0 0 24px rgba(32,86,181,0.10);
+  box-shadow: 0 5px 25px rgba(19,51,107,0.14);
   width: 480px;
   height: 270px;
   display: flex;
   align-items: center;
   gap: 2.5rem;
   padding: 2rem 2.5rem;
-  transition: box-shadow 0.3s;
+  transition:
+    background 0.33s cubic-bezier(.55,.08,.29,.99),
+    box-shadow 0.33s cubic-bezier(.55,.08,.29,.99),
+    transform 0.33s cubic-bezier(.55,.08,.29,.99),
+    border-color 0.28s cubic-bezier(.55,.08,.29,.99);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
-.carousel-card:hover {
-  box-shadow: 0 4px 40px rgba(32,86,181,0.18);
+.carousel-card:hover,
+.carousel-card:focus-within {
+  background: rgba(255,140,0,0.11);
+  border-color: #ffb340;
+  box-shadow: 0 8px 32px 0 rgba(255,140,0,0.18), 0 5px 25px rgba(19,51,107,0.14);
+  transform: translateY(-7px) scale(1.035);
 }
 .carousel-img {
   width: 160px;
@@ -736,8 +753,15 @@ body.black-bg {
   object-fit: cover;
   border-radius: 22px;
   margin-right: 1.5rem;
-  box-shadow: 0 2px 12px rgba(32,86,181,0.13);
-  border: 2px solid #2056b5;
+  border: 3px solid orange;
+  box-shadow: 0 2px 16px 2px #ffb34033;
+  transition: box-shadow 0.33s, border-color 0.28s, transform 0.32s cubic-bezier(.55,.08,.29,.99);
+}
+.carousel-card:hover .carousel-img,
+.carousel-card:focus-within .carousel-img {
+  border-color: #fff;
+  box-shadow: 0 0 32px 4px orange, 0 2px 16px 2px #ffb34033;
+  transform: scale(1.10) rotate(-3deg);
 }
 .carousel-info {
   flex: 1;
@@ -746,13 +770,18 @@ body.black-bg {
   justify-content: center;
 }
 .carousel-name {
-  color: #13336b;
+  color: orange;
   font-size: 2rem;
   font-weight: 700;
   margin: 0.5rem 0 0.3rem 0;
+  transition: color 0.22s;
+}
+.carousel-card:hover .carousel-name,
+.carousel-card:focus-within .carousel-name {
+  color: #fff;
 }
 .carousel-role {
-  color: #ff7a30;
+  color: #ffeebd;
   font-size: 1.25rem;
   font-weight: 500;
   margin-bottom: 0.8rem;
@@ -772,7 +801,26 @@ body.black-bg {
 .carousel-btn:active {
   opacity: 1;
 }
-@media (max-width: 900px) {
+
+/* Responsive for team cards and carousel */
+@media (max-width: 700px) {
+  .core-members {
+    flex-direction: column;
+    align-items: center;
+  }
+  .team-card, .member-slide {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    max-width: 94vw;
+    min-width: 0;
+    min-height: 0;
+  }
+  .team-img {
+    width: 84px;
+    height: 84px;
+  }
+  .member-track {
+    gap: 0.7rem;
+  }
   .carousel-card {
     width: 95vw;
     max-width: 98vw;
@@ -802,6 +850,7 @@ body.black-bg {
     max-width: 99vw;
   }
 }
+
 /* Animation for smooth transitions */
 #carousel-track.fade-in {
   animation: fadeIn 0.6s;
