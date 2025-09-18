@@ -91,7 +91,7 @@ body {
 }
 .navbar-logo {
   height: 48px;
-  width: auto;
+  width: 68px;
   transition: transform 0.2s;
 }
 .logo-link:hover .navbar-logo {
