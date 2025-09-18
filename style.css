@@ -882,33 +882,7 @@ body.black-bg {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 2.5rem 0 0.5rem 0;
-}
-.filter-btn {
-  background: transparent;
-  border: 2px solid orange;
-  color: orange;
-  font-weight: bold;
-  font-size: 1.12rem;
-  padding: 0.7rem 2.3rem;
-  border-radius: 22px;
-  transition: background 0.22s, color 0.22s, border-color 0.22s;
-  cursor: pointer;
-  outline: none;
-}
-.filter-btn.active,
-.filter-btn:hover {
-  background: orange;
-  color: #222;
-  border-color: #fff;
-}
-
-/* --- Fullscreen Gallery Filter Bar --- */
-.gallery-filter-fullscreen {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2.5rem 0 0.5rem 0;
+  margin: 2.5rem 0 2rem 0;
 }
 .filter-btn {
   background: transparent;
@@ -929,94 +903,84 @@ body.black-bg {
   border-color: #fff;
 }
 
-/* --- Fullscreen Slider Section --- */
-.gallery-fullscreen-slider-section {
-  display: none;
-  width: 100vw;
-  height: 93vh;
-  min-height: 500px;
-  background: #111;
+/* --- Homepage-Style Gallery Slider --- */
+.gallery-carousel {
   position: relative;
-  z-index: 3;
-  transition: opacity 0.4s;
+  width: 100vw;
+  max-width: 1400px;
+  height: 420px;
+  margin: 0 auto 3rem auto;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  border-bottom: 2px solid orange;
+  border-top: 2px solid orange;
+  overflow: hidden;
 }
-.gallery-fullscreen-slider-section.active {
-  display: block;
-  animation: fadeIn 0.7s;
+.gallery-carousel.active { display: flex; }
+
+.gallery-carousel-track {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-carousel-slide {
+  display: none;
+  flex: 1 0 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  transition: opacity 0.6s;
+  z-index: 2;
+}
+.gallery-carousel-slide.active {
+  display: flex;
+  opacity: 1;
+  z-index: 3;
+  animation: fadeIn 0.6s;
 }
 @keyframes fadeIn {
-  0% { opacity: 0;}
-  100% { opacity: 1;}
+  from { opacity: 0.4;}
+  to { opacity: 1;}
 }
-
-/* --- Fullscreen Slider --- */
-.gallery-fullscreen-slider {
-  position: relative;
-  width: 100vw;
-  height: 93vh;
-  min-height: 500px;
-  overflow: hidden;
-  outline: none;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.gallery-fs-slide {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 93vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.85s cubic-bezier(.5,0,.5,1);
-  will-change: opacity;
-  z-index: 1;
-}
-.gallery-fs-slide.active {
-  opacity: 1;
-  z-index: 2;
-  pointer-events: auto;
-}
-.gallery-fs-img {
-  max-width: 82vw;
-  max-height: 82vh;
-  border-radius: 1.3rem;
-  border: 4px solid orange;
-  box-shadow: 0 0 0 2px #222, 0 6px 44px 2px orange;
-  background: rgba(20,20,20,0.82);
+.gallery-carousel-img {
+  max-width: 98%;
+  max-height: 400px;
+  margin: 0 auto;
+  border-radius: 18px;
+  border: 3px solid orange;
+  box-shadow: 0 4px 26px 0 rgba(255,140,0,0.13);
   cursor: pointer;
-  transition: filter 0.22s, box-shadow 0.22s, transform 0.22s;
+  background: #181818;
+  transition: transform 0.22s, box-shadow 0.22s;
   object-fit: contain;
-  opacity: 0.92;
-  /* for "view image only on click" effect, slight dim: */
-  filter: brightness(0.82) grayscale(0.2);
 }
-.gallery-fs-img:hover {
-  filter: brightness(1) grayscale(0);
-  box-shadow: 0 10px 70px 10px orange;
-  opacity: 1;
-  transform: scale(1.025);
+.gallery-carousel-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 40px orange;
 }
 
-/* --- Slider Arrows and Dots --- */
+/* Arrows & dots */
 .gallery-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 3rem;
-  background: rgba(0,0,0,0.22);
+  font-size: 2.3rem;
+  background: rgba(0,0,0,0.18);
   color: orange;
   border: none;
   border-radius: 2rem;
   cursor: pointer;
   z-index: 10;
-  width: 3rem;
-  height: 3rem;
+  width: 2.9rem;
+  height: 2.9rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1031,9 +995,9 @@ body.black-bg {
   color: #fff;
   outline: 2px solid #fff;
 }
-.gallery-dots {
+.gallery-carousel-dots {
   position: absolute;
-  left: 0; right: 0; bottom: 3.2vh;
+  left: 0; right: 0; bottom: 2.5vh;
   display: flex;
   gap: 1.2rem;
   justify-content: center;
@@ -1041,8 +1005,8 @@ body.black-bg {
   z-index: 12;
 }
 .gallery-dot {
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
   border: 2px solid #fff;
   background: rgba(255,140,0,0.3);
@@ -1055,12 +1019,8 @@ body.black-bg {
   background: orange;
   border-color: orange;
 }
-.gallery-fullscreen-slider:focus .gallery-arrow,
-.gallery-fullscreen-slider:focus .gallery-dot {
-  outline: 2px solid #fff;
-}
 
-/* --- Lightbox --- */
+/* Lightbox */
 .lightbox-modal {
   position: fixed;
   z-index: 10000;
@@ -1082,34 +1042,24 @@ body.black-bg {
   z-index: 10001;
   box-shadow: 0 4px 40px orange;
   background: #191919;
-  /* image is not dimmed in lightbox */
-  filter: none !important;
-  opacity: 1 !important;
 }
 
-/* --- Responsive --- */
+/* Responsive */
 @media (max-width: 900px) {
-  .gallery-fs-img {
-    max-width: 97vw;
-    max-height: 68vh;
-    border-radius: 0.6rem;
-  }
-  .gallery-arrow { font-size: 2rem; width: 2.1rem; height: 2.1rem; }
-  .gallery-dot { width: 12px; height: 12px;}
+  .gallery-carousel { height: 230px; }
+  .gallery-carousel-img { max-height: 210px; border-radius: 8px;}
+  .gallery-arrow { font-size: 1.5rem; width: 1.9rem; height: 1.9rem; }
+  .gallery-dot { width: 9px; height: 9px;}
 }
 @media (max-width: 700px) {
-  .gallery-fullscreen-slider,
-  .gallery-fullscreen-slider-section,
-  .gallery-fs-slide {
-    min-height: 240px;
-    height: 100vh;
-  }
+  .gallery-carousel { height: 160px; }
+  .gallery-carousel-img { max-height: 130px; }
   .gallery-filter-fullscreen { gap: 1rem; }
-  .gallery-fs-img { max-width: 99vw; max-height: 45vh; }
   .gallery-dots { gap: 0.7rem; }
 }
 
 /* --- Gallery Page Styling End --- */
+
 /* --- Raaganjali Events Page CSS --- */
 
 /* HERO/HEADER */
