@@ -876,27 +876,13 @@ body.black-bg {
 /* --- Team Page styling end --- */
 
 /* --- Gallery Page Styling Start --- */
-.gallery-section {
-  margin: 90px auto 0 auto;
-  max-width: 1200px;
-  padding: 2.5rem 1rem 2rem 1rem;
-  background: rgba(30,30,30,0.92);
-  border-radius: 1rem;
-  box-shadow: 0 5px 25px rgba(19,51,107,0.14);
-  border: 3px solid orange;
-}
 
-.gallery-desc {
-  text-align: center;
-  color: #ffeebd;
-  margin-bottom: 1.3rem;
-  font-size: 1.12rem;
-}
-.gallery-filter {
+/* FILTER BAR */
+.gallery-filter-fullscreen {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2.1rem;
+  gap: 2rem;
+  margin: 2.5rem 0 0.5rem 0;
 }
 .filter-btn {
   background: transparent;
@@ -904,10 +890,11 @@ body.black-bg {
   color: orange;
   font-weight: bold;
   font-size: 1.12rem;
-  padding: 0.7rem 1.5rem;
+  padding: 0.7rem 2.3rem;
   border-radius: 22px;
   transition: background 0.22s, color 0.22s, border-color 0.22s;
   cursor: pointer;
+  outline: none;
 }
 .filter-btn.active,
 .filter-btn:hover {
@@ -916,71 +903,85 @@ body.black-bg {
   border-color: #fff;
 }
 
-.gallery-slider-section {
-  margin: 2.5rem 0;
-  text-align: center;
-}
-.gallery-slider-section h2 {
-  color: orange;
-  margin-bottom: 1.3rem;
-}
-
-.gallery-slider {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 19px;
-  border: 2px solid orange;
-  background: rgba(20,20,20,0.98);
-}
-.gallery-slides {
-  width: 100%;
-  height: 370px;
-  display: flex;
-  position: relative;
-}
-.gallery-slide {
+/* FULLSCREEN SLIDERS */
+.gallery-fullscreen-slider-section {
   display: none;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 370px;
+  width: 100vw;
+  height: 100vh;
+  min-height: 420px;
+  position: relative;
+  z-index: 3;
+  background: #111;
+  transition: opacity 0.4s;
 }
-.gallery-slide.active {
-  display: flex;
-  animation: fadeIn 0.6s;
+.gallery-fullscreen-slider-section.active {
+  display: block;
+  animation: fadeIn 0.7s;
 }
 @keyframes fadeIn {
-  0% { opacity: 0; transform: scale(0.97);}
-  100% { opacity: 1; transform: scale(1);}
+  0% { opacity: 0;}
+  100% { opacity: 1;}
 }
-.gallery-slide-img {
-  width: 100%;
-  max-height: 360px;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 2px 18px orange;
+
+.gallery-fullscreen-slider {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 420px;
+  overflow: hidden;
+  outline: none;
+  z-index: 3;
+}
+.gallery-fs-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s cubic-bezier(.5,0,.5,1);
+  will-change: opacity;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-fs-slide.active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+.gallery-fs-img {
+  max-width: 72vw;
+  max-height: 82vh;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 42px orange;
   cursor: pointer;
-  transition: transform 0.23s, box-shadow 0.22s;
+  border: 3px solid orange;
+  background: rgba(20,20,20,0.72);
+  transition: filter 0.22s, box-shadow 0.22s, transform 0.22s;
 }
-.gallery-slide-img:hover {
+.gallery-fs-img:hover {
+  filter: brightness(1.08) drop-shadow(0 0 24px orange);
+  box-shadow: 0 8px 72px orange;
   transform: scale(1.04);
-  box-shadow: 0 4px 32px orange;
 }
-/* Slider arrows and dots (like homepage) */
+
+/* ARROWS AND DOTS */
 .gallery-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2.7rem;
+  font-size: 3rem;
   background: rgba(0,0,0,0.22);
   color: orange;
   border: none;
   border-radius: 2rem;
   cursor: pointer;
-  z-index: 11;
+  z-index: 10;
   width: 3.2rem;
   height: 3.2rem;
   display: flex;
@@ -999,7 +1000,7 @@ body.black-bg {
 }
 .gallery-dots {
   position: absolute;
-  left: 0; right: 0; bottom: 3vh;
+  left: 0; right: 0; bottom: 4vh;
   display: flex;
   gap: 1.2rem;
   justify-content: center;
@@ -1021,13 +1022,12 @@ body.black-bg {
   background: orange;
   border-color: orange;
 }
-
-.gallery-slider:focus .gallery-arrow,
-.gallery-slider:focus .gallery-dot {
+.gallery-fullscreen-slider:focus .gallery-arrow,
+.gallery-fullscreen-slider:focus .gallery-dot {
   outline: 2px solid #fff;
 }
 
-/* Lightbox styles */
+/* LIGHTBOX */
 .lightbox-modal {
   position: fixed;
   z-index: 10000;
@@ -1039,7 +1039,7 @@ body.black-bg {
 .lightbox-backdrop {
   position: absolute;
   left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.86);
   cursor: pointer;
 }
 #lightbox-img {
@@ -1050,14 +1050,25 @@ body.black-bg {
   box-shadow: 0 4px 40px orange;
 }
 
-/* Responsive */
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .gallery-fs-img {
+    max-width: 93vw;
+    max-height: 68vh;
+    border-radius: 0.6rem;
+  }
+  .gallery-arrow { font-size: 2rem; width: 2.1rem; height: 2.1rem; }
+  .gallery-dot { width: 12px; height: 12px;}
+}
 @media (max-width: 700px) {
-  .gallery-section { padding: 1rem 0.1rem; }
-  .gallery-slider { max-width: 99vw; }
-  .gallery-slides,
-  .gallery-slide { height: 180px; }
-  #lightbox-img { border-radius: 8px; }
-  .gallery-arrow { font-size: 1.7rem; width: 2rem; height: 2rem; }
+  .gallery-fullscreen-slider,
+  .gallery-fullscreen-slider-section,
+  .gallery-fs-slide {
+    min-height: 240px;
+    height: 100vh;
+  }
+  .gallery-filter-fullscreen { gap: 1rem; }
+  .gallery-fs-img { max-width: 99vw; max-height: 45vh; }
   .gallery-dots { gap: 0.7rem; }
 }
 /* --- Raaganjali Gallery Page CSS END--- */
