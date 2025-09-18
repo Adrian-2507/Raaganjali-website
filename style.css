@@ -79,7 +79,7 @@ body {
   left: 0;
   width: 100vw;
   z-index: 10;
-  background-color: #13336bcc;
+  background-color: #181f3a;
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
   box-shadow: 0 5px 24px rgba(19,51,107,0.10);
@@ -90,13 +90,17 @@ body {
   align-items: center;
 }
 .navbar-logo {
-  height: 48px;
-  width: 88px;
-  transition: transform 0.2s;
+  height: 72px;     /* or your preferred size */
+  width: auto;
+  max-width: 240px; /* optional, prevents huge logos */
+  display: block;
+  object-fit: contain;
+  filter: none;
+  box-shadow: none;
 }
 .logo-link:hover .navbar-logo {
-  transform: scale(1.08) rotate(-3deg);
-  filter: drop-shadow(0 2px 8px orange);
+  transform: none;
+  filter: none;
 }
 .navbar-text {
   font-size: 1.7rem;
