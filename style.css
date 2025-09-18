@@ -903,15 +903,41 @@ body.black-bg {
   border-color: #fff;
 }
 
-/* FULLSCREEN SLIDERS */
+/* --- Fullscreen Gallery Filter Bar --- */
+.gallery-filter-fullscreen {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2.5rem 0 0.5rem 0;
+}
+.filter-btn {
+  background: transparent;
+  border: 2px solid orange;
+  color: orange;
+  font-weight: bold;
+  font-size: 1.15rem;
+  padding: 0.85rem 2.5rem;
+  border-radius: 22px;
+  transition: background 0.22s, color 0.22s, border-color 0.22s;
+  cursor: pointer;
+  outline: none;
+}
+.filter-btn.active,
+.filter-btn:hover {
+  background: orange;
+  color: #222;
+  border-color: #fff;
+}
+
+/* --- Fullscreen Slider Section --- */
 .gallery-fullscreen-slider-section {
   display: none;
   width: 100vw;
-  height: 100vh;
-  min-height: 420px;
+  height: 93vh;
+  min-height: 500px;
+  background: #111;
   position: relative;
   z-index: 3;
-  background: #111;
   transition: opacity 0.4s;
 }
 .gallery-fullscreen-slider-section.active {
@@ -923,31 +949,33 @@ body.black-bg {
   100% { opacity: 1;}
 }
 
+/* --- Fullscreen Slider --- */
 .gallery-fullscreen-slider {
   position: relative;
   width: 100vw;
-  height: 100vh;
-  min-height: 420px;
+  height: 93vh;
+  min-height: 500px;
   overflow: hidden;
   outline: none;
   z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .gallery-fs-slide {
   position: absolute;
   top: 0; left: 0;
   width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1s cubic-bezier(.5,0,.5,1);
-  will-change: opacity;
-  z-index: 1;
+  height: 93vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.85s cubic-bezier(.5,0,.5,1);
+  will-change: opacity;
+  z-index: 1;
 }
 .gallery-fs-slide.active {
   opacity: 1;
@@ -955,22 +983,27 @@ body.black-bg {
   pointer-events: auto;
 }
 .gallery-fs-img {
-  max-width: 72vw;
+  max-width: 82vw;
   max-height: 82vh;
-  border-radius: 1.2rem;
-  box-shadow: 0 4px 42px orange;
+  border-radius: 1.3rem;
+  border: 4px solid orange;
+  box-shadow: 0 0 0 2px #222, 0 6px 44px 2px orange;
+  background: rgba(20,20,20,0.82);
   cursor: pointer;
-  border: 3px solid orange;
-  background: rgba(20,20,20,0.72);
   transition: filter 0.22s, box-shadow 0.22s, transform 0.22s;
+  object-fit: contain;
+  opacity: 0.92;
+  /* for "view image only on click" effect, slight dim: */
+  filter: brightness(0.82) grayscale(0.2);
 }
 .gallery-fs-img:hover {
-  filter: brightness(1.08) drop-shadow(0 0 24px orange);
-  box-shadow: 0 8px 72px orange;
-  transform: scale(1.04);
+  filter: brightness(1) grayscale(0);
+  box-shadow: 0 10px 70px 10px orange;
+  opacity: 1;
+  transform: scale(1.025);
 }
 
-/* ARROWS AND DOTS */
+/* --- Slider Arrows and Dots --- */
 .gallery-arrow {
   position: absolute;
   top: 50%;
@@ -982,8 +1015,8 @@ body.black-bg {
   border-radius: 2rem;
   cursor: pointer;
   z-index: 10;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 3rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -991,8 +1024,8 @@ body.black-bg {
   box-shadow: 0 2px 12px rgba(0,0,0,0.15);
   user-select: none;
 }
-.gallery-arrow.prev { left: 3vw; }
-.gallery-arrow.next { right: 3vw; }
+.gallery-arrow.prev { left: 2vw; }
+.gallery-arrow.next { right: 2vw; }
 .gallery-arrow:hover, .gallery-arrow:focus {
   background: orange;
   color: #fff;
@@ -1000,7 +1033,7 @@ body.black-bg {
 }
 .gallery-dots {
   position: absolute;
-  left: 0; right: 0; bottom: 4vh;
+  left: 0; right: 0; bottom: 3.2vh;
   display: flex;
   gap: 1.2rem;
   justify-content: center;
@@ -1008,8 +1041,8 @@ body.black-bg {
   z-index: 12;
 }
 .gallery-dot {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   border: 2px solid #fff;
   background: rgba(255,140,0,0.3);
@@ -1027,7 +1060,7 @@ body.black-bg {
   outline: 2px solid #fff;
 }
 
-/* LIGHTBOX */
+/* --- Lightbox --- */
 .lightbox-modal {
   position: fixed;
   z-index: 10000;
@@ -1043,17 +1076,21 @@ body.black-bg {
   cursor: pointer;
 }
 #lightbox-img {
-  max-width: 95vw;
-  max-height: 90vh;
+  max-width: 96vw;
+  max-height: 92vh;
   border-radius: 20px;
   z-index: 10001;
   box-shadow: 0 4px 40px orange;
+  background: #191919;
+  /* image is not dimmed in lightbox */
+  filter: none !important;
+  opacity: 1 !important;
 }
 
-/* RESPONSIVE */
+/* --- Responsive --- */
 @media (max-width: 900px) {
   .gallery-fs-img {
-    max-width: 93vw;
+    max-width: 97vw;
     max-height: 68vh;
     border-radius: 0.6rem;
   }
@@ -1071,8 +1108,8 @@ body.black-bg {
   .gallery-fs-img { max-width: 99vw; max-height: 45vh; }
   .gallery-dots { gap: 0.7rem; }
 }
-/* --- Raaganjali Gallery Page CSS END--- */
 
+/* --- Gallery Page Styling End --- */
 /* --- Raaganjali Events Page CSS --- */
 
 /* HERO/HEADER */
