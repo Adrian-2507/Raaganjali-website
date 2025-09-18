@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raaganjali | Gallery</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="gallery.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
-<body  class="black-bg">
+<body class="black-bg">
 
 <!-- NAVIGATION -->
 <nav id="navbar">
@@ -16,7 +17,7 @@
     <span class="navbar-text">Raaganjali</span>
   </a>
   <button id="navbar-toggle" aria-label="Open menu">&#9776;</button>
-  <div class="nav-links">
+  <div class="nav-links" id="nav-links">
     <a href="index.html">Home</a>
     <a href="team.html">About Us</a>
     <a href="services.html">Services</a>
@@ -32,28 +33,65 @@
     <p>Moments from our musical journey</p>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery-container" data-aos="fade-up">
-  <div class="gallery-grid">
-    <img src="images/Grp1.jpg" alt="Group Photo 1" />
-    <img src="images/Grp2.jpg" alt="Group Photo 2" />
-    <img src="images/Grp3.jpg" alt="Group Photo 3" />
-    <img src="images/Grp4.jpg" alt="Group Photo 4" />
-    <img src="images/Grp5.jpg" alt="Group Photo 5" />
-    <img src="images/Group[2].jpg" alt="Performance 1" />
-    <img src="images/Group[3].jpg" alt="Performance 2" />
-    <img src="images/Lakshmi[1].jpg" alt="Lakshmi performing" />
-    <img src="images/soumya2.jpg" alt="Soumya performing" />
-    <img src="images/Malai[2].jpg" alt="Malai performing" />
-    <img src="images/Satvika[3].jpg" alt="Satvika performing" />
-    <img src="images/Ravi[1].jpg" alt="Ravi performing" />
-    <img src="images/madhu.jpg" alt="Ravi performing" />
-    <img src="images/saket_bg.jpg" alt="Ravi performing" />
-    <img src="images/satvik.jpg" alt="Ravi performing" />
-    <img src="images/allan_bg.jpg" alt="Ravi performing" />
-    <!-- Add more as needed -->
+<!-- FILTER -->
+<section class="gallery-section" data-aos="fade-up">
+  <p class="gallery-desc">You can filter what type of pictures you want to see.</p>
+  <div class="gallery-filter">
+    <button class="filter-btn active" data-target="team-group-section">Team Group Photos</button>
+    <button class="filter-btn" data-target="performances-section">Performances</button>
   </div>
+
+  <!-- TEAM GROUP PHOTOS -->
+  <section id="team-group-section" class="gallery-slider-section">
+    <h2>Team Group Photos</h2>
+    <div class="gallery-slider" id="team-slider" tabindex="0">
+      <button class="gallery-arrow prev" aria-label="Previous slide">&#10094;</button>
+      <div class="gallery-slides">
+        <!-- Slides -->
+        <div class="gallery-slide active"><img src="images/Grp1.jpg" alt="Group Photo 1" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Grp2.jpg" alt="Group Photo 2" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Grp3.jpg" alt="Group Photo 3" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Grp4.jpg" alt="Group Photo 4" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Grp5.jpg" alt="Group Photo 5" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Group[2].jpg" alt="Group Photo 6" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Group[3].jpg" alt="Group Photo 7" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/allan_bg.jpg" alt="Group Photo 8" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/satvik.jpg" alt="Group Photo 9" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/saket_bg.jpg" alt="Group Photo 10" class="gallery-slide-img" /></div>
+      </div>
+      <button class="gallery-arrow next" aria-label="Next slide">&#10095;</button>
+      <div class="gallery-dots" id="team-dots"></div>
+    </div>
+  </section>
+
+  <!-- PERFORMANCES -->
+  <section id="performances-section" class="gallery-slider-section" style="display:none;">
+    <h2>Performances</h2>
+    <div class="gallery-slider" id="performances-slider" tabindex="0">
+      <button class="gallery-arrow prev" aria-label="Previous slide">&#10094;</button>
+      <div class="gallery-slides">
+        <div class="gallery-slide active"><img src="images/Lakshmi[1].jpg" alt="Performance 1" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/soumya2.jpg" alt="Performance 2" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Malai[2].jpg" alt="Performance 3" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Satvika[3].jpg" alt="Performance 4" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Ravi[1].jpg" alt="Performance 5" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/madhu.jpg" alt="Performance 6" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Group[2].jpg" alt="Performance 7" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Group[3].jpg" alt="Performance 8" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Grp1.jpg" alt="Performance 9" class="gallery-slide-img" /></div>
+        <div class="gallery-slide"><img src="images/Grp2.jpg" alt="Performance 10" class="gallery-slide-img" /></div>
+      </div>
+      <button class="gallery-arrow next" aria-label="Next slide">&#10095;</button>
+      <div class="gallery-dots" id="performances-dots"></div>
+    </div>
+  </section>
 </section>
+
+<!-- LIGHTBOX MODAL -->
+<div id="lightbox-modal" class="lightbox-modal" style="display:none;">
+  <div class="lightbox-backdrop"></div>
+  <img id="lightbox-img" src="" alt="Large Preview" />
+</div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -117,36 +155,133 @@
   AOS.init();
 </script>
 
- <!-- Hamburger menu script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const navbarToggle = document.getElementById('navbar-toggle');
-      const navLinks = document.getElementById('nav-links');
+<!-- Hamburger menu script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const navLinks = document.getElementById('nav-links');
 
-      // Toggle menu open/close
-      navbarToggle.addEventListener('click', function() {
-        const isOpen = navLinks.classList.toggle('open');
-        navbarToggle.setAttribute('aria-expanded', isOpen ? "true" : "false");
-      });
+    navbarToggle.addEventListener('click', function() {
+      const isOpen = navLinks.classList.toggle('open');
+      navbarToggle.setAttribute('aria-expanded', isOpen ? "true" : "false");
+    });
 
-      // Close menu when a nav link is clicked (on mobile)
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          if (window.innerWidth <= 800) {
-            navLinks.classList.remove('open');
-            navbarToggle.setAttribute('aria-expanded', "false");
-          }
-        });
-      });
-
-      // Close menu if window resized to desktop
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 800) {
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 800) {
           navLinks.classList.remove('open');
           navbarToggle.setAttribute('aria-expanded', "false");
         }
       });
     });
-  </script>
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 800) {
+        navLinks.classList.remove('open');
+        navbarToggle.setAttribute('aria-expanded', "false");
+      }
+    });
+  });
+</script>
+
+<!-- Gallery Filter, Slider, and Lightbox JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Filter buttons
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const sections = {
+    "team-group-section": document.getElementById('team-group-section'),
+    "performances-section": document.getElementById('performances-section')
+  };
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      Object.keys(sections).forEach(key => sections[key].style.display = 'none');
+      const target = btn.getAttribute('data-target');
+      sections[target].style.display = 'block';
+      // scroll to the respective slider
+      setTimeout(() => sections[target].scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+    });
+  });
+
+  // Slider logic (arrows, dots, autoplay, keyboard)
+  function initGallerySlider(sliderId, dotsId) {
+    const slider = document.getElementById(sliderId);
+    if (!slider) return;
+    const slides = Array.from(slider.querySelectorAll('.gallery-slide'));
+    const prevBtn = slider.querySelector('.gallery-arrow.prev');
+    const nextBtn = slider.querySelector('.gallery-arrow.next');
+    const dotsContainer = document.getElementById(dotsId);
+    let current = 0, interval = null, paused = false;
+
+    function showSlide(idx) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === idx);
+        slide.setAttribute('aria-hidden', i !== idx);
+      });
+      Array.from(dotsContainer.children).forEach((dot, i) => {
+        dot.classList.toggle('active', i === idx);
+        dot.setAttribute('aria-current', i === idx ? 'true' : 'false');
+      });
+      current = idx;
+    }
+
+    function prevSlide() { showSlide((current - 1 + slides.length) % slides.length); }
+    function nextSlide() { showSlide((current + 1) % slides.length); }
+    function goToSlide(idx) { showSlide(idx); }
+    function startAutoplay() {
+      if (interval) clearInterval(interval);
+      interval = setInterval(() => { if (!paused) nextSlide(); }, 3500);
+    }
+    function pauseAutoplay() { paused = true; }
+    function resumeAutoplay() { paused = false; }
+
+    function createDots() {
+      dotsContainer.innerHTML = '';
+      slides.forEach((s, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+        btn.setAttribute('aria-label', `Go to slide ${i+1}`);
+        btn.onclick = () => { goToSlide(i); pauseAutoplay(); };
+        dotsContainer.appendChild(btn);
+      });
+    }
+
+    slider.addEventListener('mouseenter', pauseAutoplay);
+    slider.addEventListener('mouseleave', resumeAutoplay);
+    slider.addEventListener('focusin', pauseAutoplay);
+    slider.addEventListener('focusout', resumeAutoplay);
+    slider.addEventListener('keydown', function(e) {
+      if (e.key === "ArrowLeft") { prevSlide(); pauseAutoplay(); }
+      if (e.key === "ArrowRight") { nextSlide(); pauseAutoplay(); }
+    });
+    prevBtn.addEventListener('click', () => { prevSlide(); pauseAutoplay(); });
+    nextBtn.addEventListener('click', () => { nextSlide(); pauseAutoplay(); });
+
+    createDots();
+    showSlide(0);
+    startAutoplay();
+  }
+
+  initGallerySlider('team-slider', 'team-dots');
+  initGallerySlider('performances-slider', 'performances-dots');
+
+  // Lightbox logic
+  document.querySelectorAll('.gallery-slide-img').forEach(img => {
+    img.addEventListener('click', function() {
+      document.getElementById('lightbox-img').src = this.src;
+      document.getElementById('lightbox-modal').style.display = 'flex';
+    });
+  });
+  document.getElementById('lightbox-modal').addEventListener('click', function(e) {
+    if (e.target === this || e.target.classList.contains('lightbox-backdrop')) {
+      this.style.display = 'none';
+      document.getElementById('lightbox-img').src = '';
+    }
+  });
+});
+</script>
+
 </body>
 </html>
