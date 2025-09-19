@@ -90,7 +90,7 @@ body {
   align-items: center;
 }
 .navbar-logo {
-  height: 90px;     /* or your preferred size */
+  height: 200px;     /* or your preferred size */
   width: auto;
   max-width: 240px; /* optional, prevents huge logos */
   display: block;
