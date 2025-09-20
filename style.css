@@ -141,33 +141,36 @@ body.black-bg {
     z-index: 1002;
   }
   .nav-links {
-    display: none;
-    width: 100vw;
+    display: flex;
     flex-direction: column;
-    align-items: center;    /* Center horizontally */
-    justify-content: flex-start; /* Space out vertically from top */
+    align-items: flex-start;
+    justify-content: flex-start;
     background: #18183C;
     border-top: 1px solid #444;
     margin: 0;
     padding: 0.8rem 0 1.4rem 0;
-    position: absolute;
+    position: fixed;
     top: 70px;
-    right: 0;
-    left: 0;
+    right: -220px; /* Hide off-canvas to the right */
+    width: 200px;
+    height: calc(100vh - 70px);
     z-index: 1001;
-    box-shadow: 0 5px 24px rgba(19,51,107,0.14);
-    text-align: center;
+    box-shadow: -5px 0 24px rgba(19,51,107,0.14);
+    text-align: left;
+    transition: right 0.3s cubic-bezier(.42,0,.58,1);
+    display: flex;
+    left: auto; /* Remove left: 0 to avoid stretching */
   }
   .nav-links.open {
-    display: flex;
+    right: 0; /* Slide in */
   }
   .nav-links a {
     width: 100%;
-    padding: 1rem 0;
+    padding: 1rem 1.2rem;
     font-size: 1.1rem;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     border-radius: 0;
-    text-align: center;
+    text-align: left;
   }
   .navbar-logo {
     width: 120px;
