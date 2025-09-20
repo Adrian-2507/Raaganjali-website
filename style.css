@@ -1770,7 +1770,7 @@ body.black-bg {
   left: 0;
   width: 100vw;
   z-index: 10;
-  background-color: #13336bcc;
+  background-color: #18183C;
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
   box-shadow: 0 5px 24px rgba(19,51,107,0.10);
