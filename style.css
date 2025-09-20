@@ -54,7 +54,7 @@ body.black-bg {
   z-index: 1000;
   display: flex;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 1.2rem; /* tighter horizontal padding */
   border-bottom: 2px solid orange;
   width: 100vw;
 }
@@ -63,10 +63,9 @@ body.black-bg {
   display: flex;
   align-items: center;
   text-decoration: none;
-  margin-right: 2rem;
+  margin-right: 1.2rem;
 }
 
-/* Logo size is easily adjustable here */
 .navbar-logo {
   width: 150px;
   height: 80px;
@@ -76,7 +75,7 @@ body.black-bg {
   display: block;
 }
 
-/* Hamburger menu button */
+/* Hamburger menu */
 #navbar-toggle {
   display: none;
   background: transparent;
@@ -91,7 +90,7 @@ body.black-bg {
 
 .nav-links {
   display: flex;
-  gap: 3rem;
+  gap: 1.5rem; /* reduced gap for compact look */
   margin-left: auto;
   align-items: center;
 }
@@ -100,13 +99,12 @@ body.black-bg {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   transition: color 0.2s;
-  padding: 0.2em 0.7em;
+  padding: 0.2em 0.8em; /* a bit more horizontal padding for click area */
   border-radius: 4px;
 }
 
-/* Highlight the active link and hover */
 .nav-links a.active,
 .nav-links a:hover {
   color: orange;
@@ -116,13 +114,14 @@ body.black-bg {
 /* Responsive: tablet */
 @media (max-width: 950px) {
   .nav-links {
-    gap: 1.3rem;
+    gap: 1rem;
   }
   .nav-links a {
-    font-size: 1.1rem;
+    font-size: 1.08rem;
+    padding: 0.2em 0.7em;
   }
   .logo-link {
-    margin-right: 1rem;
+    margin-right: 0.8rem;
   }
 }
 
@@ -131,10 +130,10 @@ body.black-bg {
   #navbar {
     flex-wrap: wrap;
     height: auto;
-    padding: 0.2rem 0.7rem;
+    padding: 0.2rem 0.5rem;
   }
   .logo-link {
-    margin-right: 0.7rem;
+    margin-right: 0.4rem;
   }
   #navbar-toggle {
     display: block;
@@ -144,14 +143,15 @@ body.black-bg {
     display: none;
     width: 100vw;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end; /* align to right */
     background: #18183C;
     border-top: 1px solid #444;
     margin: 0;
-    padding: 0.8rem 0 1.4rem 0.7rem;
+    padding: 0.8rem 0.7rem 1.4rem 0;
     position: absolute;
     top: 70px;
-    left: 0;
+    right: 0;   /* open from right */
+    left: auto; /* don't override with left */
     z-index: 1001;
     box-shadow: 0 5px 24px rgba(19,51,107,0.14);
   }
@@ -159,11 +159,12 @@ body.black-bg {
     display: flex;
   }
   .nav-links a {
-    width: 100%;
-    padding: 1rem 0.5rem;
+    width: auto;
+    padding: 1rem 1.2rem 1rem 1.2rem;
     font-size: 1.1rem;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     border-radius: 0;
+    text-align: right;
   }
   .navbar-logo {
     width: 120px;
