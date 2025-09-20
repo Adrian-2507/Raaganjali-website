@@ -392,7 +392,7 @@ body.black-bg {
 .services-card {
   max-width: 700px;
   margin: 2rem auto 3.5rem auto; /* Adds more space below for the footer */
-  background: rgba(30,30,30,0.92);
+  background: #fff;
   border-radius: 1rem;
   box-shadow: 0 5px 25px rgba(19,51,107,0.14);
   border: 3px solid orange;
