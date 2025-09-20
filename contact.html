@@ -114,36 +114,7 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ once:true });</script>
-  <!-- Hamburger menu script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const navbarToggle = document.getElementById('navbar-toggle');
-      const navLinks = document.getElementById('nav-links');
-
-      // Toggle menu open/close
-      navbarToggle.addEventListener('click', function() {
-        const isOpen = navLinks.classList.toggle('open');
-        navbarToggle.setAttribute('aria-expanded', isOpen ? "true" : "false");
-      });
-
-      // Close menu when a nav link is clicked (on mobile)
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          if (window.innerWidth <= 800) {
-            navLinks.classList.remove('open');
-            navbarToggle.setAttribute('aria-expanded', "false");
-          }
-        });
-      });
-
-      // Close menu if window resized to desktop
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 800) {
-          navLinks.classList.remove('open');
-          navbarToggle.setAttribute('aria-expanded', "false");
-        }
-      });
-    });
-  </script>
+ <!--Hamburger menu toggle script -->
+<script src="script.js"></script>
 </body>
 </html>
