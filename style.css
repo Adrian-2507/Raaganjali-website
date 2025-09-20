@@ -1042,7 +1042,7 @@ body.black-bg {
 .events-hero {
   text-align: center;
   padding: 6rem 1rem 2rem 1rem; /* increased top padding for navbar! */
-  background: linear-gradient(90deg, #13336b 70%, #5f3dc4 110%);
+  background: linear-gradient(90deg, #18183C 70%, #5f3dc4 110%);
   color: #fff;
 }
 .events-hero h1 {
