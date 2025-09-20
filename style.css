@@ -400,11 +400,10 @@ body.black-bg {
 
 .services-inner {
   display: flex;
-  width: 100%;
-  justify-content: space-evenly;   /* EVEN, automatic spacing */
+  justify-content: center;
   align-items: center;
-  gap: 0;                         /* Let space-evenly handle gap */
-  flex-wrap: nowrap;              /* No wrap on desktop! */
+  flex-wrap: nowrap;     /* Don't allow wrapping on desktop */
+  gap: 2.5rem;           /* Set a reasonable gap, adjust as needed */
 }
 
 .service-icon-card {
@@ -413,14 +412,11 @@ body.black-bg {
   align-items: center;
   text-decoration: none;
   color: #fff;
-  transition: transform 0.22s, box-shadow 0.22s, background 0.22s;
-  padding: 0.6rem 1.1rem 0.5rem 1.1rem;
-  border-radius: 0.7rem;
   background: transparent;
-  min-width: 120px;                /* Nice fixed min size */
-  max-width: 160px;                /* Prevents stretching */
-  flex: 0 1 140px;                 /* DO NOT grow to fill row */
-  margin: 0.5rem 0;
+  min-width: 120px;
+  max-width: 140px;
+  flex: 0 0 130px;      /* Fixed width, no grow/shrink */
+  margin: 0;
 }
 
 .service-icon-card img {
