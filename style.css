@@ -401,9 +401,10 @@ body.black-bg {
 .services-inner {
   display: flex;
   width: 100%;
-  justify-content: space-between; /* Equal spacing */
+  justify-content: center;
   align-items: center;
-  gap: 0; /* No extra gap needed with space-between */
+  gap: 1.7rem; /* Add some gap for both desktop and mobile */
+  flex-wrap: wrap; /* Allow wrapping for extra small screens */
 }
 
 .service-icon-card {
@@ -413,10 +414,13 @@ body.black-bg {
   text-decoration: none;
   color: #fff;
   transition: transform 0.22s, box-shadow 0.22s, background 0.22s;
-  padding: 0.4rem 0.9rem 0.2rem 0.9rem;
+  padding: 0.6rem 1.1rem 0.5rem 1.1rem;
   border-radius: 0.7rem;
   background: transparent;
-  min-width: 150px; /* Ensures icons are evenly spaced */
+  min-width: 110px;
+  flex: 1 1 130px; /* Smoothly auto-sizes and wraps */
+  max-width: 155px;
+  margin: 0.5rem 0; /* vertical margin for mobile stacking */
 }
 
 .service-icon-card img {
@@ -435,7 +439,8 @@ body.black-bg {
   letter-spacing: 0.01em;
 }
 
-.service-icon-card:hover, .service-icon-card:focus {
+.service-icon-card:hover,
+.service-icon-card:focus {
   background: rgba(255,140,0,0.10);
   transform: translateY(-8px) scale(1.08);
   box-shadow: 0 4px 16px rgba(255,140,0,0.11);
@@ -454,14 +459,16 @@ body.black-bg {
     padding: 1.2rem 0.4rem 1.7rem 0.4rem;
   }
   .services-inner {
-    justify-content: space-between;
-    width: 100%;
-    gap: 0;
+    justify-content: center;
+    gap: 1.1rem;
+    flex-wrap: wrap;      /* Allow icon cards to stack if needed */
   }
   .service-icon-card {
-    min-width: 0;
-    flex: 1 1 0;      /* Add this line! */
-    padding: 0.2rem 0.3rem;
+    min-width: 95px;
+    max-width: 135px;
+    flex: 1 1 120px;
+    margin: 0.6rem 0.2rem;
+    padding: 0.45rem 0.3rem 0.5rem 0.3rem;
   }
   .service-icon-card img {
     width: 29px;
