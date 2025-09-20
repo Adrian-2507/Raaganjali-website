@@ -398,13 +398,14 @@ body.black-bg {
   justify-content: center;
 }
 
+/* --- Service Icons Section (Desktop) --- */
 .services-inner {
   display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: space-around;   /* Even space between icons */
   align-items: center;
-  gap: 1.7rem; /* Add some gap for both desktop and mobile */
-  flex-wrap: wrap; /* Allow wrapping for extra small screens */
+  gap: 0;                          /* No extra gap needed */
+  flex-wrap: nowrap;               /* Keep in one row */
 }
 
 .service-icon-card {
@@ -417,10 +418,10 @@ body.black-bg {
   padding: 0.6rem 1.1rem 0.5rem 1.1rem;
   border-radius: 0.7rem;
   background: transparent;
-  min-width: 110px;
-  flex: 1 1 130px; /* Smoothly auto-sizes and wraps */
-  max-width: 155px;
-  margin: 0.5rem 0; /* vertical margin for mobile stacking */
+  min-width: 150px;                /* Ensures icons are evenly spaced */
+  max-width: 180px;
+  flex: 0 1 170px;                 /* Prevents over-growing but allows some shrink */
+  margin: 0.5rem 0;
 }
 
 .service-icon-card img {
