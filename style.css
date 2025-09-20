@@ -401,10 +401,10 @@ body.black-bg {
 .services-inner {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;   /* EVEN, automatic spacing */
+  justify-content: space-evenly;   /* Even spacing between icons */
   align-items: center;
-  gap: 0;                         /* Let space-evenly handle gap */
-  flex-wrap: nowrap;              /* No wrap on desktop! */
+  gap: 0;                         /* Let space-evenly handle spacing */
+  flex-wrap: nowrap;              /* Prevent wrapping on desktop */
 }
 
 .service-icon-card {
@@ -417,12 +417,11 @@ body.black-bg {
   padding: 0.6rem 1.1rem 0.5rem 1.1rem;
   border-radius: 0.7rem;
   background: transparent;
-  min-width: 120px;                /* Nice fixed min size */
-  max-width: 160px;                /* Prevents stretching */
-  flex: 0 1 140px;                 /* DO NOT grow to fill row */
+  min-width: 120px;                /* Reasonable fixed size */
+  max-width: 150px;
+  flex: 0 0 150px;                 /* Do NOT grow, do NOT shrink, fixed width */
   margin: 0.5rem 0;
 }
-
 /* ...rest of your styles... */
 
 /* Responsive */
