@@ -43,7 +43,7 @@ body.black-bg {
   padding: 0;
 }
 
-/* --- Navbar --- */
+/* --- Navbar styling start --- */
 #navbar {
   position: fixed;
   top: 0;
@@ -90,8 +90,9 @@ body.black-bg {
 
 .nav-links {
   display: flex;
-  gap: 1.5rem; /* reduced gap for compact look */
-  margin-left: auto;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: center;
   align-items: center;
 }
 
@@ -101,7 +102,7 @@ body.black-bg {
   font-weight: bold;
   font-size: 1.25rem;
   transition: color 0.2s;
-  padding: 0.2em 0.8em; /* a bit more horizontal padding for click area */
+  padding: 0.2em 0.8em;
   border-radius: 4px;
 }
 
@@ -143,28 +144,30 @@ body.black-bg {
     display: none;
     width: 100vw;
     flex-direction: column;
-    align-items: flex-end; /* align to right */
+    align-items: center;    /* Center horizontally */
+    justify-content: flex-start; /* Space out vertically from top */
     background: #18183C;
     border-top: 1px solid #444;
     margin: 0;
-    padding: 0.8rem 0.7rem 1.4rem 0;
+    padding: 0.8rem 0 1.4rem 0;
     position: absolute;
     top: 70px;
-    right: 0;   /* open from right */
-    left: auto; /* don't override with left */
+    right: 0;
+    left: 0;
     z-index: 1001;
     box-shadow: 0 5px 24px rgba(19,51,107,0.14);
+    text-align: center;
   }
   .nav-links.open {
     display: flex;
   }
   .nav-links a {
-    width: auto;
-    padding: 1rem 1.2rem 1rem 1.2rem;
+    width: 100%;
+    padding: 1rem 0;
     font-size: 1.1rem;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     border-radius: 0;
-    text-align: right;
+    text-align: center;
   }
   .navbar-logo {
     width: 120px;
