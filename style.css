@@ -401,10 +401,10 @@ body.black-bg {
 .services-inner {
   display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: space-evenly;   /* EVEN, automatic spacing */
   align-items: center;
-  gap: 1.7rem; /* Add some gap for both desktop and mobile */
-  flex-wrap: wrap; /* Allow wrapping for extra small screens */
+  gap: 0;                         /* Let space-evenly handle gap */
+  flex-wrap: nowrap;              /* No wrap on desktop! */
 }
 
 .service-icon-card {
@@ -417,10 +417,10 @@ body.black-bg {
   padding: 0.6rem 1.1rem 0.5rem 1.1rem;
   border-radius: 0.7rem;
   background: transparent;
-  min-width: 110px;
-  flex: 1 1 130px; /* Smoothly auto-sizes and wraps */
-  max-width: 155px;
-  margin: 0.5rem 0; /* vertical margin for mobile stacking */
+  min-width: 120px;                /* Nice fixed min size */
+  max-width: 160px;                /* Prevents stretching */
+  flex: 0 1 140px;                 /* DO NOT grow to fill row */
+  margin: 0.5rem 0;
 }
 
 .service-icon-card img {
