@@ -388,7 +388,7 @@ body.black-bg {
 /* --- Service Icons Section --- */
 .services-card {
   max-width: 700px;
-  margin: 2rem auto 3.5rem auto; /* Adds more space below for the footer */
+  margin: 2rem auto 3.5rem auto;
   background: rgba(30,30,30,0.92);
   border-radius: 1rem;
   box-shadow: 0 5px 25px rgba(19,51,107,0.14);
@@ -398,14 +398,13 @@ body.black-bg {
   justify-content: center;
 }
 
-/* --- Service Icons Section (Desktop) --- */
 .services-inner {
   display: flex;
   width: 100%;
-  justify-content: space-around;   /* Even space between icons */
+  justify-content: space-evenly;   /* EVEN, automatic spacing */
   align-items: center;
-  gap: 0;                          /* No extra gap needed */
-  flex-wrap: nowrap;               /* Keep in one row */
+  gap: 0;                         /* Let space-evenly handle gap */
+  flex-wrap: nowrap;              /* No wrap on desktop! */
 }
 
 .service-icon-card {
@@ -418,40 +417,13 @@ body.black-bg {
   padding: 0.6rem 1.1rem 0.5rem 1.1rem;
   border-radius: 0.7rem;
   background: transparent;
-  min-width: 150px;                /* Ensures icons are evenly spaced */
-  max-width: 180px;
-  flex: 0 1 170px;                 /* Prevents over-growing but allows some shrink */
+  min-width: 120px;                /* Nice fixed min size */
+  max-width: 160px;                /* Prevents stretching */
+  flex: 0 1 140px;                 /* DO NOT grow to fill row */
   margin: 0.5rem 0;
 }
 
-.service-icon-card img {
-  width: 38px;
-  height: 38px;
-  margin-bottom: 0.7rem;
-  filter: drop-shadow(0 0 13px orange);
-  transition: filter 0.2s, transform 0.22s, box-shadow 0.22s;
-}
-
-.service-icon-card span {
-  margin-top: 0.1rem;
-  font-weight: 600;
-  color: orange;
-  font-size: 1.18rem;
-  letter-spacing: 0.01em;
-}
-
-.service-icon-card:hover,
-.service-icon-card:focus {
-  background: rgba(255,140,0,0.10);
-  transform: translateY(-8px) scale(1.08);
-  box-shadow: 0 4px 16px rgba(255,140,0,0.11);
-}
-
-.service-icon-card:hover img,
-.service-icon-card:focus img {
-  filter: drop-shadow(0 0 18px orange) brightness(1.14);
-  transform: scale(1.15);
-}
+/* ...rest of your styles... */
 
 /* Responsive */
 @media (max-width: 700px) {
