@@ -388,7 +388,7 @@ body.black-bg {
 /* --- Service Icons Section --- */
 .services-card {
   max-width: 700px;
-  margin: 2rem auto 3.5rem auto;
+  margin: 2rem auto 3.5rem auto; /* Adds more space below for the footer */
   background: rgba(30,30,30,0.92);
   border-radius: 1rem;
   box-shadow: 0 5px 25px rgba(19,51,107,0.14);
@@ -401,10 +401,10 @@ body.black-bg {
 .services-inner {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;   /* Even spacing between icons */
+  justify-content: center;
   align-items: center;
-  gap: 0;                         /* Let space-evenly handle spacing */
-  flex-wrap: nowrap;              /* Prevent wrapping on desktop */
+  gap: 1.7rem; /* Add some gap for both desktop and mobile */
+  flex-wrap: wrap; /* Allow wrapping for extra small screens */
 }
 
 .service-icon-card {
@@ -417,12 +417,40 @@ body.black-bg {
   padding: 0.6rem 1.1rem 0.5rem 1.1rem;
   border-radius: 0.7rem;
   background: transparent;
-  min-width: 120px;                /* Reasonable fixed size */
-  max-width: 150px;
-  flex: 0 0 150px;                 /* Do NOT grow, do NOT shrink, fixed width */
-  margin: 0.5rem 0;
+  min-width: 110px;
+  flex: 1 1 130px; /* Smoothly auto-sizes and wraps */
+  max-width: 155px;
+  margin: 0.5rem 0; /* vertical margin for mobile stacking */
 }
-/* ...rest of your styles... */
+
+.service-icon-card img {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 0.7rem;
+  filter: drop-shadow(0 0 13px orange);
+  transition: filter 0.2s, transform 0.22s, box-shadow 0.22s;
+}
+
+.service-icon-card span {
+  margin-top: 0.1rem;
+  font-weight: 600;
+  color: orange;
+  font-size: 1.18rem;
+  letter-spacing: 0.01em;
+}
+
+.service-icon-card:hover,
+.service-icon-card:focus {
+  background: rgba(255,140,0,0.10);
+  transform: translateY(-8px) scale(1.08);
+  box-shadow: 0 4px 16px rgba(255,140,0,0.11);
+}
+
+.service-icon-card:hover img,
+.service-icon-card:focus img {
+  filter: drop-shadow(0 0 18px orange) brightness(1.14);
+  transform: scale(1.15);
+}
 
 /* Responsive */
 @media (max-width: 700px) {
