@@ -549,6 +549,72 @@ body.black-bg {
 .page-head {
   margin-top: 80px;
 }
+/* --- About Raaganjali Story Section Styling start --- */
+.about-raaganjali-story {
+  max-width: 680px;
+  margin: 2.2rem auto 1.5rem auto;
+  padding: 2rem 1.6rem 2.1rem 1.6rem;
+  background: rgba(24,24,60,0.93);
+  border: 2.5px solid orange;
+  border-radius: 22px;
+  box-shadow: 0 7px 28px rgba(19,51,107,0.13);
+  color: #ffeebd;
+  font-size: 1.14rem;
+  line-height: 1.7;
+  font-family: 'Montserrat', sans-serif;
+}
+.about-raaganjali-story h2 {
+  color: orange;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: 2.1rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.01em;
+}
+.about-raaganjali-story ul {
+  margin: 0 0 0 1.1rem;
+  padding: 0 0 0 0.7rem;
+}
+.raaganjali-values {
+  margin: 1.7rem 0 1.5rem 0;
+  padding: 1rem 1.1rem 1.2rem 1.1rem;
+  background: rgba(255,140,0,0.07);
+  border-radius: 14px;
+  border-left: 5px solid orange;
+}
+.raaganjali-values .values-title {
+  font-size: 1.13rem;
+  font-weight: 600;
+  color: orange;
+  margin-bottom: 0.7rem;
+}
+.raaganjali-values li {
+  margin-bottom: 0.45rem;
+  color: #ffeebd;
+}
+.raaganjali-values strong {
+  color: orange;
+}
+.raaganjali-welcome {
+  text-align: center;
+  font-size: 1.17rem;
+  margin: 0;
+  color: #fff;
+}
+/* Responsive tweak if needed */
+@media (max-width: 700px) {
+  .about-raaganjali-story {
+    padding: 1.2rem 0.7rem 1.3rem 0.7rem;
+    max-width: 97vw;
+    font-size: 1.05rem;
+  }
+  .about-raaganjali-story h2 {
+    font-size: 1.25rem;
+  }
+}
+/* --- About Raaganjali Story Section Styling End --- */
+
 .team-shell {
   margin: 1.2rem 0;
   display: flex;
