@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: raaganjali-website.vercel.app/sitemap.xml
